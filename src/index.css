@@ -3,3 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Roboto */
+/* font-family: 'Roboto', sans-serif; how to use ===> */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+:root {
+  --mediumBlue: #140c40;
+  --lightBrown: #301A22;
+}
