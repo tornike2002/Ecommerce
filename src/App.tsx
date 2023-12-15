@@ -4,9 +4,8 @@ import Categories from "./pages/Categories";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import OneProductPage from "./pages/oneProductPage";
+import OneProductPage from "./pages/OneProductPage";
 import Login from "./pages/Login";
-
 
 function App() {
   return (

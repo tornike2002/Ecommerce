@@ -1,4 +1,4 @@
-import { Link, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type Props = {
   banner: string;
