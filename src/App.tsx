@@ -5,6 +5,8 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import OneProductPage from "./pages/oneProductPage";
+import Login from "./pages/Login";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="blog" element={<Blog />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
         <Route path="one-product-page" element={<OneProductPage />} />
       </Routes>
     </>
