@@ -1,6 +1,8 @@
 import ProductsCarousel from "../components/carousel/ProductsCarousel";
 
 const Home = () => {
+  console.log("hello");
+
   return (
     <div>
       <ProductsCarousel />
@@ -8,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home
+export default Home;
