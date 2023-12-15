@@ -3,6 +3,8 @@ import "react-multi-carousel/lib/styles.css";
 import { Data } from "../../Data";
 import Movie from "../movie/Movie";
 
+// სტილების მაგივრად
+
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 3000, min: 1400 },
