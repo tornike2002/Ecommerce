@@ -1,6 +1,5 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import "./ProductsCarouselStyles.css";
 import { Data } from "../../Data";
 import Movie from "../movie/Movie";
 
