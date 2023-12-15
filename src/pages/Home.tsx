@@ -1,10 +1,15 @@
+import ProductsCarousel from "../components/carousel/ProductsCarousel";
 
-export default function Home() {
-
+const Home = () => {
+  console.log("hell");
+  console.log("helwwwwl");
 
   return (
-    <>
-      homePage
-    </>
+    <div>
+      test
+      <ProductsCarousel />
+    </div>
   );
-}
+};
+
+export default Home;
