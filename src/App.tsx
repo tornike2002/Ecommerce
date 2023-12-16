@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import styled from 'styled-components';
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
+import Cart from "./pages/Cart";
 
 const Container = styled.div`
   padding-left: 270px;
@@ -38,6 +39,9 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
           <Route path="one-product-page" element={<OneProductPage />} />
+          <Route path="cart" element={<Cart />} />
+
+
 
         </Routes>
       </Container>
