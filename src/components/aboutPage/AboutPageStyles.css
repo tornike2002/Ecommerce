@@ -4,11 +4,7 @@
   flex-direction: column;
   gap: 65px;
 }
-.about-text-container h2 {
-  font-size: 30px;
-  display: block;
-  font-weight: 700;
-  line-height: 1.4;
+.about-text-container div div {
   margin-bottom: 22px;
 }
 .about-text-container p {

@@ -1,4 +1,5 @@
 import TitleAndImg from "../pageTitleAndBgImage/TitleAndImg";
+import { MainTitle } from "../styledComponents/texts";
 import "./AboutPageStyles.css";
 
 const AboutPage = () => {
@@ -11,11 +12,15 @@ const AboutPage = () => {
       <TitleAndImg title="About" link={imgSrc} />
       <div className="about-text-container">
         <div>
-          <h2>Our Story</h2>
+          <div>
+            <MainTitle>Our Story</MainTitle>
+          </div>
           <p>{text}</p>
         </div>
         <div>
-          <h2>Our Goal</h2>
+          <div>
+            <MainTitle>Our Goal</MainTitle>
+          </div>
           <p>{text}</p>
         </div>
       </div>
