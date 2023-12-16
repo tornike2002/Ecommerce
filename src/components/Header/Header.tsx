@@ -60,7 +60,9 @@ export default function Header() {
           </ResetButton>
         </Link>
 
-        <img src={LogoOfShop} alt='shop' style={{ width: '45px' }} />
+        <Link to='/cart'>
+          <img src={LogoOfShop} alt='shop' style={{ width: '45px' }} />
+        </Link>
 
         <Link to='/signIn'>
           <ResetButton>
