@@ -22,8 +22,9 @@ const ResetButton = styled.button`
 
   &:hover {
     color: #dc3545; 
-    
   }
+
+  
 `;
 
 const CartImage = styled.img`
@@ -32,6 +33,16 @@ const CartImage = styled.img`
 
   &:hover {
     transform: scale(1.1); 
+  }
+`;
+
+
+const SignInButton = styled(ResetButton)`
+  color: white; /* Text color for "Sign in" button */
+
+
+  &:hover {
+    color: white; 
   }
 `;
 
@@ -58,7 +69,7 @@ export default function Header() {
           borderColor: 'gray'
         }}></input>
 
-      <div >
+      <div style={{ marginLeft: '200px', display: 'flex', gap: '20px' }} >
         <Link to='/faq'>
           <ResetButton >
             FAQ
@@ -75,9 +86,11 @@ export default function Header() {
         </Link>
 
         <Link to='/signIn'>
-          <ResetButton>
-            Sign in
-          </ResetButton>
+          <div style={{ width: '80px', backgroundColor: 'red', borderRadius: '20px', }}>
+            <SignInButton>
+              Sign in
+            </SignInButton>
+          </div>
         </Link>
       </div>
     </div>
