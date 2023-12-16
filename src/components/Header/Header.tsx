@@ -22,6 +22,16 @@ const ResetButton = styled.button`
 
   &:hover {
     color: #dc3545; 
+    
+  }
+`;
+
+const CartImage = styled.img`
+  width: 45px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1); 
   }
 `;
 
@@ -61,7 +71,7 @@ export default function Header() {
         </Link>
 
         <Link to='/cart'>
-          <img src={LogoOfShop} alt='shop' style={{ width: '45px' }} />
+          <CartImage src={LogoOfShop} alt='shop' style={{ width: '45px' }} />
         </Link>
 
         <Link to='/signIn'>
