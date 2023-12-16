@@ -1,0 +1,19 @@
+.about-text-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+.about-text-container h2 {
+  font-size: 30px;
+  display: block;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 22px;
+}
+.about-text-container p {
+  color: #707070;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+}

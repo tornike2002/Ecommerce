@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home />} // Ensure the prop is passed directly here
+          element={<About />} // Ensure the prop is passed directly here
         />
         <Route path="categories" element={<Categories />} />
         <Route path="about" element={<About />} />
