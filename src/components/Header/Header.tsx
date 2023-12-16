@@ -1,8 +1,28 @@
 // import React from 'react'
+import styled from 'styled-components';
 import Logo from '../../../public/logo.jpg';
 import { Link } from "react-router-dom";
 
 
+const ResetButton = styled.button`
+  /* Resetting default styles */
+  appearance: none;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none; 
+  color: black;
+  background-color: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  &:hover {
+    color: #dc3545; 
+  }
+`;
 
 
 
@@ -28,9 +48,21 @@ export default function Header() {
         }}></input>
 
       <div >
-        <Link to='/faq'><button >FAQ</button></Link>
-        <Link to='/trackOrder'><button>Track Order</button></Link>
-        <Link to='/signIn'><button className='buttonItemsOfList'>Sign in</button></Link>
+        <Link to='/faq'>
+          <ResetButton >
+            FAQ
+          </ResetButton>
+        </Link>
+        <Link to='/trackOrder'>
+          <ResetButton>
+            Track Order
+          </ResetButton>
+        </Link>
+        <Link to='/signIn'>
+          <ResetButton>
+            Sign in
+          </ResetButton>
+        </Link>
       </div>
     </div>
   )
