@@ -1,6 +1,7 @@
 // import React from 'react'
 import styled from 'styled-components';
 import Logo from '../../../public/logo.jpg';
+import LogoOfShop from '../../../public/shopping-cart-outline-svgrepo-com.svg'
 import { Link } from "react-router-dom";
 
 
@@ -58,6 +59,9 @@ export default function Header() {
             Track Order
           </ResetButton>
         </Link>
+
+        <img src={LogoOfShop} alt='shop' style={{ width: '45px' }} />
+
         <Link to='/signIn'>
           <ResetButton>
             Sign in
