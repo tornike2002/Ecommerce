@@ -11,6 +11,7 @@ import styled from "styled-components";
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
+import Registration from "./pages/Registration";
 
 const Container = styled.div`
   padding-left: 270px;
@@ -38,6 +39,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path=":id" element={<OneProductPage />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="register" element={<Registration />} />
         </Routes>
       </Container>
     </>
