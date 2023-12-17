@@ -11,6 +11,7 @@ import styled from "styled-components";
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
+import { RecoilRoot } from "recoil";
 
 const Container = styled.div`
   padding-left: 270px;
@@ -20,26 +21,28 @@ const Container = styled.div`
 function App() {
   return (
     <>
-      <Container>
-        <Header />
-        <Routes>
-          <Route path="faq" element={<Faq />} />
-          <Route path="trackOrder" element={<TrackOrder />} />
-          <Route path="signIn" element={<Login />} />
+      <RecoilRoot>
+        <Container>
+          <Header />
+          <Routes>
+            <Route path="faq" element={<Faq />} />
+            <Route path="trackOrder" element={<TrackOrder />} />
+            <Route path="signIn" element={<Login />} />
 
-          <Route
-            path="/"
-            element={<Home />} // Ensure the prop is passed directly here
-          />
-          <Route path="categories" element={<Categories />} />
-          <Route path="about" element={<About />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="login" element={<Login />} />
-          <Route path=":id" element={<OneProductPage />} />
-          <Route path="cart" element={<Cart />} />
-        </Routes>
-      </Container>
+            <Route
+              path="/"
+              element={<Home />} // Ensure the prop is passed directly here
+            />
+            <Route path="categories" element={<Categories />} />
+            <Route path="about" element={<About />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="login" element={<Login />} />
+            <Route path=":id" element={<OneProductPage />} />
+            <Route path="cart" element={<Cart />} />
+          </Routes>
+        </Container>
+      </RecoilRoot>
     </>
   );
 }
