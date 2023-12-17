@@ -1,6 +1,6 @@
 import { FC, Fragment } from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const Login: FC = () => {
   return (
     <Fragment>
@@ -35,7 +35,7 @@ const Login: FC = () => {
             <h2>Forgot Password?</h2>
           </CheckboxForgotWrapper>
           <SignLoginWrapper>
-            <p>Don’t have an account? <span>Sign Up</span> here</p>
+            <p>Don’t have an account? <Link to="/register"><span>Sign Up</span></Link> here</p>
             <button>Login</button>
           </SignLoginWrapper>
         </LoginWrapper>

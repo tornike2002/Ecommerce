@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import { FormsHeader } from "../styledComponents/texts";
 import { InputFieldsWrapper } from "../styledComponents/InputFields";
+import { Link } from "react-router-dom";
 const RegistrationPage = () => {
   return (
     <RegistrationMainDiv>
@@ -31,7 +32,7 @@ const RegistrationPage = () => {
         </RegistrationInputsWrapper>
         {/* registration */}
          <RegistrationButtonWrapper>
-            <p>Already have an account? <span>Login</span> here</p>
+            <p>Already have an account? <Link to="/login"><span>Login</span></Link> here</p>
             <button>Register</button>
           </RegistrationButtonWrapper>
       </RegistrationDivWrapper>
