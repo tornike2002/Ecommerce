@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import OneProductPage from "./pages/OneProductPage";
 import Login from "./pages/Login";
 import Header from "./components/Header/Header";
-import styled from 'styled-components';
+import styled from "styled-components";
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
@@ -15,7 +15,6 @@ import Cart from "./pages/Cart";
 const Container = styled.div`
   padding-left: 270px;
   padding-right: 270px;
-
 `;
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
           <Route path="trackOrder" element={<TrackOrder />} />
           <Route path="signIn" element={<Login />} />
 
-
           <Route
             path="/"
             element={<Home />} // Ensure the prop is passed directly here
@@ -38,11 +36,8 @@ function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
-          <Route path="one-product-page" element={<OneProductPage />} />
+          <Route path=":id" element={<OneProductPage />} />
           <Route path="cart" element={<Cart />} />
-
-
-
         </Routes>
       </Container>
     </>

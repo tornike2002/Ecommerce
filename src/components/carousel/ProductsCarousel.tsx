@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Data } from "../../Data";
+import { DataBase as Data } from "../../Database";
 import Movie from "../movie/Movie";
 
 // სტილების მაგივრად
@@ -28,13 +28,14 @@ const ProductsCarousel = () => {
   return (
     <div>
       <h2>Best Selling Books Ever</h2>
-      <Carousel responsive={responsive}>
+      <Carousel responsive={responsive} infinite={true} autoPlay={true}>
         {Data.map((oneMovie) => (
           <Movie
             key={oneMovie.id}
-            banner={oneMovie.banner}
-            title={oneMovie.title}
-            director={oneMovie.director}
+            pathname={oneMovie.pathname}
+            banner={oneMovie.img}
+            title={oneMovie.name}
+            director={oneMovie.author}
             rating={oneMovie.rating}
             review={oneMovie.review}
             price={oneMovie.price}
