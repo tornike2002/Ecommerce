@@ -42,6 +42,10 @@ const Home = () => {
     z-index: 1;
   `;
 
+  const scrollToTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
   return (
     <div>
 
@@ -138,6 +142,8 @@ const Home = () => {
       </div>
 
       <ProductsCarousel />
+      {/* სქროლი, რომ მაღლა აგაგდოს */}
+      <button onClick={scrollToTop} >UP</button>
 
     </div>
   );
