@@ -1,9 +1,9 @@
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import styled from "styled-components";
 
 const RegistrationPage = () => {
-  return (
-    <div>RegistrationPage</div>
-  )
-}
+  return <div></div>;
+};
 
-export default RegistrationPage
+export default RegistrationPage;
+
