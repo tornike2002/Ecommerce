@@ -11,6 +11,10 @@ import styled from "styled-components";
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import BookDetails from "./pages/BookDetails";
+import BlogDetails from "./pages/BlogDetails";
+import Element from "./pages/Element";
 
 const Container = styled.div`
   padding-left: 270px;
@@ -38,6 +42,11 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path=":id" element={<OneProductPage />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="bookDetails" element={<BookDetails />} />
+          <Route path="blogDetails" element={<BlogDetails />} />
+          <Route path="element" element={<Element />} />
+
         </Routes>
       </Container>
     </>
