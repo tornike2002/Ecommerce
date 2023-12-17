@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import ProductsCarousel from "../components/carousel/ProductsCarousel";
 import styled from "styled-components";
 import { useState } from "react";
+import scrollUp from '../../public/scroll-up-svgrepo-com.svg';
+
+
+
+
 
 const Home = () => {
   const [showPageLinks, setShowPageLinks] = useState(false);
@@ -42,10 +47,25 @@ const Home = () => {
     z-index: 1;
   `;
 
+  const ScrollToTopButtonContainer = styled.div`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it's above other elements */
+`;
+  // სკროლისთვის და ასევე ინტერვალისთვის რომ, ერთიანად არ აისქორლოს..
   const scrollToTop = () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    const scrollStep = -window.scrollY / (500 / 15);
+
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep);
+      } else {
+        clearInterval(scrollInterval);
+      }
+    }, 15);
   };
+
   return (
     <div>
 
@@ -142,8 +162,24 @@ const Home = () => {
       </div>
 
       <ProductsCarousel />
+      <ProductsCarousel />
+      <ProductsCarousel />
+      <ProductsCarousel />
+      <ProductsCarousel />
+      <ProductsCarousel />
+      <ProductsCarousel />
+      <ProductsCarousel />
+      <ProductsCarousel />
+      <ProductsCarousel />
+
       {/* სქროლი, რომ მაღლა აგაგდოს */}
-      <button onClick={scrollToTop} >UP</button>
+      <div  >
+        <ScrollToTopButtonContainer>
+          <ResetButton onClick={scrollToTop} style={{ borderRadius: '30px' }} >
+            <img src={scrollUp} alt='logo' style={{ width: '40px' }} />
+          </ResetButton>
+        </ScrollToTopButtonContainer>
+      </div>
 
     </div>
   );

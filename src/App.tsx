@@ -22,6 +22,11 @@ const Container = styled.div`
 `;
 
 function App() {
+
+
+
+
+
   return (
     <>
       <Container>
@@ -33,7 +38,7 @@ function App() {
 
           <Route
             path="/"
-            element={<Home />} // Ensure the prop is passed directly here
+            element={<Home />}
           />
           <Route path="categories" element={<Categories />} />
           <Route path="about" element={<About />} />
