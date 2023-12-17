@@ -3,7 +3,9 @@
 export default function TrackOrder() {
   return (
     <div>
-      Track Order Page
+      <h1>
+        Track Order Page
+      </h1>
     </div>
   )
 }
