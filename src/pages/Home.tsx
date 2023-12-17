@@ -15,7 +15,7 @@ const Home = () => {
 
   const ResetButton = styled.button`
   /* Resetting default styles */
-  appearance: none;
+  appearance: none;git 
   background: none;
   border: none;
   margin: 0;
@@ -69,7 +69,7 @@ const Home = () => {
   return (
     <div>
 
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Link to='/'>
           <ResetButton >
             <h3>
