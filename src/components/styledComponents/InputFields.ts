@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const InputFields = styled.div`
+export const InputFieldsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   & label {
     display: block;
     font-size: 17px;
