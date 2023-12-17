@@ -69,7 +69,7 @@ const Home = () => {
   return (
     <div>
 
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'centergit' }}>
         <Link to='/'>
           <ResetButton >
             <h3>
