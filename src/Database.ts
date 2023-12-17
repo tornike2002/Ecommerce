@@ -283,7 +283,7 @@ export const DataBase = [
       genre2: "Biography",
     },
     id: 17,
-    img: "https://scopernia.ae/wp-content/uploads/2020/02/Digital-Transformation.png",
+    img: "https://books.forbes.com/wp-content/uploads/2023/04/The-Great-Digital-Transformation-e1681138709476-922x1024.png",
     name: "Digital Transformation",
     price: 72.34,
     rating: 5.5,

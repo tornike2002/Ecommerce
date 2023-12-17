@@ -1,7 +1,7 @@
 // import React from 'react'
 import styled from 'styled-components';
-import Logo from '../../../public/logo.jpg';
-import LogoOfShop from '../../../public/shopping-cart-outline-svgrepo-com.svg'
+import Logo from '../../../public/logoOf.png.webp';
+import LogoOfShop from '../../../public/shopping-cart-outline-svgrepo-com.svg';
 import { Link } from "react-router-dom";
 
 
@@ -54,8 +54,7 @@ export default function Header() {
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <Link to='/'>
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <img src={Logo} alt='logo' style={{ width: '95px' }} />
-          <h1>ABC Book</h1>
+          <img src={Logo} alt='logo' style={{ width: '170px' }} />
         </div>
       </Link>
 

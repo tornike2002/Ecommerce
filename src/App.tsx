@@ -12,6 +12,11 @@ import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
 import { RecoilRoot } from "recoil";
+import Checkout from "./pages/Checkout";
+import BookDetails from "./pages/BookDetails";
+import BlogDetails from "./pages/BlogDetails";
+import Element from "./pages/Element";
+
 
 const Container = styled.div`
   padding-left: 270px;
@@ -19,6 +24,11 @@ const Container = styled.div`
 `;
 
 function App() {
+
+
+
+
+
   return (
     <>
       <RecoilRoot>
@@ -28,21 +38,25 @@ function App() {
             <Route path="faq" element={<Faq />} />
             <Route path="trackOrder" element={<TrackOrder />} />
             <Route path="signIn" element={<Login />} />
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route path="categories" element={<Categories />} />
+          <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="login" element={<Login />} />
+          <Route path=":id" element={<OneProductPage />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="bookDetails" element={<BookDetails />} />
+          <Route path="blogDetails" element={<BlogDetails />} />
+          <Route path="element" element={<Element />} />
 
-            <Route
-              path="/"
-              element={<Home />} // Ensure the prop is passed directly here
-            />
-            <Route path="categories" element={<Categories />} />
-            <Route path="about" element={<About />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="login" element={<Login />} />
-            <Route path=":id" element={<OneProductPage />} />
-            <Route path="cart" element={<Cart />} />
-          </Routes>
-        </Container>
-      </RecoilRoot>
+        </Routes>
+      </Container>
+        </RecoilRoot>
     </>
   );
 }

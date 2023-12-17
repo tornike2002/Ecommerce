@@ -3,7 +3,9 @@
 export default function Faq() {
   return (
     <div>
-      Faq Page
+      <h1>
+        Faq Page
+      </h1>
     </div>
   )
 }
