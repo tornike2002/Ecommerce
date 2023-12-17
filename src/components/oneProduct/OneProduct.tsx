@@ -1,12 +1,28 @@
-import { useState } from "react";
-import { Data } from "../../Data";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { DataBase, MovieType1, MovieType2, MovieType3 } from "../../Database";
 
 const OneProduct = () => {
-  const oneMovie = Data[0];
+  const location = useLocation();
+  const pathname = location.pathname;
   const [showText, setShowText] = useState("description");
   const textHandler = (text: string) => {
     setShowText(text);
   };
+  console.log(pathname);
+  const [movie, setMovie] = useState<
+    MovieType1 | MovieType2 | MovieType3 | undefined
+  >(undefined);
+
+  useEffect(() => {
+    const oneMovie = DataBase.find(
+      (movie) => movie.pathname === pathname.slice(1)
+    );
+    console.log("/" + pathname);
+
+    setMovie(oneMovie);
+  }, [pathname]);
+
   return (
     <div>
       <div
@@ -19,14 +35,14 @@ const OneProduct = () => {
         }}
       >
         <div>
-          <img src={oneMovie.banner} alt="" />
+          <img src={movie?.img} alt="" />
         </div>
         <div>
-          <h2>{oneMovie.title}</h2>
-          <p>{oneMovie.director}</p>
-          <p style={{ marginTop: "50px" }}>${oneMovie.price.toFixed(2)}</p>
-          <span>rating: {oneMovie.rating}</span>
-          <p>{oneMovie.review}</p>
+          <h2>{movie?.name}</h2>
+          <p>{movie?.author}</p>
+          <p style={{ marginTop: "50px" }}>${movie?.price.toFixed(2)}</p>
+          <span>rating: {movie?.rating}</span>
+          <p>{movie?.review}</p>
           <div>
             <button>Add To Cart</button>
             <button>Icon</button>
@@ -35,20 +51,17 @@ const OneProduct = () => {
       </div>
       <div style={{ display: "flex", gap: "20px", marginTop: "50px" }}>
         <button onClick={() => textHandler("description")}>Description</button>
-        <button onClick={() => textHandler("author")}>Author</button>
         <button onClick={() => textHandler("comments")}>Comments</button>
         <button onClick={() => textHandler("review")}>Review</button>
       </div>
       <div style={{ height: "300px", marginTop: "50px" }}>
         <p>
           {showText === "description"
-            ? oneMovie.descriptionText
-            : showText === "author"
-            ? oneMovie.authorText
+            ? movie?.description
             : showText === "comments"
-            ? oneMovie.commentsText
+            ? "No Comments"
             : showText === "review"
-            ? oneMovie.reviewText
+            ? "No Review"
             : null}
         </p>
       </div>
