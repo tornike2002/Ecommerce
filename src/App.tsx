@@ -11,10 +11,12 @@ import styled from "styled-components";
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
+import { RecoilRoot } from "recoil";
 import Checkout from "./pages/Checkout";
 import BookDetails from "./pages/BookDetails";
 import BlogDetails from "./pages/BlogDetails";
 import Element from "./pages/Element";
+
 
 const Container = styled.div`
   padding-left: 270px;
@@ -29,13 +31,13 @@ function App() {
 
   return (
     <>
-      <Container>
-        <Header />
-        <Routes>
-          <Route path="faq" element={<Faq />} />
-          <Route path="trackOrder" element={<TrackOrder />} />
-          <Route path="signIn" element={<Login />} />
-
+      <RecoilRoot>
+        <Container>
+          <Header />
+          <Routes>
+            <Route path="faq" element={<Faq />} />
+            <Route path="trackOrder" element={<TrackOrder />} />
+            <Route path="signIn" element={<Login />} />
           <Route
             path="/"
             element={<Home />}
@@ -54,6 +56,7 @@ function App() {
 
         </Routes>
       </Container>
+        </RecoilRoot>
     </>
   );
 }
