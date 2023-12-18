@@ -11,6 +11,7 @@ import styled from "styled-components";
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
+import Registration from "./pages/Registration";
 import { RecoilRoot } from "recoil";
 import Checkout from "./pages/Checkout";
 import BookDetails from "./pages/BookDetails";
@@ -24,10 +25,6 @@ const Container = styled.div`
 `;
 
 function App() {
-
-
-
-
 
   return (
     <>
@@ -49,6 +46,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path=":id" element={<OneProductPage />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="register" element={<Registration />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="bookDetails" element={<BookDetails />} />
           <Route path="blogDetails" element={<BlogDetails />} />

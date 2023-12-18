@@ -25,7 +25,6 @@ const OneProduct = () => {
   }, [pathname]);
 
   const [bookCart, setBookCart] = useRecoilState(cart);
-
   const addToCart = () => {
     setBookCart((prevBookCart) => [
       ...prevBookCart,
@@ -36,6 +35,7 @@ const OneProduct = () => {
         price: movie?.price ?? 0,
       },
     ]);
+    console.log(bookCart)
   };
 
   return (
