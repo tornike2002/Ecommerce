@@ -20,19 +20,19 @@ const RegistrationPage = () => {
         .string()
         .min(5)
         .max(50)
-        .refine((value) => value.trim() !== "", {
+        .refine((value: string) => value.trim() !== "", {
           message: "Full Name is required",
         }),
       email: z
         .string()
         .email()
-        .refine((value) => value.trim() !== "", {
+        .refine((value: string) => value.trim() !== "", {
           message: "Email is required",
         }),
       password: z
         .string()
         .min(8, { message: "Password must be at least 8 characters long" })
-        .refine((value) => value.trim() !== "", {
+        .refine((value: string) => value.trim() !== "", {
           message: "Password is required",
         }),
       cpassword: z
@@ -41,7 +41,7 @@ const RegistrationPage = () => {
           message: "Confirm Password must be at least 8 characters long",
         }),
     })
-    .refine((data) => data.cpassword === data.password, {
+    .refine((data: { cpassword: string; password: string; }) => data.cpassword === data.password, {
       message: "Passwords do not match",
     });
 
