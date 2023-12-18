@@ -19,7 +19,7 @@ const RegistrationPage = () => {
       fullname: z
         .string()
         .min(5)
-        .max(50)
+        .max(15)
         .refine((value: string) => value.trim() !== "", {
           message: "Full Name is required",
         }),
