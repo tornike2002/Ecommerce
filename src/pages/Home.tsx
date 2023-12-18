@@ -15,7 +15,7 @@ const Home = () => {
 
   const ResetButton = styled.button`
   /* Resetting default styles */
-  appearance: none;git 
+  appearance: none; 
   background: none;
   border: none;
   margin: 0;
@@ -29,7 +29,7 @@ const Home = () => {
   border-radius: 4px;
 
   &:hover {
-    color: #dc3545; 
+    color: #dc3545;
   }
 `;
 

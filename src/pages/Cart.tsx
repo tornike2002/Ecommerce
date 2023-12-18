@@ -1,9 +1,7 @@
-// import React from 'react'
-
 import TitleAndImg from "../components/pageTitleAndBgImage/TitleAndImg";
 import { Book, cart } from "../recoilStates/states";
 import { useRecoilValue } from "recoil";
-import SaleBook from "../components/saleBook/saleBook";
+import SaleBook from "../components/saleBook/SaleBook";
 
 export default function Cart() {
   const books = useRecoilValue(cart);
@@ -17,7 +15,7 @@ export default function Cart() {
         />
       </div>
       <ul>
-        {books.map((book) => (
+        {books.map((book: Book) => (
           <SaleBook
             key={book.id}
             img={book.img}

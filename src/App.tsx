@@ -11,6 +11,7 @@ import styled from "styled-components";
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
+import Registration from "./pages/Registration";
 import { RecoilRoot } from "recoil";
 import Checkout from "./pages/Checkout";
 import BookDetails from "./pages/BookDetails";
@@ -23,6 +24,10 @@ const Container = styled.div`
 `;
 
 function App() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4489aeb02544a2d33bd17a0dec717816f2c67a66
   return (
     <>
       <RecoilRoot>
@@ -32,6 +37,7 @@ function App() {
             <Route path="faq" element={<Faq />} />
             <Route path="trackOrder" element={<TrackOrder />} />
             <Route path="signIn" element={<Login />} />
+<<<<<<< HEAD
             <Route path="/" element={<Home />} />
             <Route path="categories" element={<Categories />} />
             <Route path="about" element={<About />} />
@@ -47,6 +53,28 @@ function App() {
           </Routes>
         </Container>
       </RecoilRoot>
+=======
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route path="categories" element={<Categories />} />
+          <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="login" element={<Login />} />
+          <Route path=":id" element={<OneProductPage />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="register" element={<Registration />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="bookDetails" element={<BookDetails />} />
+          <Route path="blogDetails" element={<BlogDetails />} />
+          <Route path="element" element={<Element />} />
+
+        </Routes>
+      </Container>
+        </RecoilRoot>
+>>>>>>> 4489aeb02544a2d33bd17a0dec717816f2c67a66
     </>
   );
 }
