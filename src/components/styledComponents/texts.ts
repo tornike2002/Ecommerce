@@ -23,3 +23,9 @@ export const FormsHeader = styled.div`
     padding-bottom: 20px;
   }
 `;
+
+export const FormErrorMessage = styled.p`
+  color: #ff1616;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+`;
