@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { DataBase, MovieType1, MovieType2, MovieType3 } from "../../Database";
+import { useRecoilState } from "recoil";
+import { cart } from "../../recoilStates/states";
 
 const OneProduct = () => {
   const location = useLocation();
   const pathname = location.pathname;
   const [showText, setShowText] = useState("description");
+
   const textHandler = (text: string) => {
     setShowText(text);
   };
-  console.log(pathname);
   const [movie, setMovie] = useState<
     MovieType1 | MovieType2 | MovieType3 | undefined
   >(undefined);
@@ -18,10 +20,23 @@ const OneProduct = () => {
     const oneMovie = DataBase.find(
       (movie) => movie.pathname === pathname.slice(1)
     );
-    console.log("/" + pathname);
 
     setMovie(oneMovie);
   }, [pathname]);
+
+  const [bookCart, setBookCart] = useRecoilState(cart);
+
+  const addToCart = () => {
+    setBookCart((prevBookCart) => [
+      ...prevBookCart,
+      {
+        id: movie?.id ?? 0,
+        img: movie?.img ?? "",
+        title: movie?.name ?? "",
+        price: movie?.price ?? 0,
+      },
+    ]);
+  };
 
   return (
     <div>
@@ -35,7 +50,11 @@ const OneProduct = () => {
         }}
       >
         <div>
-          <img src={movie?.img} alt="" />
+          <img
+            src={movie?.img}
+            alt=""
+            style={{ width: "300px", height: "400px" }}
+          />
         </div>
         <div>
           <h2>{movie?.name}</h2>
@@ -44,7 +63,7 @@ const OneProduct = () => {
           <span>rating: {movie?.rating}</span>
           <p>{movie?.review}</p>
           <div>
-            <button>Add To Cart</button>
+            <button onClick={addToCart}>Add To Cart</button>
             <button>Icon</button>
           </div>
         </div>

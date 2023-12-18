@@ -12,10 +12,12 @@ import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";
 import Registration from "./pages/Registration";
+import { RecoilRoot } from "recoil";
 import Checkout from "./pages/Checkout";
 import BookDetails from "./pages/BookDetails";
 import BlogDetails from "./pages/BlogDetails";
 import Element from "./pages/Element";
+
 
 const Container = styled.div`
   padding-left: 270px;
@@ -23,18 +25,23 @@ const Container = styled.div`
 `;
 
 function App() {
+
+
+
+
+
   return (
     <>
-      <Container>
-        <Header />
-        <Routes>
-          <Route path="faq" element={<Faq />} />
-          <Route path="trackOrder" element={<TrackOrder />} />
-          <Route path="signIn" element={<Login />} />
-
+      <RecoilRoot>
+        <Container>
+          <Header />
+          <Routes>
+            <Route path="faq" element={<Faq />} />
+            <Route path="trackOrder" element={<TrackOrder />} />
+            <Route path="signIn" element={<Login />} />
           <Route
             path="/"
-            element={<Home />} // Ensure the prop is passed directly here
+            element={<Home />}
           />
           <Route path="categories" element={<Categories />} />
           <Route path="about" element={<About />} />
@@ -51,6 +58,7 @@ function App() {
 
         </Routes>
       </Container>
+        </RecoilRoot>
     </>
   );
 }
