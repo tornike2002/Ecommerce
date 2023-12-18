@@ -18,7 +18,7 @@ const RegistrationPage = () => {
     .object({
       fullname: z
         .string()
-        .min(1)
+        .min(5)
         .max(50)
         .refine((value) => value.trim() !== "", {
           message: "Full Name is required",
