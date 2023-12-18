@@ -9,7 +9,7 @@ const BlogPage = () => {
   return (
     <div>
       <div>
-        <img src={blogHero} alt="" />
+        <img src={blogHero} alt="" style={{width: "100%"}} />
         <h1>Blog</h1>
       </div>
       <BlogPoster
