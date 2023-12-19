@@ -34,6 +34,7 @@ const OneProduct = () => {
         price: movie?.price ?? 0,
       },
     ]);
+    console.log(bookCart)
   };
 
   return (
