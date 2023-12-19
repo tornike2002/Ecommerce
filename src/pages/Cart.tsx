@@ -1,5 +1,5 @@
 import TitleAndImg from "../components/pageTitleAndBgImage/TitleAndImg";
-import { Book, cart } from "../recoilStates/states";
+import { cart } from "../recoilStates/states";
 import { useRecoilValue } from "recoil";
 import SaleBook from "../components/saleBook/SaleBook";
 

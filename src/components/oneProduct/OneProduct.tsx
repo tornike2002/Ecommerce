@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { DataBase, MovieType1, MovieType2, MovieType3 } from "../../Database";
+import { DataBase, MovieType } from "../../Database";
 import { useRecoilState } from "recoil";
 import { cart } from "../../recoilStates/states";
 
@@ -12,9 +12,7 @@ const OneProduct = () => {
   const textHandler = (text: string) => {
     setShowText(text);
   };
-  const [movie, setMovie] = useState<
-    MovieType1 | MovieType2 | MovieType3 | undefined
-  >(undefined);
+  const [movie, setMovie] = useState<MovieType | undefined>(undefined);
 
   useEffect(() => {
     const oneMovie = DataBase.find(
@@ -24,7 +22,8 @@ const OneProduct = () => {
     setMovie(oneMovie);
   }, [pathname]);
 
-  const [bookCart, setBookCart] = useRecoilState(cart);
+  const [, setBookCart] = useRecoilState(cart);
+
   const addToCart = () => {
     setBookCart((prevBookCart) => [
       ...prevBookCart,

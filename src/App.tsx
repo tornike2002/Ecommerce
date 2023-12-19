@@ -23,7 +23,6 @@ const Container = styled.div`
 `;
 
 function App() {
-
   return (
     <>
       <RecoilRoot>
@@ -48,7 +47,7 @@ function App() {
           </Routes>
         </Container>
       </RecoilRoot>
-         </>
-  )
+    </>
+  );
 }
 export default App;
