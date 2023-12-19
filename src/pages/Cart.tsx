@@ -15,7 +15,7 @@ export default function Cart() {
         />
       </div>
       <ul>
-        {books.map((book) => (
+        {books.map((book: Book) => (
           <SaleBook
             key={book.id}
             img={book.img}
