@@ -10,6 +10,8 @@ const categoryPage = () => {
     setBooksList(DataBase);
   }, []);
 
+  console.log("hi");
+
   const [history, setHistory] = useState(false);
   const [historyThriller, setHistoryThriller] = useState(false);
   const [loveStories, setLoveStories] = useState(false);
