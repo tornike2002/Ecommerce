@@ -16,6 +16,7 @@ import Checkout from "./pages/Checkout";
 import BookDetails from "./pages/BookDetails";
 import BlogDetails from "./pages/BlogDetails";
 import Element from "./pages/Element";
+import Registration from "./pages/Registration";
 
 const Container = styled.div`
   padding-left: 270px;
@@ -38,6 +39,7 @@ function App() {
             <Route path="blog" element={<Blog />} />
             <Route path="contact" element={<Contact />} />
             <Route path="login" element={<Login />} />
+            <Route path="register" element={<Registration />} />
             <Route path=":id" element={<OneProductPage />} />
             <Route path="cart" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
