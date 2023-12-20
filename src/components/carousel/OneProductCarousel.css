@@ -1,0 +1,30 @@
+.text-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  animation: slideUp 1s ease forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -1%;
+  }
+
+  25% {
+    bottom: 5%;
+  }
+
+  50% {
+    bottom: 10%;
+  }
+
+  75% {
+    bottom: 20%;
+  }
+
+  100% {
+    bottom: 30%;
+  }
+}
