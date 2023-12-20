@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
+import { useNavigate } from "react-router-dom";
+import { auth, googleProvider } from "../../config/firebase";
+
+import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 
 type FormData = {
   fullname: string;
@@ -14,6 +18,8 @@ type FormData = {
   cpassword: string;
 };
 const RegistrationPage = () => {
+  const navigate = useNavigate();
+
   const schema = z
     .object({
       fullname: z
@@ -35,17 +41,19 @@ const RegistrationPage = () => {
         .refine((value: string) => value.trim() !== "", {
           message: "Password is required",
         }),
-      cpassword: z
-        .string()
-        .min(8, {
-          message: "Confirm Password must be at least 8 characters long",
-        }),
+      cpassword: z.string().min(8, {
+        message: "Confirm Password must be at least 8 characters long",
+      }),
     })
-    .refine((data: { cpassword: string; password: string; }) => data.cpassword === data.password, {
-      message: "Passwords do not match",
-    });
+    .refine(
+      (data: { cpassword: string; password: string }) =>
+        data.cpassword === data.password,
+      {
+        message: "Passwords do not match",
+      }
+    );
 
-  const { register, handleSubmit, formState } = useForm<FormData>({
+  const { register, handleSubmit, formState, getValues } = useForm<FormData>({
     defaultValues: {
       fullname: "",
       email: "",
@@ -60,7 +68,27 @@ const RegistrationPage = () => {
   const onSubmit = (data: FormData) => {
     console.log("form submitted", data);
   };
-
+  const createUser = async () => {
+    console.log("getValues", getValues());
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        getValues("email"),
+        getValues("password"),
+      );
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <RegistrationMainDiv>
       <RegistrationDivWrapper>
@@ -113,7 +141,6 @@ const RegistrationPage = () => {
             />
             <FormErrorMessage>{errors.cpassword?.message}</FormErrorMessage>
           </InputFieldsWrapper>
-
           <RegistrationButtonWrapper>
             <p>
               Already have an account?
@@ -122,9 +149,10 @@ const RegistrationPage = () => {
               </Link>
               here
             </p>
-            <button type="submit">Register</button>
+            <button onClick={createUser} type="submit">Register</button>
           </RegistrationButtonWrapper>
         </RegistrationInputsWrapper>
+        <button onClick={signInWithGoogle}>Google</button>
       </RegistrationDivWrapper>
     </RegistrationMainDiv>
   );
