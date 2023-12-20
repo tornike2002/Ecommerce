@@ -4,7 +4,7 @@ import Filter from "./filter/Filter";
 import { DataBase, MovieType } from "../../Database";
 import { useEffect, useState } from "react";
 
-const categoryPage = () => {
+const CategoryPage = () => {
   const [booksList, setBooksList] = useState<MovieType[]>([]);
   useEffect(() => {
     setBooksList(DataBase);
@@ -74,4 +74,4 @@ const categoryPage = () => {
   );
 };
 
-export default categoryPage;
+export default CategoryPage;
