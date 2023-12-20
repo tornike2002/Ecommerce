@@ -10,51 +10,14 @@ const categoryPage = () => {
     setBooksList(DataBase);
   }, []);
 
-  console.log("test");
-
-  const [history, setHistory] = useState(false);
-  const [historyThriller, setHistoryThriller] = useState(false);
-  const [loveStories, setLoveStories] = useState(false);
-  const [scienceFiction, setScienceFiction] = useState(false);
-  const [biography, setBiography] = useState(false);
-
-  const historyList = (genre: string) => {
-    if (genre === "History") setHistory(!history);
-    if (genre === "History-Thriller") setHistoryThriller(!historyThriller);
-    if (genre === "Love Stories") setLoveStories(!loveStories);
-    if (genre === "Science Fiction") setScienceFiction(!scienceFiction);
-    if (genre === "Biography") setBiography(!biography);
-    if (history === true) {
-      const filtGenre = DataBase.filter((book) => book.genres.includes(genre));
-      setBooksList(filtGenre);
-    } else {
-      setBooksList(DataBase);
-    }
-    if (historyThriller === true) {
-      const filtGenre = DataBase.filter((book) => book.genres.includes(genre));
-      setBooksList(filtGenre);
-    } else {
-      setBooksList(DataBase);
-    }
-    if (loveStories === true) {
-      const filtGenre = DataBase.filter((book) => book.genres.includes(genre));
-      setBooksList(filtGenre);
-    } else {
-      setBooksList(DataBase);
-    }
-    if (scienceFiction === true) {
-      const filtGenre = DataBase.filter((book) => book.genres.includes(genre));
-      setBooksList(filtGenre);
-    } else {
-      setBooksList(DataBase);
-    }
-    if (biography === true) {
-      const filtGenre = DataBase.filter((book) => book.genres.includes(genre));
-      setBooksList(filtGenre);
-    } else {
-      setBooksList(DataBase);
-    }
+  const filterHandler = (foo: string) => {
+    const filtGenre = DataBase.filter((book) => book.genres.includes(foo));
+    setBooksList(filtGenre);
   };
+
+  console.log(
+    JSON.stringify(["haha", "huhu"]) === JSON.stringify(["haha", "huhu"])
+  );
 
   return (
     <div>
@@ -64,7 +27,7 @@ const categoryPage = () => {
       />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
-          <Filter historyList={historyList} />
+          <Filter filterHandler={filterHandler} />
         </div>
         <div>
           <BookCategories booksList={booksList} />

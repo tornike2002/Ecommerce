@@ -1,40 +1,61 @@
+import "./FilterStyles.css";
+
 type Props = {
-  historyList: (genre: string) => void;
+  filterHandler: (foo: string) => void;
 };
 
-const Filter = ({ historyList }: Props) => {
+const Filter = ({ filterHandler }: Props) => {
   return (
     <div style={{ width: "300px", border: "1px solid black" }}>
-      <div>
+      <div className="filter-sidebar">
         <h2>Filter by Genres</h2>
-        <ul>
-          <li>
-            <input type="checkbox" onClick={() => historyList("History")} />
+        <div className="hahaha">
+          <label className="label-sidebar">
+            <input
+              type="radio"
+              name="test"
+              onClick={() => filterHandler("History")}
+            />
+            <span className="checkmark"></span>
             <span>History</span>
-          </li>
-          <li>
+          </label>
+          <label className="label-sidebar">
             <input
-              type="checkbox"
-              onClick={() => historyList("History-Thriller")}
+              type="radio"
+              name="test"
+              onClick={() => filterHandler("Thriller")}
             />
-            <span>History-Thriller</span>
-          </li>
-          <li>
-            <input type="checkbox" onClick={() => historyList("Love Story")} />
+            <span className="checkmark"></span>
+            <span>Thriller</span>
+          </label>
+          <label className="label-sidebar">
+            <input
+              type="radio"
+              name="test"
+              onClick={() => filterHandler("Love Story")}
+            />
+            <span className="checkmark"></span>
             <span>Love Stories</span>
-          </li>
-          <li>
+          </label>
+          <label className="label-sidebar">
             <input
-              type="checkbox"
-              onClick={() => historyList("Science Fiction")}
+              type="radio"
+              name="test"
+              onClick={() => filterHandler("Science Fiction")}
             />
+            <span className="checkmark"></span>
             <span>Science Fiction</span>
-          </li>
-          <li>
-            <input type="checkbox" onClick={() => historyList("Biography")} />
+          </label>
+          <label className="label-sidebar">
+            <input
+              type="radio"
+              name="test"
+              onClick={() => filterHandler("Biography")}
+            />
+            <span className="checkmark"></span>
             <span>Biography</span>
-          </li>
-        </ul>
+          </label>
+        </div>
       </div>
     </div>
   );
