@@ -26,6 +26,7 @@ const Login: FC = () => {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
+  const refresh = () => window.location.reload();
 
   const handleLogin = (data: FormData) => {
     // Retrieve registration data from local storage
@@ -37,16 +38,14 @@ const Login: FC = () => {
       console.log("Stored Registration Data:", registrationData);
       console.log("Entered Login Data:", data);
 
-      // Trim the password input value
       const trimmedPassword = data.password.trim();
-
-      // Check if the entered login data matches the stored registration data
       if (
         data.email.trim() === registrationData.email.trim() &&
         trimmedPassword === registrationData.password.trim()
       ) {
         // Redirect to the home page
         navigate("/");
+        refresh()
       } else {
         setError("password", {
           type: "manual",

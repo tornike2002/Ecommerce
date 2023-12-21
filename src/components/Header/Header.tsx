@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Logo from "../../../public/logoOf.png.webp";
 import LogoOfShop from "../../../public/shopping-cart-outline-svgrepo-com.svg";
 import { Link } from "react-router-dom";
+
 const ResetButton = styled.button`
   /* Resetting default styles */
   appearance: none;
@@ -41,6 +42,13 @@ const SignInButton = styled(ResetButton)`
 `;
 
 export default function Header() {
+  const refresh = () => window.location.reload();
+  const logoutHandler = () => {
+    localStorage.removeItem("registrationData");
+    refresh();
+  };
+  const locCheck = localStorage.getItem("registrationData");
+
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
       <Link to="/">
@@ -72,17 +80,32 @@ export default function Header() {
         <Link to="/cart">
           <CartImage src={LogoOfShop} alt="shop" style={{ width: "45px" }} />
         </Link>
-        <Link to="/signIn">
-          <div
-            style={{
-              width: "80px",
-              backgroundColor: "red",
-              borderRadius: "20px",
-            }}
-          >
-            <SignInButton>Sign in</SignInButton>
-          </div>
-        </Link>
+
+        {locCheck ? (
+          <Link to="/register">
+            <div
+              style={{
+                width: "80px",
+                backgroundColor: "red",
+                borderRadius: "20px",
+              }}
+            >
+              <SignInButton onClick={logoutHandler}>Log out</SignInButton>
+            </div>
+          </Link>
+        ) : (
+          <Link to="/signIn">
+            <div
+              style={{
+                width: "80px",
+                backgroundColor: "red",
+                borderRadius: "20px",
+              }}
+            >
+              <SignInButton>Sign in</SignInButton>
+            </div>
+          </Link>
+        )}
       </div>
     </div>
   );
