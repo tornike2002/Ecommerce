@@ -1,63 +1,21 @@
 import "./FilterStyles.css";
+import FilterByGenre from "./filterByGenre/FilterByGenre";
+import FilterByPrice from "./filterByPrice/FilterByPrice";
+import FilterByRating from "./filterByRating/FilterByRating";
 
 type Props = {
-  filterHandler: (foo: string) => void;
+  filterHandler: (genre: string) => void;
+  priceHandler: (firstPrice: number, secondPrice: number) => void;
+  ratingHandler: (firstRating: number, secondRating: number) => void;
 };
 
-const Filter = ({ filterHandler }: Props) => {
+const Filter = ({ filterHandler, priceHandler, ratingHandler }: Props) => {
   return (
-    <div style={{ width: "300px", border: "1px solid black" }}>
-      <div className="filter-sidebar">
-        <h2>Filter by Genres</h2>
-        <div className="hahaha">
-          <label className="label-sidebar">
-            <input
-              type="radio"
-              name="test"
-              onClick={() => filterHandler("History")}
-            />
-            <span className="checkmark"></span>
-            <span>History</span>
-          </label>
-          <label className="label-sidebar">
-            <input
-              type="radio"
-              name="test"
-              onClick={() => filterHandler("Thriller")}
-            />
-            <span className="checkmark"></span>
-            <span>Thriller</span>
-          </label>
-          <label className="label-sidebar">
-            <input
-              type="radio"
-              name="test"
-              onClick={() => filterHandler("Love Story")}
-            />
-            <span className="checkmark"></span>
-            <span>Love Stories</span>
-          </label>
-          <label className="label-sidebar">
-            <input
-              type="radio"
-              name="test"
-              onClick={() => filterHandler("Science Fiction")}
-            />
-            <span className="checkmark"></span>
-            <span>Science Fiction</span>
-          </label>
-          <label className="label-sidebar">
-            <input
-              type="radio"
-              name="test"
-              onClick={() => filterHandler("Biography")}
-            />
-            <span className="checkmark"></span>
-            <span>Biography</span>
-          </label>
-        </div>
-      </div>
-    </div>
+    <>
+      <FilterByGenre filterHandler={filterHandler} />
+      <FilterByPrice priceHandler={priceHandler} />
+      <FilterByRating ratingHandler={ratingHandler} />
+    </>
   );
 };
 
