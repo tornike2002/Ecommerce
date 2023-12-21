@@ -4,7 +4,9 @@ import ProductsCarousel from "../components/carousel/ProductsCarousel";
 import styled from "styled-components";
 import { useState } from "react";
 import scrollUp from '../../public/scroll-up-svgrepo-com.svg';
+// import { OneProductCarousel } from "../components/carousel/OneProductCarousel";
 import OneProductCarousel from "../components/carousel/OneProductCarousel";
+
 
 
 

@@ -5,6 +5,12 @@
   transform: translateX(-50%);
   text-align: center;
   animation: slideUp 1s ease forwards;
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* Adjust the transition properties as needed */
+
+}
+.text-overlay.show {
+  opacity: 1;
 }
 
 @keyframes slideUp {
@@ -14,17 +20,41 @@
 
   25% {
     bottom: 5%;
+    opacity: 0.1;
+
+  }
+  30% {
+    bottom: 6%;
+    opacity: 0.2;
+
+  }
+  35% {
+    bottom: 7%;
+    opacity: 0.3;
+
+  }
+  40% {
+    bottom: 8%;
+    opacity: 0.4;
+
   }
 
   50% {
     bottom: 10%;
+    opacity: 0.5;
+
   }
+
 
   75% {
     bottom: 20%;
+    opacity: 0.6;
+
   }
 
   100% {
     bottom: 30%;
+    opacity: 1;
+
   }
 }
