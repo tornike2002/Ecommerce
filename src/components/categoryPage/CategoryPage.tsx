@@ -34,6 +34,19 @@ const CategoryPage = () => {
     }
   };
 
+  // Filter By Rating ////////////////////////////////
+
+  const ratingHandler = (firstRating = 0, secondRating = 6) => {
+    if (firstRating === 0 && secondRating === 6) {
+      setBooksList(DataBase);
+    } else {
+      const filterPrice = DataBase.filter(
+        ({ rating }) => rating >= firstRating && rating < secondRating
+      );
+      setBooksList(filterPrice);
+    }
+  };
+
   return (
     <div>
       <TitleAndImg
@@ -42,7 +55,11 @@ const CategoryPage = () => {
       />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
-          <Filter filterHandler={filterHandler} priceHandler={priceHandler} />
+          <Filter
+            filterHandler={filterHandler}
+            priceHandler={priceHandler}
+            ratingHandler={ratingHandler}
+          />
         </div>
         <div>
           <BookCategories booksList={booksList} />
