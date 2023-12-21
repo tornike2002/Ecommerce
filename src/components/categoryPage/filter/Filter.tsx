@@ -14,6 +14,15 @@ const Filter = ({ filterHandler }: Props) => {
             <input
               type="radio"
               name="test"
+              onClick={() => filterHandler("all")}
+            />
+            <span className="checkmark"></span>
+            <span>All</span>
+          </label>
+          <label className="label-sidebar">
+            <input
+              type="radio"
+              name="test"
               onClick={() => filterHandler("History")}
             />
             <span className="checkmark"></span>

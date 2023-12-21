@@ -10,14 +10,14 @@ const CategoryPage = () => {
     setBooksList(DataBase);
   }, []);
 
-  const filterHandler = (foo: string) => {
-    const filtGenre = DataBase.filter((book) => book.genres.includes(foo));
-    setBooksList(filtGenre);
+  const filterHandler = (foo = "all") => {
+    if (foo === "all") {
+      setBooksList(DataBase);
+    } else {
+      const filtGenre = DataBase.filter((book) => book.genres.includes(foo));
+      setBooksList(filtGenre);
+    }
   };
-
-  console.log(
-    JSON.stringify(["haha", "huhu"]) === JSON.stringify(["haha", "huhu"])
-  );
 
   return (
     <div>
