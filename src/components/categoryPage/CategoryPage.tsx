@@ -10,12 +10,27 @@ const CategoryPage = () => {
     setBooksList(DataBase);
   }, []);
 
-  const filterHandler = (foo = "all") => {
-    if (foo === "all") {
+  // Filter By Genres ////////////////////////////////
+
+  const filterHandler = (genre = "all") => {
+    if (genre === "all") {
       setBooksList(DataBase);
     } else {
-      const filtGenre = DataBase.filter((book) => book.genres.includes(foo));
+      const filtGenre = DataBase.filter(({ genres }) => genres.includes(genre));
       setBooksList(filtGenre);
+    }
+  };
+
+  // Filter By Price ////////////////////////////////
+
+  const priceHandler = (firstPrice = 0, secondPrice = 200) => {
+    if (firstPrice === 0 && secondPrice === 200) {
+      setBooksList(DataBase);
+    } else {
+      const filterPrice = DataBase.filter(
+        ({ price }) => price >= firstPrice && price < secondPrice
+      );
+      setBooksList(filterPrice);
     }
   };
 
@@ -27,7 +42,7 @@ const CategoryPage = () => {
       />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
-          <Filter filterHandler={filterHandler} />
+          <Filter filterHandler={filterHandler} priceHandler={priceHandler} />
         </div>
         <div>
           <BookCategories booksList={booksList} />
