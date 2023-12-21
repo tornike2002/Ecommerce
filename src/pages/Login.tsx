@@ -1,43 +1,114 @@
 import { FC, Fragment } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { FormErrorMessage } from "../components/styledComponents/texts";
+
+type FormData = {
+  email: string;
+  password: string;
+};
+
+const schema = z.object({
+  email: z.string().email({ message: "Invalid email address" }).refine(data => data.trim() !== '', { message: 'Email is required' }),
+  password: z.string().min(6, { message: "Password must be at least 6 characters" }).refine(data => data.trim() !== '', { message: 'Password is required' }),
+});
+
 const Login: FC = () => {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
+  const refresh = () => window.location.reload();
+
+  const handleLogin = (data: FormData) => {
+    // Retrieve registration data from local storage
+    const storedData = localStorage.getItem("registrationData");
+
+    if (storedData) {
+      const registrationData: FormData = JSON.parse(storedData);
+
+      console.log("Stored Registration Data:", registrationData);
+      console.log("Entered Login Data:", data);
+
+      const trimmedPassword = data.password.trim();
+      if (
+        data.email.trim() === registrationData.email.trim() &&
+        trimmedPassword === registrationData.password.trim()
+      ) {
+        // Redirect to the home page
+        navigate("/");
+        refresh()
+      } else {
+        setError("password", {
+          type: "manual",
+          message: "Incorrect email or password",
+        });
+      }
+    } else {
+      setError("email", {
+        type: "manual",
+        message: "No registration data found",
+      });
+    }
+  };
+
   return (
     <Fragment>
       <LoginMainDiv>
         <LoginWrapper>
-          {/* titles */}
           <LoginTitle>
             <h1>Login</h1>
             <h2>Enter Login details to get access</h2>
           </LoginTitle>
-          {/* inputs */}
-          <LoginInputsWrapper>
-            <LoginInputsContainer>
-              <label htmlFor="email">Email Address</label>
-              <input type="text" id="email" placeholder="Email Adress..." />
-            </LoginInputsContainer>
-            <LoginInputsContainer>
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Enter Password..."
-              />
-            </LoginInputsContainer>
-          </LoginInputsWrapper>
-          {/* checkbox and forgot password */}
-          <CheckboxForgotWrapper>
-            <span>
-              <input type="checkbox" />
-              <h3>Keep Me Logged In</h3>
-            </span>
-            <h2>Forgot Password?</h2>
-          </CheckboxForgotWrapper>
-          <SignLoginWrapper>
-            <p>Don’t have an account? <Link to="/register"><span>Sign Up</span></Link> here</p>
-            <button>Login</button>
-          </SignLoginWrapper>
+          <form onSubmit={handleSubmit(handleLogin)}>
+            <LoginInputsWrapper>
+              <LoginInputsContainer>
+                <label htmlFor="email">Email Address</label>
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="Email Address..."
+                  {...register("email")}
+                />
+                {errors.email && <FormErrorMessage>{errors.email.message}</FormErrorMessage>}
+              </LoginInputsContainer>
+              <LoginInputsContainer>
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Enter Password..."
+                  {...register("password")}
+                />
+                {errors.password && <FormErrorMessage>{errors.password.message}</FormErrorMessage>}
+              </LoginInputsContainer>
+            </LoginInputsWrapper>
+            <CheckboxForgotWrapper>
+              <span>
+                <input type="checkbox" />
+                <h3>Keep Me Logged In</h3>
+              </span>
+              <h2>Forgot Password?</h2>
+            </CheckboxForgotWrapper>
+            <SignLoginWrapper>
+              <p>
+                Don’t have an account?{" "}
+                <Link to="/register">
+                  <span>Sign Up</span>
+                </Link>{" "}
+                here
+              </p>
+              <button type="submit">Login</button>
+            </SignLoginWrapper>
+          </form>
         </LoginWrapper>
       </LoginMainDiv>
     </Fragment>
@@ -63,7 +134,6 @@ const LoginWrapper = styled.div`
   width: 100%;
   max-width: 700px;
 `;
-// main div areas
 const LoginTitle = styled.div`
   text-align: center;
   color: var(--mediumBlue);
@@ -82,7 +152,6 @@ const LoginTitle = styled.div`
     padding-bottom: 20px;
   }
 `;
-// title area
 const LoginInputsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -116,7 +185,6 @@ const LoginInputsContainer = styled.div`
     font-size: 16px;
   }
 `;
-// CheckboxForgotWrapper
 const CheckboxForgotWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -151,7 +219,6 @@ const CheckboxForgotWrapper = styled.div`
     accent-color: red;
   }
 `;
-// checkbox area
 const SignLoginWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -169,7 +236,7 @@ const SignLoginWrapper = styled.div`
     cursor: pointer;
   }
   & button {
-    background: #FF1616;
+    background: #ff1616;
     height: 60px;
     padding: 10px 43px;
     border: 0;
