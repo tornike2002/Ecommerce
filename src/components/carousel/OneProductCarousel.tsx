@@ -64,6 +64,8 @@ export default function OneProductCarousel() {
   //   }, 2000)
   //   console.log('---', textOverlay)
   // };
+  // 
+  // 
 
 
 
