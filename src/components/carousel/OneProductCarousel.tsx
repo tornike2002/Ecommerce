@@ -42,16 +42,16 @@ export default function OneProductCarousel() {
 
   const textOverlayRef = useRef<HTMLDivElement | null>(null);
 
-  const handleBeforeSlideChange = () => {
-    const textOverlay = textOverlayRef.current;
-    console.log(textOverlay)
-    if (textOverlay) {
-      textOverlay.classList.remove('text-overlay');
-      textOverlay.classList.add('text-overlay');
+  // const handleBeforeSlideChange = () => {
+  //   const textOverlay = textOverlayRef.current;
+  //   console.log(textOverlay)
+  //   if (textOverlay) {
+  //     textOverlay.classList.remove('text-overlay');
+  //     textOverlay.classList.add('text-overlay');
 
-    }
-    console.log('--', textOverlay)
-  };
+  //   }
+  //   console.log('--', textOverlay)
+  // };
 
 
   // const handleAfterSlideChange = async () => {
@@ -74,9 +74,9 @@ export default function OneProductCarousel() {
       <h2 style={{ color: 'green' }}>One Product Carousel---------------</h2>
 
       <Carousel responsive={responsive} infinite={true} autoPlay={true}
-        // beforeChange={(nextSlide) => {
-        //   handleSlideCHange(nextSlide);
-        // }}
+        beforeChange={(nextSlide) => {
+          handleSlideCHange(nextSlide);
+        }}
         afterChange={(current) => {
           handleSlideCHange(current);
         }}
