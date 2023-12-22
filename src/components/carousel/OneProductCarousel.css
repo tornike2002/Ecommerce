@@ -2,11 +2,11 @@
   position: absolute;
   bottom: -100%;
   left: 50%;
-  transform: translateX(-50%);
   text-align: center;
+  transition: opacity 5s ease-in-out; /* Adjust the transition properties as needed */
+  transform: translateX(-50%);
+  opacity: 1;
   animation: slideUp 1s ease forwards;
-  opacity: 0;
-  transition: opacity 2s ease-in-out; /* Adjust the transition properties as needed */
 
 }
 .text-overlay.show {

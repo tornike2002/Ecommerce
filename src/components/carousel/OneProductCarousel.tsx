@@ -1,5 +1,5 @@
 // import React from 'react'
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import './OneProductCarousel.css';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -34,38 +34,31 @@ const responsive = {
 };
 
 export default function OneProductCarousel() {
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
-  console.log(currentSlide);
-  const handleSlideCHange = (current: number) => {
-    setCurrentSlide(current);
-  }
+  // const [currentSlide, setCurrentSlide] = useState<number>(0);
+  // console.log(currentSlide);
+  // const handleSlideCHange = (current: number) => {
+  //   setCurrentSlide(current);
+  // }
 
   const textOverlayRef = useRef<HTMLDivElement | null>(null);
 
-  // const handleBeforeSlideChange = () => {
-  //   const textOverlay = textOverlayRef.current;
-  //   console.log(textOverlay)
-  //   if (textOverlay) {
-  //     textOverlay.classList.remove('text-overlay');
-  //     textOverlay.classList.add('text-overlay');
+  const handleBeforeSlideChange = async () => {
+    const textOverlay = textOverlayRef.current;
+    textOverlay?.classList.remove('text-overlay');
 
-  //   }
-  //   console.log('--', textOverlay)
-  // };
+    console.log('--', textOverlay)
+  };
 
 
-  // const handleAfterSlideChange = async () => {
-  //   const textOverlay = textOverlayRef.current;
+  const handleAfterSlideChange = async () => {
+    const textOverlay = textOverlayRef.current;
+    textOverlay?.classList.add('text-overlay');
 
-  //   setTimeout(() => {
+    console.log('---', textOverlay)
+  };
 
-  //     if (textOverlay) {
-  //     }
-  //   }, 2000)
-  //   console.log('---', textOverlay)
-  // };
-  // 
-  // 
+
+
 
 
 
@@ -76,19 +69,22 @@ export default function OneProductCarousel() {
       <h2 style={{ color: 'green' }}>One Product Carousel---------------</h2>
 
       <Carousel responsive={responsive} infinite={true} autoPlay={true}
-        beforeChange={(nextSlide) => {
-          handleSlideCHange(nextSlide);
-        }}
-        afterChange={(current) => {
-          handleSlideCHange(current);
-        }}
+        // beforeChange={(nextSlide) => {
+        //   handleSlideCHange(nextSlide);
+        // }}
+        // afterChange={(current) => {
+        //   handleSlideCHange(current);
+        // }}
+
+        beforeChange={handleBeforeSlideChange}
+        afterChange={handleAfterSlideChange}
       >
 
 
         {images.map((image, index) => (
           <div key={index} >
             <img src={image} alt={`Slide ${index + 1}`} />
-            <div className={`${index === currentSlide ? 'text-overlay' : ''}`} ref={textOverlayRef}>
+            <div className={'text-overlay'} ref={textOverlayRef}>
               <h1 style={{ color: 'red' }} >The history of </h1>
               <button>click me</button>
             </div>
