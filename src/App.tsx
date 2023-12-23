@@ -17,6 +17,7 @@ import BookDetails from "./pages/BookDetails";
 import BlogDetails from "./pages/BlogDetails";
 import Element from "./pages/Element";
 import Registration from "./pages/Registration";
+import Footer from "./components/footer/Footer";
 
 const Container = styled.div`
   padding-left: 270px;
@@ -47,6 +48,7 @@ function App() {
             <Route path="blogDetails" element={<BlogDetails />} />
             <Route path="element" element={<Element />} />
           </Routes>
+          <Footer />
         </Container>
       </RecoilRoot>
     </>

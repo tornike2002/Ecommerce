@@ -47,6 +47,17 @@ const CategoryPage = () => {
     }
   };
 
+  // Filter By Author ////////////////////////////////
+
+  const filterAuthor = (authorr: string) => {
+    if (authorr === "all") {
+      setBooksList(DataBase);
+    } else {
+      const filtGenre = DataBase.filter(({ author }) => author === authorr);
+      setBooksList(filtGenre);
+    }
+  };
+
   return (
     <div>
       <TitleAndImg
@@ -59,6 +70,7 @@ const CategoryPage = () => {
             filterHandler={filterHandler}
             priceHandler={priceHandler}
             ratingHandler={ratingHandler}
+            filterAuthor={filterAuthor}
           />
         </div>
         <div>
