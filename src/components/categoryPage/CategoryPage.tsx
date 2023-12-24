@@ -6,8 +6,10 @@ import { useEffect, useState } from "react";
 
 const CategoryPage = () => {
   const [booksList, setBooksList] = useState<MovieType[]>([]);
+  const [genreList, setGenreList] = useState<MovieType[]>([]);
   useEffect(() => {
     setBooksList(DataBase);
+    setGenreList(DataBase);
   }, []);
 
   // Filter By Genres ////////////////////////////////
@@ -15,45 +17,39 @@ const CategoryPage = () => {
   const filterHandler = (genre = "all") => {
     if (genre === "all") {
       setBooksList(DataBase);
+      setGenreList(DataBase);
     } else {
       const filtGenre = DataBase.filter(({ genres }) => genres.includes(genre));
       setBooksList(filtGenre);
+      setGenreList(filtGenre);
     }
   };
 
   // Filter By Price ////////////////////////////////
 
   const priceHandler = (firstPrice = 0, secondPrice = 200) => {
-    if (firstPrice === 0 && secondPrice === 200) {
-      setBooksList(DataBase);
-    } else {
-      const filterPrice = DataBase.filter(
-        ({ price }) => price >= firstPrice && price < secondPrice
-      );
-      setBooksList(filterPrice);
-    }
+    const filterPrice = genreList.filter(
+      ({ price }) => price >= firstPrice && price < secondPrice
+    );
+    setBooksList(filterPrice);
   };
 
   // Filter By Rating ////////////////////////////////
 
   const ratingHandler = (firstRating = 0, secondRating = 6) => {
-    if (firstRating === 0 && secondRating === 6) {
-      setBooksList(DataBase);
-    } else {
-      const filterPrice = DataBase.filter(
-        ({ rating }) => rating >= firstRating && rating < secondRating
-      );
-      setBooksList(filterPrice);
-    }
+    const filterRating = genreList.filter(
+      ({ rating }) => rating >= firstRating && rating < secondRating
+    );
+    setBooksList(filterRating);
   };
 
   // Filter By Author ////////////////////////////////
 
   const filterAuthor = (authorr: string) => {
     if (authorr === "all") {
-      setBooksList(DataBase);
+      setBooksList(genreList);
     } else {
-      const filtGenre = DataBase.filter(({ author }) => author === authorr);
+      const filtGenre = genreList.filter(({ author }) => author === authorr);
       setBooksList(filtGenre);
     }
   };
