@@ -9,7 +9,7 @@ const FilterByAuthor = ({ filterAuthor }: Props) => {
         <h2>Filter By Author Name</h2>
         <div className="hahaha">
           <label className="label-sidebar" onClick={() => filterAuthor("all")}>
-            <input type="radio" name="filt" />
+            <input type="radio" name="price" />
             <span className="checkmark"></span>
             <span>All</span>
           </label>
@@ -17,7 +17,7 @@ const FilterByAuthor = ({ filterAuthor }: Props) => {
             className="label-sidebar"
             onClick={() => filterAuthor("Buster Hymen")}
           >
-            <input type="radio" name="filt" />
+            <input type="radio" name="price" />
             <span className="checkmark"></span>
             <span>Buster Hymen</span>
           </label>
@@ -25,7 +25,7 @@ const FilterByAuthor = ({ filterAuthor }: Props) => {
             className="label-sidebar"
             onClick={() => filterAuthor("Otto Matic")}
           >
-            <input type="radio" name="filt" />
+            <input type="radio" name="price" />
             <span className="checkmark"></span>
             <span>Otto Matic</span>
           </label>
@@ -33,7 +33,7 @@ const FilterByAuthor = ({ filterAuthor }: Props) => {
             className="label-sidebar"
             onClick={() => filterAuthor("Juan Annatoo")}
           >
-            <input type="radio" name="filt" />
+            <input type="radio" name="price" />
             <span className="checkmark"></span>
             <span>Juan Annatoo</span>
           </label>
@@ -41,7 +41,7 @@ const FilterByAuthor = ({ filterAuthor }: Props) => {
             className="label-sidebar"
             onClick={() => filterAuthor("Cam L. Toe")}
           >
-            <input type="radio" name="filt" />
+            <input type="radio" name="price" />
             <span className="checkmark"></span>
             <span>Cam L. Toe</span>
           </label>
@@ -49,7 +49,7 @@ const FilterByAuthor = ({ filterAuthor }: Props) => {
             className="label-sidebar"
             onClick={() => filterAuthor("Phil Harmonic")}
           >
-            <input type="radio" name="filt" />
+            <input type="radio" name="price" />
             <span className="checkmark"></span>
             <span>Phil Harmonic</span>
           </label>

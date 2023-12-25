@@ -10,11 +10,11 @@ const SaleBook = ({ img, price, title }: Props) => {
   const [count, setCount] = useState(1);
 
   const plusCount = () => {
-    if (count === 9) return 9;
+    if (count === 9) return;
     setCount(count + 1);
   };
   const minusCount = () => {
-    if (count === 1) return 1;
+    if (count === 1) return;
     setCount(count - 1);
   };
 
