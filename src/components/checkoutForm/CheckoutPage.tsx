@@ -4,8 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { SmileOutlined } from '@ant-design/icons';
 import { Button, notification } from 'antd';
+import { FormErrorMessage } from '../styledComponents/InputFields';
 
-// Define the form data type based on your Zod schema
 type FormData = {
   nameOnCard: string;
   creditCardNumber: string;
@@ -91,7 +91,7 @@ const CheckoutPage: React.FC = () => {
               />
             )}
           />
-          <span>{errors.nameOnCard?.message}</span>
+          <FormErrorMessage>{errors.nameOnCard?.message}</FormErrorMessage>
         </div>
         <div>
           <label htmlFor="cnumber">Credit card number</label>
@@ -110,7 +110,7 @@ const CheckoutPage: React.FC = () => {
               />
             )}
           />
-          <span>{errors.creditCardNumber?.message}</span>
+          <FormErrorMessage>{errors.creditCardNumber?.message}</FormErrorMessage>
         </div>
         <div>
           <label htmlFor="expMonth">Exp Month</label>
@@ -128,7 +128,7 @@ const CheckoutPage: React.FC = () => {
               />
             )}
           />
-          <span>{errors.expMonth?.message}</span>
+          <FormErrorMessage>{errors.expMonth?.message}</FormErrorMessage>
         </div>
         <div>
           <label htmlFor="cvv">CVV</label>
@@ -146,7 +146,7 @@ const CheckoutPage: React.FC = () => {
               />
             )}
           />
-          <span>{errors.cvv?.message}</span>
+          <FormErrorMessage>{errors.cvv?.message}</FormErrorMessage>
         </div>
         <div>
           <label htmlFor="expYear">Exp Year</label>
@@ -164,7 +164,7 @@ const CheckoutPage: React.FC = () => {
               />
             )}
           />
-          <span>{errors.expYear?.message}</span>
+          <FormErrorMessage>{errors.expYear?.message}</FormErrorMessage>
         </div>
         {contextHolder}
         <Button type="primary" htmlType="submit" onClick={openNotification} disabled={!isValid}>
