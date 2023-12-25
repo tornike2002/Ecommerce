@@ -21,8 +21,8 @@ import Footer from "./components/footer/Footer";
 import ErrorPage from "./pages/ErrorPage";
 
 const Container = styled.div`
-  padding-left: 270px;
-  padding-right: 270px;
+  max-width: 1140px;
+  margin: 0 auto;
 `;
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
     <>
       <RecoilRoot>
         <Container>
-          <Header />
+          {/* <Header /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/faq" element={<Faq />} />
@@ -50,7 +50,7 @@ function App() {
             <Route path="/element" element={<Element />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </Container>
       </RecoilRoot>
     </>

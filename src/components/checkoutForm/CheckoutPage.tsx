@@ -80,8 +80,8 @@ const CheckoutPage: React.FC = () => {
         </div>
       </CheckoutTitleWrapper>
       {/* title */}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+      <CheckoutForm onSubmit={handleSubmit(onSubmit)}>
+        <CheckoutInputWrapper>
           <label htmlFor="ncard">Name on Card</label>
           <Controller
             name="nameOnCard"
@@ -98,8 +98,8 @@ const CheckoutPage: React.FC = () => {
             )}
           />
           <FormErrorMessage>{errors.nameOnCard?.message}</FormErrorMessage>
-        </div>
-        <div>
+        </CheckoutInputWrapper>
+        <CheckoutInputWrapper>
           <label htmlFor="cnumber">Credit card number</label>
           <Controller
             name="creditCardNumber"
@@ -122,8 +122,8 @@ const CheckoutPage: React.FC = () => {
           <FormErrorMessage>
             {errors.creditCardNumber?.message}
           </FormErrorMessage>
-        </div>
-        <div>
+        </CheckoutInputWrapper>
+        <CheckoutInputWrapper>
           <label htmlFor="expMonth">Exp Month</label>
           <Controller
             name="expMonth"
@@ -140,8 +140,8 @@ const CheckoutPage: React.FC = () => {
             )}
           />
           <FormErrorMessage>{errors.expMonth?.message}</FormErrorMessage>
-        </div>
-        <div>
+        </CheckoutInputWrapper>
+        <CheckoutInputWrapper>
           <label htmlFor="cvv">CVV</label>
           <Controller
             name="cvv"
@@ -158,8 +158,8 @@ const CheckoutPage: React.FC = () => {
             )}
           />
           <FormErrorMessage>{errors.cvv?.message}</FormErrorMessage>
-        </div>
-        <div>
+        </CheckoutInputWrapper>
+        <CheckoutInputWrapper>
           <label htmlFor="expYear">Exp Year</label>
           <Controller
             name="expYear"
@@ -176,7 +176,7 @@ const CheckoutPage: React.FC = () => {
             )}
           />
           <FormErrorMessage>{errors.expYear?.message}</FormErrorMessage>
-        </div>
+        </CheckoutInputWrapper>
         {contextHolder}
         <Button
           type="primary"
@@ -186,15 +186,19 @@ const CheckoutPage: React.FC = () => {
         >
           Continue checkout
         </Button>
-      </form>
+      </CheckoutForm>
     </CheckoutMainDiv>
   );
 };
 
 const CheckoutMainDiv = styled.div`
   background-color: #f2f2f2;
-  padding: 10px 10px 10px 10px;
+  padding: 40px 40px 40px 50px;
   font-family: "Roboto", sans-serif;
+  @media screen and (max-width: 414px){
+    padding: 25px 25px 25px 20px;
+    margin: 10px
+  }
 `;
 const CheckoutTitleWrapper = styled.div`
   display: flex;
@@ -215,6 +219,37 @@ const CheckoutTitleWrapper = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     padding-bottom: 15px;
+  }
+`;
+
+// inputs
+const CheckoutInputWrapper = styled.div`
+width: 100%;
+max-width: 100%;
+  & label {
+    font-size: 16px;
+    font-weight: 300;
+    display: block;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  & input {
+    font-family: "Roboto", sans-serif;
+    padding: 7px 45px;
+    font-size: 15px;
+    font-weight: 300;
+    max-width: 100%;
+  }
+`;
+const CheckoutForm = styled.form`
+  & button {
+    margin-top: 15px;
+    background-color: black;
+    border-radius: 5px;
+  }
+  & button:disabled {
+    background-color: gray;
+    color: black;
   }
 `;
 export default CheckoutPage;
