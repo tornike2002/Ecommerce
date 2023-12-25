@@ -18,6 +18,7 @@ import BlogDetails from "./pages/BlogDetails";
 import Element from "./pages/Element";
 import Registration from "./pages/Registration";
 import Footer from "./components/footer/Footer";
+import ErrorPage from "./pages/ErrorPage";
 
 const Container = styled.div`
   padding-left: 270px;
@@ -31,22 +32,23 @@ function App() {
         <Container>
           <Header />
           <Routes>
-            <Route path="faq" element={<Faq />} />
-            <Route path="trackOrder" element={<TrackOrder />} />
-            <Route path="signIn" element={<Login />} />
             <Route path="/" element={<Home />} />
-            <Route path="categories" element={<Categories />} />
-            <Route path="about" element={<About />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Registration />} />
-            <Route path=":id" element={<OneProductPage />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="bookDetails" element={<BookDetails />} />
-            <Route path="blogDetails" element={<BlogDetails />} />
-            <Route path="element" element={<Element />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/trackOrder" element={<TrackOrder />} />
+            <Route path="/signIn" element={<Login />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Registration />} />
+            <Route path="/:id" element={<OneProductPage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/bookDetails" element={<BookDetails />} />
+            <Route path="/blogDetails" element={<BlogDetails />} />
+            <Route path="/element" element={<Element />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
         </Container>
