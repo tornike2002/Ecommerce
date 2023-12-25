@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { SmileOutlined } from '@ant-design/icons';
+import { Button, notification } from 'antd';
 
 // Define the form data type based on your Zod schema
 type FormData = {
@@ -19,6 +21,8 @@ const formatCreditCardNumber = (value: string) => {
 };
 
 const CheckoutPage: React.FC = () => {
+  const [api, contextHolder] = notification.useNotification();
+
   const schema = z.object({
     nameOnCard: z.string().min(2, { message: 'Minimum 2 characters' }),
     creditCardNumber: z.string().min(19, { message: 'Invalid credit card number' }),
@@ -27,7 +31,12 @@ const CheckoutPage: React.FC = () => {
     expYear: z.string().length(4, { message: 'Invalid expiration year' }),
   });
 
-  const { handleSubmit, control, formState: { errors }, setValue } = useForm<FormData>({
+  const {
+    handleSubmit,
+    control,
+    formState: { errors, isValid },
+    setValue,
+  } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
       nameOnCard: '',
@@ -39,8 +48,16 @@ const CheckoutPage: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    // Handle form submission
     console.log(data);
+  };
+
+  const openNotification = () => {
+    api.open({
+      message: 'Notification Title',
+      description:
+        'Checkout confirmation for card is done, thanks for choosing our company.',
+      icon: <SmileOutlined style={{ color: '#108ee9' }} />,
+    });
   };
 
   return (
@@ -149,7 +166,10 @@ const CheckoutPage: React.FC = () => {
           />
           <span>{errors.expYear?.message}</span>
         </div>
-        <button type="submit">Continue to checkout</button>
+        {contextHolder}
+        <Button type="primary" htmlType="submit" onClick={openNotification} disabled={!isValid}>
+          Continue checkout
+        </Button>
       </form>
     </div>
   );
