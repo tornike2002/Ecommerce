@@ -13,7 +13,7 @@ const FilterByPrice = ({ priceHandler }: Props) => {
               className="label-sidebar"
               onClick={() => priceHandler(0, 200)}
             >
-              <input type="radio" name="filt" />
+              <input type="radio" name="price" />
               <span className="checkmark"></span>
               <span>All</span>
             </label>
@@ -21,7 +21,7 @@ const FilterByPrice = ({ priceHandler }: Props) => {
               className="label-sidebar"
               onClick={() => priceHandler(0, 30)}
             >
-              <input type="radio" name="filt" />
+              <input type="radio" name="price" />
               <span className="checkmark"></span>
               <span>$0-30</span>
             </label>
@@ -29,7 +29,7 @@ const FilterByPrice = ({ priceHandler }: Props) => {
               className="label-sidebar"
               onClick={() => priceHandler(30, 50)}
             >
-              <input type="radio" name="filt" />
+              <input type="radio" name="price" />
               <span className="checkmark"></span>
               <span>$30-50</span>
             </label>
@@ -37,7 +37,7 @@ const FilterByPrice = ({ priceHandler }: Props) => {
               className="label-sidebar"
               onClick={() => priceHandler(50, 100)}
             >
-              <input type="radio" name="filt" />
+              <input type="radio" name="price" />
               <span className="checkmark"></span>
               <span>$50-100</span>
             </label>
@@ -45,7 +45,7 @@ const FilterByPrice = ({ priceHandler }: Props) => {
               className="label-sidebar"
               onClick={() => priceHandler(100, 200)}
             >
-              <input type="radio" name="filt" />
+              <input type="radio" name="price" />
               <span className="checkmark"></span>
               <span>$100 Over</span>
             </label>

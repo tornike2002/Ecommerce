@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Logo from "../../../public/logoOf.png.webp";
 import LogoOfShop from "../../../public/shopping-cart-outline-svgrepo-com.svg";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { Book, cart } from "../../recoilStates/states";
 
 const ResetButton = styled.button`
   /* Resetting default styles */
@@ -42,6 +44,9 @@ const SignInButton = styled(ResetButton)`
 `;
 
 export default function Header() {
+  const books = useRecoilValue<Book[]>(cart);
+  const booksLength = books.length;
+
   const refresh = () => window.location.reload();
   const logoutHandler = () => {
     localStorage.removeItem("registrationData");
@@ -79,6 +84,7 @@ export default function Header() {
 
         <Link to="/cart">
           <CartImage src={LogoOfShop} alt="shop" style={{ width: "45px" }} />
+          <p>{booksLength}</p>
         </Link>
 
         {locCheck ? (
