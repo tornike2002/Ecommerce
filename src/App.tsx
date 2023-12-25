@@ -21,8 +21,8 @@ import Footer from "./components/footer/Footer";
 import ErrorPage from "./pages/ErrorPage";
 
 const Container = styled.div`
-  padding-left: 270px;
-  padding-right: 270px;
+  max-width: 1140px;
+  margin: 0 auto;
 `;
 
 function App() {

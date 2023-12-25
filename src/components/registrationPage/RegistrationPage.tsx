@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import styled from "styled-components";
-import { FormsHeader, FormErrorMessage } from "../styledComponents/texts";
+import { FormsHeader} from "../styledComponents/texts";
+import { FormErrorMessage } from "../styledComponents/InputFields";
 import { InputFieldsWrapper } from "../styledComponents/InputFields";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";

@@ -1,11 +1,16 @@
-import React from 'react';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { SmileOutlined } from '@ant-design/icons';
-import { Button, notification } from 'antd';
+import React from "react";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { SmileOutlined } from "@ant-design/icons";
+import { Button, notification } from "antd";
+import { FormErrorMessage } from "../styledComponents/InputFields";
+import masterCard from "../../../public/checkout/mastercard.png";
+import visaCard from "../../../public/checkout/visa.png";
+import discorverCard from "../../../public/checkout/discorver-card.png";
+import { CheckoutIcon } from "../styledComponents/images";
+import styled from "styled-components";
 
-// Define the form data type based on your Zod schema
 type FormData = {
   nameOnCard: string;
   creditCardNumber: string;
@@ -15,8 +20,8 @@ type FormData = {
 };
 
 const formatCreditCardNumber = (value: string) => {
-  const cleanValue = typeof value === 'string' ? value.replace(/\D/g, '') : '';
-  const formattedValue = cleanValue.replace(/(\d{4})(?=\d)/g, '$1-');
+  const cleanValue = typeof value === "string" ? value.replace(/\D/g, "") : "";
+  const formattedValue = cleanValue.replace(/(\d{4})(?=\d)/g, "$1-");
   return formattedValue;
 };
 
@@ -24,11 +29,13 @@ const CheckoutPage: React.FC = () => {
   const [api, contextHolder] = notification.useNotification();
 
   const schema = z.object({
-    nameOnCard: z.string().min(2, { message: 'Minimum 2 characters' }),
-    creditCardNumber: z.string().min(19, { message: 'Invalid credit card number' }),
-    expMonth: z.string().length(2, { message: 'Invalid expiration month' }),
-    cvv: z.string().length(3, { message: 'Invalid CVV' }),
-    expYear: z.string().length(4, { message: 'Invalid expiration year' }),
+    nameOnCard: z.string().min(2, { message: "Minimum 2 characters" }),
+    creditCardNumber: z
+      .string()
+      .min(19, { message: "Invalid credit card number" }),
+    expMonth: z.string().length(2, { message: "Invalid expiration month" }),
+    cvv: z.string().length(3, { message: "Invalid CVV" }),
+    expYear: z.string().length(4, { message: "Invalid expiration year" }),
   });
 
   const {
@@ -39,11 +46,11 @@ const CheckoutPage: React.FC = () => {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      nameOnCard: '',
-      creditCardNumber: '',
-      expMonth: '',
-      cvv: '',
-      expYear: '',
+      nameOnCard: "",
+      creditCardNumber: "",
+      expMonth: "",
+      cvv: "",
+      expYear: "",
     },
   });
 
@@ -53,29 +60,28 @@ const CheckoutPage: React.FC = () => {
 
   const openNotification = () => {
     api.open({
-      message: 'Notification Title',
+      message: "Notification Title",
       description:
-        'Checkout confirmation for card is done, thanks for choosing our company.',
-      icon: <SmileOutlined style={{ color: '#108ee9' }} />,
+        "Checkout confirmation for card is done, thanks for choosing our company.",
+      icon: <SmileOutlined style={{ color: "#108ee9" }} />,
     });
   };
 
   return (
-    <div>
+    <CheckoutMainDiv>
       {/* title */}
-      <div>
+      <CheckoutTitleWrapper>
         <h1>Payment</h1>
         <p>Accepted Cards</p>
         <div>
-          <h1>Card1</h1>
-          <h1>Card2</h1>
-          <h1>Card3</h1>
-          <h1>Card4</h1>
+          <CheckoutIcon src={masterCard} alt="masterCard" />
+          <CheckoutIcon src={visaCard} alt="visaCard" />
+          <CheckoutIcon src={discorverCard} alt="discorverCard" />
         </div>
-      </div>
+      </CheckoutTitleWrapper>
       {/* title */}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+      <CheckoutForm onSubmit={handleSubmit(onSubmit)}>
+        <CheckoutInputWrapper>
           <label htmlFor="ncard">Name on Card</label>
           <Controller
             name="nameOnCard"
@@ -84,16 +90,16 @@ const CheckoutPage: React.FC = () => {
               <input
                 {...field}
                 id="ncard"
-                value={field.value || ''}
+                value={field.value || ""}
                 onChange={(e) => {
-                  setValue('nameOnCard', e.target.value);
+                  setValue("nameOnCard", e.target.value);
                 }}
               />
             )}
           />
-          <span>{errors.nameOnCard?.message}</span>
-        </div>
-        <div>
+          <FormErrorMessage>{errors.nameOnCard?.message}</FormErrorMessage>
+        </CheckoutInputWrapper>
+        <CheckoutInputWrapper>
           <label htmlFor="cnumber">Credit card number</label>
           <Controller
             name="creditCardNumber"
@@ -102,17 +108,22 @@ const CheckoutPage: React.FC = () => {
               <input
                 {...field}
                 id="cnumber"
-                value={field.value || ''}
+                value={field.value || ""}
                 onChange={(e) => {
-                  setValue('creditCardNumber', formatCreditCardNumber(e.target.value));
+                  setValue(
+                    "creditCardNumber",
+                    formatCreditCardNumber(e.target.value)
+                  );
                 }}
                 maxLength={19}
               />
             )}
           />
-          <span>{errors.creditCardNumber?.message}</span>
-        </div>
-        <div>
+          <FormErrorMessage>
+            {errors.creditCardNumber?.message}
+          </FormErrorMessage>
+        </CheckoutInputWrapper>
+        <CheckoutInputWrapper>
           <label htmlFor="expMonth">Exp Month</label>
           <Controller
             name="expMonth"
@@ -121,16 +132,16 @@ const CheckoutPage: React.FC = () => {
               <input
                 {...field}
                 id="expMonth"
-                value={field.value || ''}
+                value={field.value || ""}
                 onChange={(e) => {
-                  setValue('expMonth', e.target.value);
+                  setValue("expMonth", e.target.value);
                 }}
               />
             )}
           />
-          <span>{errors.expMonth?.message}</span>
-        </div>
-        <div>
+          <FormErrorMessage>{errors.expMonth?.message}</FormErrorMessage>
+        </CheckoutInputWrapper>
+        <CheckoutInputWrapper>
           <label htmlFor="cvv">CVV</label>
           <Controller
             name="cvv"
@@ -139,16 +150,16 @@ const CheckoutPage: React.FC = () => {
               <input
                 {...field}
                 id="cvv"
-                value={field.value || ''}
+                value={field.value || ""}
                 onChange={(e) => {
-                  setValue('cvv', e.target.value);
+                  setValue("cvv", e.target.value);
                 }}
               />
             )}
           />
-          <span>{errors.cvv?.message}</span>
-        </div>
-        <div>
+          <FormErrorMessage>{errors.cvv?.message}</FormErrorMessage>
+        </CheckoutInputWrapper>
+        <CheckoutInputWrapper>
           <label htmlFor="expYear">Exp Year</label>
           <Controller
             name="expYear"
@@ -157,22 +168,88 @@ const CheckoutPage: React.FC = () => {
               <input
                 {...field}
                 id="expYear"
-                value={field.value || ''}
+                value={field.value || ""}
                 onChange={(e) => {
-                  setValue('expYear', e.target.value);
+                  setValue("expYear", e.target.value);
                 }}
               />
             )}
           />
-          <span>{errors.expYear?.message}</span>
-        </div>
+          <FormErrorMessage>{errors.expYear?.message}</FormErrorMessage>
+        </CheckoutInputWrapper>
         {contextHolder}
-        <Button type="primary" htmlType="submit" onClick={openNotification} disabled={!isValid}>
+        <Button
+          type="primary"
+          htmlType="submit"
+          onClick={openNotification}
+          disabled={!isValid}
+        >
           Continue checkout
         </Button>
-      </form>
-    </div>
+      </CheckoutForm>
+    </CheckoutMainDiv>
   );
 };
 
+const CheckoutMainDiv = styled.div`
+  background-color: #f2f2f2;
+  padding: 40px 40px 40px 50px;
+  font-family: "Roboto", sans-serif;
+  @media screen and (max-width: 568px){
+    padding: 25px 25px 25px 20px;
+    margin: 10px
+  }
+`;
+const CheckoutTitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  & h1 {
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  & p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  & div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+  }
+`;
+
+// inputs
+const CheckoutInputWrapper = styled.div`
+width: 100%;
+max-width: 100%;
+  & label {
+    font-size: 16px;
+    font-weight: 300;
+    display: block;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  & input {
+    font-family: "Roboto", sans-serif;
+    padding: 7px 45px;
+    font-size: 15px;
+    font-weight: 300;
+    max-width: 100%;
+  }
+`;
+const CheckoutForm = styled.form`
+  & button {
+    margin-top: 15px;
+    background-color: black;
+    border-radius: 5px;
+  }
+  & button:disabled {
+    background-color: gray;
+    color: black;
+  }
+`;
 export default CheckoutPage;
