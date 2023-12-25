@@ -2,9 +2,14 @@ import TitleAndImg from "../components/pageTitleAndBgImage/TitleAndImg";
 import { Book, cart } from "../recoilStates/states";
 import { useRecoilValue } from "recoil";
 import SaleBook from "../components/saleBook/SaleBook";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const books = useRecoilValue(cart);
+  const navigate = useNavigate();
+  const CheckoutHandler = () => {
+    navigate("/checkout");
+  };
 
   return (
     <div>
@@ -24,6 +29,9 @@ export default function Cart() {
           />
         ))}
       </ul>
+      <button type="button" onClick={CheckoutHandler}>
+        Go to checkout
+      </button>
     </div>
   );
 }
