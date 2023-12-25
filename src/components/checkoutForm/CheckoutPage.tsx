@@ -195,7 +195,7 @@ const CheckoutMainDiv = styled.div`
   background-color: #f2f2f2;
   padding: 40px 40px 40px 50px;
   font-family: "Roboto", sans-serif;
-  @media screen and (max-width: 414px){
+  @media screen and (max-width: 568px){
     padding: 25px 25px 25px 20px;
     margin: 10px
   }

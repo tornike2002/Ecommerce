@@ -30,7 +30,7 @@ function App() {
     <>
       <RecoilRoot>
         <Container>
-          {/* <Header /> */}
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/faq" element={<Faq />} />
@@ -50,7 +50,7 @@ function App() {
             <Route path="/element" element={<Element />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </Container>
       </RecoilRoot>
     </>
