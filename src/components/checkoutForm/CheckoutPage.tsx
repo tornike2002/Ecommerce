@@ -8,6 +8,7 @@ import { FormErrorMessage } from '../styledComponents/InputFields';
 import masterCard from "../../../public/checkout/mastercard.png"
 import visaCard from "../../../public/checkout/visa.png"
 import discorverCard from "../../../public/checkout/discorver-card.png"
+import { CheckoutIcon } from '../styledComponents/images';
 // import styled from 'styled-components';
 
 type FormData = {
@@ -71,9 +72,9 @@ const CheckoutPage: React.FC = () => {
         <h1>Payment</h1>
         <p>Accepted Cards</p>
         <div>
-          <img src={masterCard} alt="masterCard" />
-          <img src={visaCard} alt="visaCard" />
-          <img src={discorverCard} alt="discorverCard" />
+          <CheckoutIcon src={masterCard} alt="masterCard" />
+          <CheckoutIcon src={visaCard} alt="visaCard" />
+          <CheckoutIcon src={discorverCard} alt="discorverCard" />
         </div>
       </div>
       {/* title */}
