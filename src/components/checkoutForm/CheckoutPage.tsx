@@ -5,6 +5,10 @@ import { z } from 'zod';
 import { SmileOutlined } from '@ant-design/icons';
 import { Button, notification } from 'antd';
 import { FormErrorMessage } from '../styledComponents/InputFields';
+import masterCard from "../../../public/checkout/mastercard.png"
+import visaCard from "../../../public/checkout/visa.png"
+import discorverCard from "../../../public/checkout/discorver-card.png"
+// import styled from 'styled-components';
 
 type FormData = {
   nameOnCard: string;
@@ -67,10 +71,9 @@ const CheckoutPage: React.FC = () => {
         <h1>Payment</h1>
         <p>Accepted Cards</p>
         <div>
-          <h1>Card1</h1>
-          <h1>Card2</h1>
-          <h1>Card3</h1>
-          <h1>Card4</h1>
+          <img src={masterCard} alt="masterCard" />
+          <img src={visaCard} alt="visaCard" />
+          <img src={discorverCard} alt="discorverCard" />
         </div>
       </div>
       {/* title */}
