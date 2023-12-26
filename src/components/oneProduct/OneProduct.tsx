@@ -36,6 +36,11 @@ const OneProduct = () => {
     ]);
   };
 
+  console.log(movie);
+
+  if (movie === undefined)
+    return <h1 style={{ margin: "350px " }}>Error Page</h1>;
+
   return (
     <div>
       <div
