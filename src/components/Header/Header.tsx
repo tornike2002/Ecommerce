@@ -1,7 +1,7 @@
 // import React from 'react'
 import styled from "styled-components";
 import Logo from "../../logoOf.png.webp";
-import LogoOfShop from "../../shopping-cart-outline-svgrepo-com.svg"
+import LogoOfShop from "../../shopping-cart-outline-svgrepo-com.svg";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { Book, cart } from "../../recoilStates/states";
@@ -13,6 +13,7 @@ import {
   ProductNumber,
 } from "./HeaderStyles";
 import { MainButton } from "../styledComponents/buttons";
+import Navigation from "./navigation/Navigation";
 
 const CartImage = styled.img`
   width: 45px;
@@ -35,36 +36,39 @@ export default function Header() {
   const locCheck = localStorage.getItem("registrationData");
 
   return (
-    <CustomHeader>
-      <LogoAndInput>
-        <Link to="/">
-          <div>
-            <img src={Logo} alt="logo" />
-          </div>
-        </Link>
-        <CustomInput placeholder="Search your book" />
-      </LogoAndInput>
-
-      <CartAndBtnContainer>
-        <Link to="/cart">
-          <div style={{ position: "relative" }}>
-            <CartImage src={LogoOfShop} alt="shop" />
-            <ProductNumber>{booksLength}</ProductNumber>
-          </div>
-        </Link>
-
-        {locCheck ? (
-          <Link to="/register">
+    <>
+      <CustomHeader>
+        <LogoAndInput>
+          <Link to="/">
             <div>
-              <MainButton onClick={logoutHandler}>Log out</MainButton>
+              <img src={Logo} alt="logo" />
             </div>
           </Link>
-        ) : (
-          <Link to="/signIn">
-            <MainButton>Sign in</MainButton>
+          <CustomInput placeholder="Search your book" />
+        </LogoAndInput>
+
+        <CartAndBtnContainer>
+          <Link to="/cart">
+            <div style={{ position: "relative" }}>
+              <CartImage src={LogoOfShop} alt="shop" />
+              <ProductNumber>{booksLength}</ProductNumber>
+            </div>
           </Link>
-        )}
-      </CartAndBtnContainer>
-    </CustomHeader>
+
+          {locCheck ? (
+            <Link to="/register">
+              <div>
+                <MainButton onClick={logoutHandler}>Log out</MainButton>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/signIn">
+              <MainButton>Sign in</MainButton>
+            </Link>
+          )}
+        </CartAndBtnContainer>
+      </CustomHeader>
+      <Navigation />
+    </>
   );
 }
