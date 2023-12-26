@@ -12,3 +12,7 @@
   --mediumBlue: #140c40;
   --lightBrown: #301a22;
 }
+
+body {
+  background-color: #fff;
+}

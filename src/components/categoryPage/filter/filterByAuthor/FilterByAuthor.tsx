@@ -3,8 +3,6 @@ type Props = {
 };
 
 const FilterByAuthor = ({ filterAuthor }: Props) => {
-  console.log("test");
-
   return (
     <div style={{ width: "300px", border: "1px solid black" }}>
       <div className="filter-sidebar">

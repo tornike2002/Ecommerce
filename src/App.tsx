@@ -20,16 +20,11 @@ import Registration from "./pages/Registration";
 import Footer from "./components/footer/Footer";
 import ErrorPage from "./pages/ErrorPage";
 
-const Container = styled.div`
-  max-width: 1140px;
-  margin: 0 auto;
-`;
-
 function App() {
   return (
     <>
       <RecoilRoot>
-        <Container>
+        <div className="app-container">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -51,7 +46,7 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
-        </Container>
+        </div>
       </RecoilRoot>
     </>
   );
