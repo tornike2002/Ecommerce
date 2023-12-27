@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 type Props = {
   title: string;
@@ -24,6 +23,7 @@ const TitleForHero = styled.h2`
   margin: 0 auto;
 `;
 const HeroForBlog = styled.div`
+  margin-top: 30px;
   height: 350px;
   background-repeat: no-repeat;
   display: flex;
