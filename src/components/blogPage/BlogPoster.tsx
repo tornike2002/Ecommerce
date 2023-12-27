@@ -14,7 +14,7 @@ const BlogPoster = ({
   PosterUser,
 }: PosterType) => {
   return (
-    <div>
+    <BlogPosterShadow>
       <BlogPosterContainer>
         <img src={img} alt="poster" />
         <BlogPosterDate>
@@ -30,17 +30,22 @@ const BlogPoster = ({
           <p>{PosterComments}</p>
         </BlogUserWrapper>
       </BlogPosterText>
-    </div>
+    </BlogPosterShadow>
   );
 };
 
 export default BlogPoster;
-
+const BlogPosterShadow = styled.div`
+  box-shadow: rgba(221, 221, 221, 0.3) 0px 10px 20px 0px;
+  margin-bottom: 40px;
+`;
 const BlogPosterText = styled.div`
   font-family: "Playfair Display", serif;
   display: flex;
   flex-direction: column;
   max-width: 750px;
+  padding: 20px;
+  gap: 3px;
 
   & h1 {
     font-weight: 800;
