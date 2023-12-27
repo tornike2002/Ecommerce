@@ -9,12 +9,11 @@ import { Container } from "../styledComponents/containers";
 import styled from "styled-components";
 import InstagramFeeds from "./InstagramFeeds";
 import BlogNewsLetter from "./BlogNewsLetter";
-
 const BlogPage = () => {
   return (
     <Container>
       <BlogMainCover>
-        <BlogMainCoverTitle >Welcome to blog page</BlogMainCoverTitle>
+        <BlogMainCoverTitle>Welcome to blog page</BlogMainCoverTitle>
       </BlogMainCover>
       <BlogDataWrapper>
         <div>
@@ -22,7 +21,7 @@ const BlogPage = () => {
             img={firstBlog}
             PosterTitle="Google inks pact for new 35-storey office"
             PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-            PosterComments="Travel, Lifestyle"
+            PosterComments="03 Comments"
             PosterUser="Travel, Lifestyle"
           />
           <BlogPoster
@@ -55,8 +54,8 @@ const BlogPage = () => {
           />
         </div>
         <div>
-          <InstagramFeeds />
           <BlogNewsLetter />
+          <InstagramFeeds />
         </div>
       </BlogDataWrapper>
     </Container>
