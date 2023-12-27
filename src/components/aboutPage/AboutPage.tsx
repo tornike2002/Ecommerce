@@ -24,7 +24,7 @@ const AboutPage = () => {
             <AboutTitle>Our Goal</AboutTitle>
           </div>
           <AboutParagraph>{text}</AboutParagraph>
-          <Rate disabled defaultValue={2} />
+          <Rate allowHalf defaultValue={2} />
         </div>
       </Container>
     </div>
