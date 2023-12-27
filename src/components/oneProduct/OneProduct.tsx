@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { DataBase, MovieType } from "../../Database";
 import { useRecoilState } from "recoil";
 import { cart } from "../../recoilStates/states";
+import ErrorPage from "../../pages/ErrorPage";
 
 const OneProduct = () => {
   const location = useLocation();
@@ -38,8 +39,7 @@ const OneProduct = () => {
 
   console.log(movie);
 
-  if (movie === undefined)
-    return <h1 style={{ margin: "350px " }}>Error Page</h1>;
+  if (movie === undefined) return <ErrorPage />;
 
   return (
     <div>
