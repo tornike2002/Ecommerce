@@ -9,7 +9,6 @@ import { Container } from "../styledComponents/containers";
 import styled from "styled-components";
 import InstagramFeeds from "./InstagramFeeds";
 import BlogNewsLetter from "./BlogNewsLetter";
-
 const BlogPage = () => {
   return (
     <Container>
