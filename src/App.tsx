@@ -7,7 +7,6 @@ import Contact from "./pages/Contact";
 import OneProductPage from "./pages/OneProductPage";
 import Login from "./pages/Login";
 import Header from "./components/Header/Header";
-import styled from "styled-components";
 import Faq from "./pages/Faq";
 import TrackOrder from "./pages/TrackOrder";
 import Cart from "./pages/Cart";

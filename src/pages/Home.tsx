@@ -1,7 +1,7 @@
 import ProductsCarousel from "../components/carousel/ProductsCarousel";
 
 import styled from "styled-components";
-import scrollUp from "../../src/scroll-up-svgrepo-com.svg";
+import scrollUp from "../assets/icons/scroll-up-svgrepo-com.svg";
 // import { OneProductCarousel } from "../components/carousel/OneProductCarousel";
 import OneProductCarousel from "../components/carousel/OneProductCarousel";
 

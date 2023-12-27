@@ -1,10 +1,10 @@
 import BlogPoster from "./BlogPoster";
-import firstBlog from "../../blogAssets/first-blog.jpg.webp";
-import secondBlog from "../../blogAssets/second-blog.jpg.webp";
-import thirdBlog from "../../blogAssets/third-blog.jpg.webp";
-import fourthBlog from "../../blogAssets/fourth-blog.jpg.webp";
-import sixthBlog from "../../blogAssets/sixth-blog.jpg.webp";
-import blogHero from "../../blogAssets/blog-hero.jpg.webp";
+import firstBlog from "../../assets/blogAssets/first-blog.jpg.webp";
+import secondBlog from "../../assets/blogAssets/second-blog.jpg.webp";
+import thirdBlog from "../../assets/blogAssets/third-blog.jpg.webp";
+import fourthBlog from "../../assets/blogAssets/fourth-blog.jpg.webp";
+import sixthBlog from "../../assets/blogAssets/sixth-blog.jpg.webp";
+import blogHero from "../../assets/blogAssets/blog-hero.jpg.webp";
 
 const BlogPage = () => {
   return (
