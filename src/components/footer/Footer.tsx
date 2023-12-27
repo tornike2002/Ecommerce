@@ -7,24 +7,16 @@ const Footer = () => {
   return (
     <Container>
       <FooterWrapper>
-        <div style={{ width: "300px" }}>
+        <FooterHelper>
           <Link to="/">
-            <img style={{ marginBottom: "35px" }} src={Logo} alt="" />
+            <FooterLogo src={Logo} alt="logo" />
           </Link>
-          <p style={{ color: "#454E6D", fontSize: "18px" }}>
+          <FooterParagraph>
             Get the breathing space now, and we’ll extend your term at the other
             end year for go.
-          </p>
-          <div style={{ display: "flex", gap: "12px", marginTop: "35px" }}>
-            <div
-              style={{
-                border: "1px solid #EEE1E0",
-                borderRadius: "50%",
-                width: "40px",
-                height: "40px",
-                display: "flex",
-              }}
-            >
+          </FooterParagraph>
+          <SvgMainDiv>
+            <SvgMainWrapper>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -39,16 +31,8 @@ const Footer = () => {
                   fill="#9498A7"
                 ></path>
               </svg>
-            </div>
-            <div
-              style={{
-                border: "1.5px solid #EEE1E0",
-                borderRadius: "50%",
-                width: "40px",
-                height: "40px",
-                display: "flex",
-              }}
-            >
+            </SvgMainWrapper>
+            <SvgMainWrapper>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -63,16 +47,8 @@ const Footer = () => {
                   fill="#9498A7"
                 ></path>
               </svg>
-            </div>
-            <div
-              style={{
-                border: "1px solid #EEE1E0",
-                borderRadius: "50%",
-                width: "40px",
-                height: "40px",
-                display: "flex",
-              }}
-            >
+            </SvgMainWrapper>
+            <SvgMainWrapper>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -87,16 +63,8 @@ const Footer = () => {
                   fill="#9498A7"
                 ></path>
               </svg>
-            </div>
-            <div
-              style={{
-                border: "1px solid #EEE1E0",
-                borderRadius: "50%",
-                width: "40px",
-                height: "40px",
-                display: "flex",
-              }}
-            >
+            </SvgMainWrapper>
+            <SvgMainWrapper>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -111,44 +79,19 @@ const Footer = () => {
                   fill="#9498A7"
                 ></path>
               </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            marginRight: "90px",
-            marginTop: "20px",
-          }}
-        >
-          <h2
-            style={{
-              textAlign: "right",
-              marginLeft: "auto",
-              color: "#232F55",
-              fontSize: "20px",
-            }}
-          >
-            Site Map
-          </h2>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "12px",
-              color: "#454E6D !important",
-              fontSize: "14px",
-            }}
-          >
+            </SvgMainWrapper>
+          </SvgMainDiv>
+        </FooterHelper>
+        <FooterSiteMapContainer>
+          <h2>Site Map</h2>
+          <FooterLinks>
             <Link to="/">Home</Link>
             <Link to="/categories">Categories</Link>
             <Link to="/about">About Us</Link>
             <Link to="/blog">Blog</Link>
             <Link to="/contact">Contact</Link>
-          </div>
-        </div>
+          </FooterLinks>
+        </FooterSiteMapContainer>
       </FooterWrapper>
     </Container>
   );
@@ -163,4 +106,47 @@ const FooterWrapper = styled.footer`
   padding: 20px 0;
   justify-content: space-between;
   margin-top: 50px;
+`;
+
+const FooterHelper = styled.div`
+  width: 300px;
+`;
+const FooterLogo = styled.img`
+  margin-bottom: 35px;
+`;
+const FooterParagraph = styled.p`
+  color: #454e6d;
+  font-size: 18px;
+`;
+const SvgMainDiv = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-top: 35px;
+`;
+const SvgMainWrapper = styled.div`
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+`;
+const FooterSiteMapContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-right: 90px;
+  margin-top: 20px;
+  & h2 {
+    text-align: right;
+    margin-left: auto;
+    color: #232f55;
+    font-size: 20px;
+  }
+`;
+const FooterLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #454e6d;
+  font-size: 14px;
 `;
