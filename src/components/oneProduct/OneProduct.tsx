@@ -76,7 +76,7 @@ const OneProduct = () => {
         <button onClick={() => textHandler("comments")}>Comments</button>
         <button onClick={() => textHandler("review")}>Review</button>
       </div>
-      <div style={{ height: "300px", marginTop: "50px" }}>
+      <div style={{ height: "300px", marginTop: "50px"}}>
         <p>
           {showText === "description"
             ? movie?.description
