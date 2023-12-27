@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 16% 100px;
   background-color: #fef4f4;
 }
 
@@ -64,8 +63,3 @@
   text-align: center;
 }
 
-@media (max-width: 1439px) {
-  .carousel-container {
-    padding: 0 6% 100px;
-  }
-}

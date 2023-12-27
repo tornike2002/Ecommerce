@@ -4,6 +4,7 @@ import styled from "styled-components";
 import scrollUp from "../assets/icons/scroll-up-svgrepo-com.svg";
 // import { OneProductCarousel } from "../components/carousel/OneProductCarousel";
 import OneProductCarousel from "../components/carousel/OneProductCarousel";
+import { Container } from "../components/styledComponents/containers";
 
 const Home = () => {
   const ScrollToTopButtonContainer = styled.div`
@@ -43,20 +44,18 @@ const Home = () => {
       color: #dc3545;
     }
   `;
+  const HomeBackground = styled.div`
+    background-color: #fef4f4;
+  `;
 
   return (
-    <div>
-      <OneProductCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
-      <ProductsCarousel />
+    <>
+      <HomeBackground>
+        <Container>
+          <OneProductCarousel />
+          <ProductsCarousel />
+        </Container>
+      </HomeBackground>
 
       {/* სქროლი, რომ მაღლა აგაგდოს */}
       <div>
@@ -66,7 +65,7 @@ const Home = () => {
           </ResetButton>
         </ScrollToTopButtonContainer>
       </div>
-    </div>
+    </>
   );
 };
 
