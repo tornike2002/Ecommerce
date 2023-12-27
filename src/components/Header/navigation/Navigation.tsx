@@ -65,7 +65,6 @@ const Navigation = () => {
           <Link to="/checkout">Checkout</Link>
           <Link to="/bookDetails">Book Details</Link>
           <Link to="/blogDetails">Blog Details</Link>
-          <Link to="/element">Element</Link>
         </PageLinksDropdown>
       </PageLinksContainer>
 
