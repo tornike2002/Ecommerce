@@ -1,6 +1,7 @@
+import styled from "styled-components";
 import TitleAndImg from "../pageTitleAndBgImage/TitleAndImg";
-import { MainTitle } from "../styledComponents/texts";
-import "./AboutPageStyles.css";
+import { Container } from "../styledComponents/containers";
+import { Rate } from 'antd';
 
 const AboutPage = () => {
   const imgSrc =
@@ -10,22 +11,43 @@ const AboutPage = () => {
   return (
     <div>
       <TitleAndImg title="About" link={imgSrc} />
-      <div className="about-text-container">
+      <Container>
         <div>
           <div>
-            <MainTitle>Our Story</MainTitle>
+            <AboutTitle>Our Story</AboutTitle>
           </div>
-          <p>{text}</p>
+          <AboutParagraph>{text}</AboutParagraph>
+          <Rate allowHalf defaultValue={2.5} />
         </div>
         <div>
           <div>
-            <MainTitle>Our Goal</MainTitle>
+            <AboutTitle>Our Goal</AboutTitle>
           </div>
-          <p>{text}</p>
+          <AboutParagraph>{text}</AboutParagraph>
+          <Rate disabled defaultValue={2} />
         </div>
-      </div>
+      </Container>
     </div>
   );
 };
 
 export default AboutPage;
+
+const AboutTitle = styled.h1`
+  font-size: 30px;
+  color: #1a1a1a;
+  display: block;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 22px;
+  font-family: "Playfair Display";
+  margin-top: 50px;
+`;
+const AboutParagraph = styled.p`
+  color: #707070;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+`;
