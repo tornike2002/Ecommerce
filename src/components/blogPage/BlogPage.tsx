@@ -7,6 +7,7 @@ import sixthBlog from "../../assets/blogAssets/sixth-blog.jpg.webp";
 import blogHero from "../../assets/blogAssets/blog-hero.jpg.webp";
 import { Container } from "../styledComponents/containers";
 import styled from "styled-components";
+import InstagramFeeds from "./InstagramFeeds";
 
 const BlogPage = () => {
   return (
@@ -14,41 +15,48 @@ const BlogPage = () => {
       <BlogMainCover>
         <BlogMainCoverTitle>Welcome to blog page</BlogMainCoverTitle>
       </BlogMainCover>
-      <BlogPoster
-        img={firstBlog}
-        PosterTitle="Google inks pact for new 35-storey office"
-        PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="Travel, Lifestyle"
-        PosterUser="Travel, Lifestyle"
-      />
-      <BlogPoster
-        img={secondBlog}
-        PosterTitle="Google inks pact for new 35-storey office"
-        PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="03 Comments"
-        PosterUser="Travel, Lifestyle"
-      />
-      <BlogPoster
-        img={thirdBlog}
-        PosterTitle="Google inks pact for new 35-storey office"
-        PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="03 Comments"
-        PosterUser="Travel, Lifestyle"
-      />
-      <BlogPoster
-        img={fourthBlog}
-        PosterTitle="Google inks pact for new 35-storey office"
-        PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="03 Comments"
-        PosterUser="Travel, Lifestyle"
-      />
-      <BlogPoster
-        img={sixthBlog}
-        PosterTitle="Google inks pact for new 35-storey office"
-        PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="03 Comments"
-        PosterUser="Travel, Lifestyle"
-      />
+      <BlogDataWrapper>
+        <div>
+          <BlogPoster
+            img={firstBlog}
+            PosterTitle="Google inks pact for new 35-storey office"
+            PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
+            PosterComments="Travel, Lifestyle"
+            PosterUser="Travel, Lifestyle"
+          />
+          <BlogPoster
+            img={secondBlog}
+            PosterTitle="Google inks pact for new 35-storey office"
+            PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
+            PosterComments="03 Comments"
+            PosterUser="Travel, Lifestyle"
+          />
+          <BlogPoster
+            img={thirdBlog}
+            PosterTitle="Google inks pact for new 35-storey office"
+            PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
+            PosterComments="03 Comments"
+            PosterUser="Travel, Lifestyle"
+          />
+          <BlogPoster
+            img={fourthBlog}
+            PosterTitle="Google inks pact for new 35-storey office"
+            PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
+            PosterComments="03 Comments"
+            PosterUser="Travel, Lifestyle"
+          />
+          <BlogPoster
+            img={sixthBlog}
+            PosterTitle="Google inks pact for new 35-storey office"
+            PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
+            PosterComments="03 Comments"
+            PosterUser="Travel, Lifestyle"
+          />
+        </div>
+        <div>
+          <InstagramFeeds />
+        </div>
+      </BlogDataWrapper>
     </Container>
   );
 };
@@ -66,6 +74,9 @@ const BlogMainCover = styled.div`
   align-items: center;
   justify-content: center;
 `;
+const BlogDataWrapper = styled.div`
+  display: flex;
+`
 
 const BlogMainCoverTitle = styled.div`
   color: #fff;
