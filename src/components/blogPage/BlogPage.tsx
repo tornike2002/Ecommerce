@@ -5,14 +5,15 @@ import thirdBlog from "../../assets/blogAssets/third-blog.jpg.webp";
 import fourthBlog from "../../assets/blogAssets/fourth-blog.jpg.webp";
 import sixthBlog from "../../assets/blogAssets/sixth-blog.jpg.webp";
 import blogHero from "../../assets/blogAssets/blog-hero.jpg.webp";
+import { Container } from "../styledComponents/containers";
+import styled from "styled-components";
 
 const BlogPage = () => {
   return (
-    <div>
-      <div>
-        <img src={blogHero} alt="" style={{width: "100%"}} />
-        <h1>Blog</h1>
-      </div>
+    <Container>
+      <BlogMainCover>
+        <BlogMainCoverTitle>Welcome to blog page</BlogMainCoverTitle>
+      </BlogMainCover>
       <BlogPoster
         img={firstBlog}
         PosterTitle="Google inks pact for new 35-storey office"
@@ -48,9 +49,28 @@ const BlogPage = () => {
         PosterComments="Travel, Lifestyle"
         PosterUser="03 Comments"
       />
-     
-    </div>
+    </Container>
   );
 };
 
 export default BlogPage;
+
+const BlogMainCover = styled.div`
+  margin: 30px 0;
+  background: url(${blogHero});
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 350px;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const BlogMainCoverTitle = styled.div`
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  font-size: 41px;
+`;
