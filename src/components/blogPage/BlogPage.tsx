@@ -8,6 +8,7 @@ import blogHero from "../../assets/blogAssets/blog-hero.jpg.webp";
 import { Container } from "../styledComponents/containers";
 import styled from "styled-components";
 import InstagramFeeds from "./InstagramFeeds";
+import BlogNewsLetter from "./BlogNewsLetter";
 
 const BlogPage = () => {
   return (
@@ -55,6 +56,7 @@ const BlogPage = () => {
         </div>
         <div>
           <InstagramFeeds />
+          <BlogNewsLetter />
         </div>
       </BlogDataWrapper>
     </Container>
