@@ -6,6 +6,7 @@ type PosterType = {
   PosterUser: string;
   PosterComments: string;
 };
+
 const BlogPoster = ({
   img,
   PosterTitle,
