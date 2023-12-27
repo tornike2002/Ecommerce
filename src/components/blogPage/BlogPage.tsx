@@ -1,10 +1,11 @@
 import BlogPoster from "./BlogPoster";
-import firstBlog from "../../../public/blogAssets/first-blog.jpg.webp";
-import secondBlog from "../../../public/blogAssets/second-blog.jpg.webp";
-import thirdBlog from "../../../public/blogAssets/third-blog.jpg.webp";
-import fourthBlog from "../../../public/blogAssets/fourth-blog.jpg.webp";
-import sixthtBlog from "../../../public/blogAssets/sixth-blog.jpg.webp";
-import blogHero from "../../../public/blogAssets/blog-hero.jpg.webp"
+import firstBlog from "../../blogAssets/first-blog.jpg.webp";
+import secondBlog from "../../blogAssets/second-blog.jpg.webp";
+import thirdBlog from "../../blogAssets/third-blog.jpg.webp";
+import fourthBlog from "../../blogAssets/fourth-blog.jpg.webp";
+import sixthBlog from "../../blogAssets/sixth-blog.jpg.webp";
+import blogHero from "../../blogAssets/blog-hero.jpg.webp";
+
 const BlogPage = () => {
   return (
     <div>
@@ -41,7 +42,7 @@ const BlogPage = () => {
         PosterUser="03 Comments"
       />
       <BlogPoster
-        img={sixthtBlog}
+        img={sixthBlog}
         PosterTitle="Google inks pact for new 35-storey office"
         PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
         PosterComments="Travel, Lifestyle"

@@ -5,9 +5,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // import { DataBase as Data } from "../../Database";
 // import Movie from "../movie/Movie";
-import img1 from '../../../public/419-1116x500.jpg';
-import img2 from '../../../public/883-1116x500.jpg';
-import img3 from '../../../public/894-1116x500.jpg';
+
+import img1 from "../../419-1116x500.jpg";
+import img2 from "../../883-1116x500.jpg";
+import img3 from "../../894-1116x500.jpg";
 
 const images = [img1, img2, img3];
 

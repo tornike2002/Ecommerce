@@ -1,7 +1,7 @@
 // import React from 'react'
 import styled from "styled-components";
-import Logo from "../../../public/logoOf.png.webp";
-import LogoOfShop from "../../../public/shopping-cart-outline-svgrepo-com.svg";
+import Logo from "../../logoOf.png.webp";
+import LogoOfShop from "../../shopping-cart-outline-svgrepo-com.svg"
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { Book, cart } from "../../recoilStates/states";
