@@ -2,6 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import './ProductCarouselOne.css';
 import { DataBase as Data } from "../../Database";
+import { MainButton } from "../styledComponents/buttons";
 // import React from 'react';
 
 type movieType = {
@@ -52,6 +53,10 @@ const ProductCarouselOne = () => {
           <p><strong>Rating:</strong> {rating}</p>
           <p><strong>Review:</strong> {review}</p>
           <p><strong>Price:</strong> {price}</p>
+          <MainButton style={{ display: "block", margin: "0 auto" }}>
+            View Details
+          </MainButton>
+
         </div>
       </div>
     );
