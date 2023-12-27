@@ -31,7 +31,7 @@ const Navigation = () => {
     a {
       padding: 5px 0;
       width: 15ch;
-      font-size: 16px;
+      font-size: 13px;
     }
   `;
 
