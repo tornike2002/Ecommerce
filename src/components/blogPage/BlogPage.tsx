@@ -19,35 +19,35 @@ const BlogPage = () => {
         PosterTitle="Google inks pact for new 35-storey office"
         PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
         PosterComments="Travel, Lifestyle"
-        PosterUser="03 Comments"
+        PosterUser="Travel, Lifestyle"
       />
       <BlogPoster
         img={secondBlog}
         PosterTitle="Google inks pact for new 35-storey office"
         PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="Travel, Lifestyle"
-        PosterUser="03 Comments"
+        PosterComments="03 Comments"
+        PosterUser="Travel, Lifestyle"
       />
       <BlogPoster
         img={thirdBlog}
         PosterTitle="Google inks pact for new 35-storey office"
         PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="Travel, Lifestyle"
-        PosterUser="03 Comments"
+        PosterComments="03 Comments"
+        PosterUser="Travel, Lifestyle"
       />
       <BlogPoster
         img={fourthBlog}
         PosterTitle="Google inks pact for new 35-storey office"
         PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="Travel, Lifestyle"
-        PosterUser="03 Comments"
+        PosterComments="03 Comments"
+        PosterUser="Travel, Lifestyle"
       />
       <BlogPoster
         img={sixthBlog}
         PosterTitle="Google inks pact for new 35-storey office"
         PosterParagraph="That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying."
-        PosterComments="Travel, Lifestyle"
-        PosterUser="03 Comments"
+        PosterComments="03 Comments"
+        PosterUser="Travel, Lifestyle"
       />
     </Container>
   );
