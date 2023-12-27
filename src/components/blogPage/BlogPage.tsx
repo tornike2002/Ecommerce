@@ -54,8 +54,8 @@ const BlogPage = () => {
           />
         </div>
         <div>
-          <InstagramFeeds />
           <BlogNewsLetter />
+          <InstagramFeeds />
         </div>
       </BlogDataWrapper>
     </Container>
