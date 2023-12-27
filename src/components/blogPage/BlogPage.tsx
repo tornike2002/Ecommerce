@@ -14,7 +14,7 @@ const BlogPage = () => {
   return (
     <Container>
       <BlogMainCover>
-        <BlogMainCoverTitle>Welcome to blog page</BlogMainCoverTitle>
+        <BlogMainCoverTitle >Welcome to blog page</BlogMainCoverTitle>
       </BlogMainCover>
       <BlogDataWrapper>
         <div>
