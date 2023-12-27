@@ -5,6 +5,7 @@ export const MainTitle = styled.h2`
   font-weight: 700;
   line-height: 1.4;
 `;
+
 export const FormsHeader = styled.div`
   text-align: center;
   color: var(--mediumBlue);
@@ -24,3 +25,11 @@ export const FormsHeader = styled.div`
   }
 `;
 
+export const SliderTitle = styled.h2`
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 34px;
+  color: #fff;
+  line-height: 1.2;
+  width: 10ch;
+`;

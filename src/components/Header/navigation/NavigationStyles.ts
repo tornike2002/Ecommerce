@@ -5,7 +5,7 @@ export const CustomNav = styled.nav`
   align-items: center;
   justify-content: center;
   background-color: #fef4f4;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   padding: 0 16%;
   a {
