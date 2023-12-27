@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Logo from "../../logoOf.png.webp";
-import { Flex } from "antd";
 
 const Footer = () => {
   return (
