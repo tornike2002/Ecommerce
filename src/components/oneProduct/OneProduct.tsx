@@ -64,7 +64,7 @@ const OneProduct = () => {
           <p>{movie?.author}</p>
           <p style={{ marginTop: "50px" }}>${movie?.price.toFixed(2)}</p>
           <span>rating: {movie?.rating}</span>
-          <p>{movie?.review}</p>
+          <p>{movie?.review} Review</p>
           <div>
             <button onClick={addToCart}>Add To Cart</button>
             <button>Icon</button>
@@ -76,7 +76,7 @@ const OneProduct = () => {
         <button onClick={() => textHandler("comments")}>Comments</button>
         <button onClick={() => textHandler("review")}>Review</button>
       </div>
-      <div style={{ height: "300px", marginTop: "50px"}}>
+      <div style={{ height: "300px", marginTop: "50px" }}>
         <p>
           {showText === "description"
             ? movie?.description

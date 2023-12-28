@@ -1,11 +1,8 @@
 import "./OneProductCarousel.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
 import { SliderTitle } from "../styledComponents/texts";
 import { MainButton } from "../styledComponents/buttons";
-
-// სტილების მაგივრად
 
 const responsive = {
   superLargeDesktop: {

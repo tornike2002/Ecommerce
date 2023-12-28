@@ -4,6 +4,10 @@ export const MainTitle = styled.h2`
   font-size: 30px;
   font-weight: 700;
   line-height: 1.4;
+  font-family: normal;
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 `;
 
 export const FormsHeader = styled.div`
