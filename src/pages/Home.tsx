@@ -46,6 +46,7 @@ const Home = () => {
   `;
   const HomeBackground = styled.div`
     background-color: #fef4f4;
+    padding-bottom: 100px;
   `;
 
   return (

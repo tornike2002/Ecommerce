@@ -21,19 +21,20 @@ const Movie = ({
   price,
 }: Props) => {
   return (
-    <Link
-      to={`/${pathname}`}
-      style={{ textDecoration: "none", color: "inherit" }}
-    >
+    <Link to={`/${pathname}`} className="one-movie-cont">
       <div className="book-container">
         <img src={banner} alt="Book Banner" className="book-banner" />
         <div className="text-container">
           <h2>{title}</h2>
-          <p>{director}</p>
-          <p>Rating: {rating}</p>
-          <div>
-            <p>({review} Review)</p>
-            <span>${price}</span>
+          <p className="director">{director}</p>
+          <div className="text-container-div">
+            <div>
+              <p>Rating: {rating}</p>
+              <p>
+                (<span className="text-container-review">{review}</span> Review)
+              </p>
+            </div>
+            <span className="text-container-review-price">${price}</span>
           </div>
         </div>
       </div>
