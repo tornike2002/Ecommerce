@@ -30,6 +30,7 @@ export const FormsHeader = styled.div`
 `;
 
 export const SliderTitle = styled.h2`
+  font-family: "Playfair Display", serif;
   font-size: 60px;
   font-weight: 400;
   margin-bottom: 34px;
