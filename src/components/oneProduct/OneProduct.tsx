@@ -4,6 +4,15 @@ import { DataBase, MovieType } from "../../Database";
 import { useRecoilState } from "recoil";
 import { cart } from "../../recoilStates/states";
 import ErrorPage from "../../pages/ErrorPage";
+import { Container } from "../styledComponents/containers";
+import {
+  AuthorName,
+  ProductBanner,
+  ProductContainer,
+  ProductInfoContainer,
+  ProductPrice,
+} from "./OneProductStyles";
+import { MainButton } from "../styledComponents/buttons";
 
 const OneProduct = () => {
   const location = useLocation();
@@ -42,35 +51,26 @@ const OneProduct = () => {
   if (movie === undefined) return <ErrorPage />;
 
   return (
-    <div>
-      <div
-        style={{
-          background: "red",
-          display: "flex",
-          alignItems: "center",
-          gap: "100px",
-          padding: "100px",
-        }}
-      >
+    <Container>
+      <ProductContainer>
         <div>
-          <img
-            src={movie?.img}
-            alt=""
-            style={{ width: "300px", height: "400px" }}
-          />
+          <ProductBanner src={movie?.img} alt="Product banner" />
         </div>
-        <div>
+        <ProductInfoContainer>
           <h2>{movie?.name}</h2>
-          <p>{movie?.author}</p>
-          <p style={{ marginTop: "50px" }}>${movie?.price.toFixed(2)}</p>
-          <span>rating: {movie?.rating}</span>
-          <p>{movie?.review} Review</p>
-          <div>
-            <button onClick={addToCart}>Add To Cart</button>
-            <button>Icon</button>
+          <AuthorName>{movie?.author}</AuthorName>
+          <ProductPrice>${movie?.price.toFixed(2)}</ProductPrice>
+          <div style={{ display: "flex", gap: "16px", marginBottom: "30px" }}>
+            <span>rating: {movie?.rating}</span>
+            <p>({movie?.review} Review)</p>
           </div>
-        </div>
-      </div>
+          <div>
+            <MainButton onClick={addToCart} $bgColor="white">
+              Add To Cart
+            </MainButton>
+          </div>
+        </ProductInfoContainer>
+      </ProductContainer>
       <div style={{ display: "flex", gap: "20px", marginTop: "50px" }}>
         <button onClick={() => textHandler("description")}>Description</button>
         <button onClick={() => textHandler("comments")}>Comments</button>
@@ -87,7 +87,7 @@ const OneProduct = () => {
             : null}
         </p>
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -9,16 +9,16 @@ import "./ProductsCarousel.css";
 
 const responsive = {
   superLargeDesktop: {
-    breakpoint: { max: 3000, min: 1400 },
-    items: 6,
+    breakpoint: { max: 3000, min: 1650 },
+    items: 5,
   },
   desktop: {
-    breakpoint: { max: 1400, min: 1200 },
-    items: 5,
+    breakpoint: { max: 1650, min: 1200 },
+    items: 4,
   },
   tablet: {
     breakpoint: { max: 1200, min: 767 },
-    items: 4,
+    items: 3,
   },
   mobile: {
     breakpoint: { max: 767, min: 0 },
