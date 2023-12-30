@@ -5,7 +5,7 @@ import SaleBook from "../components/saleBook/SaleBook";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Container } from "../components/styledComponents/containers";
-import { Button, Result } from 'antd';
+import { Button, Result } from "antd";
 
 export default function Cart() {
   const books = useRecoilValue(cart);
@@ -15,8 +15,8 @@ export default function Cart() {
   };
 
   const emptyCardHandler = () => {
-    navigate("/categories")
-  }
+    navigate("/categories");
+  };
 
   return (
     <Container>
@@ -27,14 +27,14 @@ export default function Cart() {
         />
       </div>
       {books.length === 0 ? (
-         <Result
-         title="Cart is Empty please add items..."
-         extra={
-           <Button type="primary" key="console" onClick={emptyCardHandler}>
-             Go to Categories
-           </Button>
-         }
-       />
+        <Result
+          title="Cart is Empty please add items..."
+          extra={
+            <Button type="primary" key="console" onClick={emptyCardHandler}>
+              Go to Categories
+            </Button>
+          }
+        />
       ) : (
         <ul>
           {books.map((book: Book) => (
@@ -47,9 +47,11 @@ export default function Cart() {
           ))}
         </ul>
       )}
-      <CartCheckoutButton type="button" onClick={CheckoutHandler}>
-        Go to checkout
-      </CartCheckoutButton>
+      {books.length > 0 && (
+        <CartCheckoutButton type="button" onClick={CheckoutHandler}>
+          Go to checkout
+        </CartCheckoutButton>
+      )}
     </Container>
   );
 }
