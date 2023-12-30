@@ -4,6 +4,7 @@ import { useRecoilValue } from "recoil";
 import SaleBook from "../components/saleBook/SaleBook";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { Container } from "../components/styledComponents/containers";
 
 export default function Cart() {
   const books = useRecoilValue(cart);
@@ -13,7 +14,7 @@ export default function Cart() {
   };
 
   return (
-    <div>
+    <Container>
       <div>
         <TitleAndImg
           title="Cart"
@@ -33,7 +34,7 @@ export default function Cart() {
       <CartCheckoutButton type="button" onClick={CheckoutHandler}>
         Go to checkout
       </CartCheckoutButton>
-    </div>
+    </Container>
   );
 }
 
