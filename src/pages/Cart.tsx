@@ -47,4 +47,5 @@ const CartCheckoutButton = styled.button`
   font-size: 16px;
   font-weight: 500;
   border-radius:36px;
+  margin-top: 30px;
 `
