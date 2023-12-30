@@ -20,13 +20,7 @@ const SaleBook = ({ img, price, title }: Props) => {
   };
 
   return (
-    <li
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
+    <BooksItem>
       <img src={img} alt="" />
       <CartItemTitle>{title}</CartItemTitle>
       <CartItemPrice>${price.toFixed(2)}</CartItemPrice>
@@ -36,11 +30,20 @@ const SaleBook = ({ img, price, title }: Props) => {
         <CartPlusMinusButton onClick={minusCount}>-</CartPlusMinusButton>
       </CartTotalContainer>
       <CartPrice>${(price * count).toFixed(2)}</CartPrice>
-    </li>
+    </BooksItem>
   );
 };
 
 export default SaleBook;
+const BooksItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding-right: 10px;
+  border-radius: 5px;
+`;
 const CartPrice = styled.p`
   font-family: "Roboto", sans-serif;
   color: #301a22;
