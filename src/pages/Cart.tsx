@@ -3,6 +3,7 @@ import { Book, cart } from "../recoilStates/states";
 import { useRecoilValue } from "recoil";
 import SaleBook from "../components/saleBook/SaleBook";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 export default function Cart() {
   const books = useRecoilValue(cart);
@@ -29,9 +30,20 @@ export default function Cart() {
           />
         ))}
       </ul>
-      <button type="button" onClick={CheckoutHandler}>
+      <CartCheckoutButton type="button" onClick={CheckoutHandler}>
         Go to checkout
-      </button>
+      </CartCheckoutButton>
     </div>
   );
 }
+
+const CartCheckoutButton = styled.button`
+  background-color: #FF1616;
+  font-family: 'Roboto', sans-serif;
+  padding: 12px 23px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius:36px;
+`
