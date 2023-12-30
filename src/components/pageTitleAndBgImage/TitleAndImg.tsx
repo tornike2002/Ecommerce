@@ -20,7 +20,7 @@ const TitleForHero = styled.h2`
   display: block;
   font-weight: 400;
   line-height: 1.4;
-  margin: 0 auto;
+  margin: 0px auto;
 `;
 const HeroForBlog = styled.div`
   margin-top: 30px;
@@ -30,4 +30,5 @@ const HeroForBlog = styled.div`
   width: 100%;
   align-items: center;
   background-position: center;
+  margin-bottom: 30px;
 `;
