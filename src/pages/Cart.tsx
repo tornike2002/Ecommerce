@@ -53,13 +53,7 @@ export default function Cart() {
     </Container>
   );
 }
-const EmptyCart = styled.h1`
-  
-    font-family: "Roboto", sans-serif;
-    font-size: 25px;
-    text-align: center;
-    display: block;
-`
+
 const CartCheckoutButton = styled.button`
   background-color: #ff1616;
   font-family: "Roboto", sans-serif;
