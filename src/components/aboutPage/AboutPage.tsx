@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TitleAndImg from "../pageTitleAndBgImage/TitleAndImg";
 import { Container } from "../styledComponents/containers";
-import { Rate } from 'antd';
+import { Rate } from "antd";
 
 const AboutPage = () => {
   const imgSrc =

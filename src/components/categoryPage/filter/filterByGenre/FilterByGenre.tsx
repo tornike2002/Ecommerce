@@ -1,12 +1,14 @@
+import { EachFilterTitle } from "../FiltersStyles";
+
 type Props = {
   filterHandler: (genre: string) => void;
 };
 
 const FilterByGenre = ({ filterHandler }: Props) => {
   return (
-    <div style={{ width: "300px", border: "1px solid black" }}>
+    <div style={{ width: "300px" }}>
       <div className="filter-sidebar">
-        <h2>Filter by Genres</h2>
+        <EachFilterTitle>Filter by Genres</EachFilterTitle>
         <div className="hahaha">
           <label className="label-sidebar" onClick={() => filterHandler("all")}>
             <input type="radio" name="filt" />
