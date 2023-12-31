@@ -21,7 +21,7 @@ const SaleBook = ({ img, price, title }: Props) => {
 
   return (
     <BooksItem>
-      <img src={img} alt="" />
+      <CartImg src={img} alt="" />
       <CartItemTitle>{title}</CartItemTitle>
       <CartItemPrice>${price.toFixed(2)}</CartItemPrice>
       <CartTotalContainer>
@@ -35,6 +35,13 @@ const SaleBook = ({ img, price, title }: Props) => {
 };
 
 export default SaleBook;
+
+const CartImg = styled.img`
+  max-width: 200px;
+  min-height: 300px;
+  object-fit: cover;
+  object-position: center;
+`;
 const BooksItem = styled.li`
   display: flex;
   justify-content: space-between;
