@@ -12,4 +12,6 @@ export const FilterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 300px;
+  height: 800px;
 `;

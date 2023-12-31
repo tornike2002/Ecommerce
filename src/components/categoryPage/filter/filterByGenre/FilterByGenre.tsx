@@ -6,7 +6,7 @@ type Props = {
 
 const FilterByGenre = ({ filterHandler }: Props) => {
   return (
-    <div style={{ width: "300px" }}>
+    <div>
       <div className="filter-sidebar">
         <EachFilterTitle>Filter by Genres</EachFilterTitle>
         <div className="hahaha">
