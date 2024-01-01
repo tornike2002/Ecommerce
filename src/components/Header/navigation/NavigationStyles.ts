@@ -19,6 +19,9 @@ export const CustomNav = styled.nav`
   @media (max-width: 1439px) {
     padding: 0 6%;
   }
+  @media (max-width: 1023px) {
+    display: none;
+  }
 `;
 
 export const PageLinksContainer = styled.div`
