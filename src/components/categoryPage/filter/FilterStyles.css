@@ -8,6 +8,7 @@
 .hahaha {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .filter-sidebar input {
@@ -19,7 +20,8 @@
 .filter-sidebar .checkmark {
   height: 20px;
   width: 20px;
-  background-color: #eee;
+  background-color: inherit;
+  border: 1px solid #ededed;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -27,11 +29,13 @@
 .label-sidebar {
   display: flex;
   gap: 20px;
+  color: #232f55;
+  font-size: 16px;
 }
 
 .label-sidebar:hover input ~ .checkmark {
   background-color: #ccc;
 }
 .label-sidebar input:checked ~ .checkmark {
-  background-color: rgb(78, 78, 207);
+  background-color: red;
 }

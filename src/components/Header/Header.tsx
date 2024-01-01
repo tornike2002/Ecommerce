@@ -1,30 +1,20 @@
 // import React from 'react'
 import styled from "styled-components";
-import Logo from "../../logoOf.png.webp";
-import LogoOfShop from "../../shopping-cart-outline-svgrepo-com.svg"
+import Logo from "../../assets/logos/logoOf.png.webp";
+import LogoOfShop from "../../assets/icons/shopping-cart-outline-svgrepo-com.svg";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { Book, cart } from "../../recoilStates/states";
-
-const ResetButton = styled.button`
-  /* Resetting default styles */
-  appearance: none;
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: none;
-  color: black;
-  background-color: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-
-  &:hover {
-    color: #dc3545;
-  }
-`;
+import {
+  CartAndBtnContainer,
+  CustomHeader,
+  CustomInput,
+  LogoAndInput,
+  ProductNumber,
+} from "./HeaderStyles";
+import { MainButton } from "../styledComponents/buttons";
+import Navigation from "./navigation/Navigation";
+import MobileMenu from "../mobileMenu/MobileMenu";
 
 const CartImage = styled.img`
   width: 45px;
@@ -32,14 +22,6 @@ const CartImage = styled.img`
 
   &:hover {
     transform: scale(1.1);
-  }
-`;
-
-const SignInButton = styled(ResetButton)`
-  color: white; /* Text color for "Sign in" button */
-
-  &:hover {
-    color: white;
   }
 `;
 
@@ -55,64 +37,40 @@ export default function Header() {
   const locCheck = localStorage.getItem("registrationData");
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <Link to="/">
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <img src={Logo} alt="logo" style={{ width: "170px" }} />
-        </div>
-      </Link>
-
-      <input
-        placeholder="Search your book"
-        style={{
-          marginLeft: "50px",
-          width: "500px",
-          height: "50px",
-          borderRadius: "20px",
-          paddingLeft: "20px",
-          borderColor: "gray",
-        }}
-      ></input>
-
-      <div style={{ marginLeft: "200px", display: "flex", gap: "20px" }}>
-        <Link to="/faq">
-          <ResetButton>FAQ</ResetButton>
-        </Link>
-        <Link to="/trackOrder">
-          <ResetButton>Track Order</ResetButton>
-        </Link>
-
-        <Link to="/cart">
-          <CartImage src={LogoOfShop} alt="shop" style={{ width: "45px" }} />
-          <p>{booksLength}</p>
-        </Link>
-
-        {locCheck ? (
-          <Link to="/register">
-            <div
-              style={{
-                width: "80px",
-                backgroundColor: "red",
-                borderRadius: "20px",
-              }}
-            >
-              <SignInButton onClick={logoutHandler}>Log out</SignInButton>
+    <>
+      <CustomHeader>
+        <LogoAndInput>
+          <Link to="/">
+            <div>
+              <img src={Logo} alt="logo" />
             </div>
           </Link>
-        ) : (
-          <Link to="/signIn">
-            <div
-              style={{
-                width: "80px",
-                backgroundColor: "red",
-                borderRadius: "20px",
-              }}
-            >
-              <SignInButton>Sign in</SignInButton>
+          <CustomInput placeholder="Search your book" />
+        </LogoAndInput>
+
+        <CartAndBtnContainer>
+          <Link to="/cart">
+            <div style={{ position: "relative" }}>
+              <CartImage src={LogoOfShop} alt="shop" />
+              <ProductNumber>{booksLength}</ProductNumber>
             </div>
           </Link>
-        )}
-      </div>
-    </div>
+
+          {locCheck ? (
+            <Link to="/register">
+              <div>
+                <MainButton onClick={logoutHandler}>Log out</MainButton>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/signIn">
+              <MainButton>Sign in</MainButton>
+            </Link>
+          )}
+        </CartAndBtnContainer>
+      </CustomHeader>
+      <Navigation />
+      <MobileMenu />
+    </>
   );
 }

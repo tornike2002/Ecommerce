@@ -5,9 +5,9 @@ import { z } from "zod";
 import { SmileOutlined } from "@ant-design/icons";
 import { Button, notification } from "antd";
 import { FormErrorMessage } from "../styledComponents/InputFields";
-import masterCard from "../../checkout/mastercard.png";
-import visaCard from "../../checkout/visa.png";
-import discorverCard from "../../checkout/discorver-card.png";
+import masterCard from "../../assets/checkout/mastercard.png"
+import visaCard from "../../assets/checkout/visa.png";
+import discorverCard from "../../assets/checkout/discorver-card.png";
 import { CheckoutIcon } from "../styledComponents/images";
 import styled from "styled-components";
 

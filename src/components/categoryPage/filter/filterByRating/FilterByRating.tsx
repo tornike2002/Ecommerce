@@ -1,3 +1,4 @@
+import { EachFilterTitle } from "../FiltersStyles";
 import "./FilterByRatingStiles.css";
 import { Select, Space } from "antd";
 
@@ -29,7 +30,7 @@ const FilterByRating = ({ ratingHandler }: Props) => {
   };
   return (
     <div>
-      <h2>Filter by Rating</h2>
+      <EachFilterTitle>Filter by Rating</EachFilterTitle>
       <Space wrap>
         <Select
           defaultValue="all"

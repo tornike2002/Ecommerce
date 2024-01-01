@@ -1,0 +1,12 @@
+.prod-car-cont {
+  text-align: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.prod-car-cont li {
+  display: flex;
+  justify-content: center;
+}
