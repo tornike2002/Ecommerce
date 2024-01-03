@@ -8,9 +8,7 @@ import { Book, cart } from "../../recoilStates/states";
 import {
   CartAndBtnContainer,
   CustomHeader,
-  CustomInput,
   LogoAndInput,
-  MobileCustomInput,
   ProductNumber,
   SearchBtn,
 } from "./HeaderStyles";
@@ -19,6 +17,7 @@ import Navigation from "./navigation/Navigation";
 import MobileMenu from "../mobileMenu/MobileMenu";
 import search from "../../assets/icons/search.png";
 import { useState } from "react";
+import Inputs from "./Inputs";
 
 const CartImage = styled.img`
   width: 45px;
@@ -58,11 +57,7 @@ export default function Header() {
               <img src={Logo} alt="logo" />
             </div>
           </Link>
-          <CustomInput placeholder="Search your book" />
-          <MobileCustomInput
-            placeholder="Search your book"
-            style={input === false ? { display: "none" } : { display: "block" }}
-          />
+          <Inputs input={input} />
         </LogoAndInput>
 
         <CartAndBtnContainer>
