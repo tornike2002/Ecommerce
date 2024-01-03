@@ -10,11 +10,15 @@ import {
   CustomHeader,
   CustomInput,
   LogoAndInput,
+  MobileCustomInput,
   ProductNumber,
+  SearchBtn,
 } from "./HeaderStyles";
 import { MainButton } from "../styledComponents/buttons";
 import Navigation from "./navigation/Navigation";
 import MobileMenu from "../mobileMenu/MobileMenu";
+import search from "../../assets/icons/search.png";
+import { useState } from "react";
 
 const CartImage = styled.img`
   width: 45px;
@@ -36,20 +40,36 @@ export default function Header() {
   };
   const locCheck = localStorage.getItem("registrationData");
 
+  const [input, setInput] = useState(false);
+
+  const inputHandler = () => {
+    setInput(!input);
+  };
+
   return (
     <>
       <CustomHeader>
         <LogoAndInput>
-          <Link to="/">
+          <Link
+            to="/"
+            style={input === true ? { display: "none" } : { display: "block" }}
+          >
             <div>
               <img src={Logo} alt="logo" />
             </div>
           </Link>
           <CustomInput placeholder="Search your book" />
+          <MobileCustomInput
+            placeholder="Search your book"
+            style={input === false ? { display: "none" } : { display: "block" }}
+          />
         </LogoAndInput>
 
         <CartAndBtnContainer>
-          <Link to="/cart">
+          <Link
+            to="/cart"
+            style={input === true ? { display: "none" } : { display: "block" }}
+          >
             <div style={{ position: "relative" }}>
               <CartImage src={LogoOfShop} alt="shop" />
               <ProductNumber>{booksLength}</ProductNumber>
@@ -57,16 +77,27 @@ export default function Header() {
           </Link>
 
           {locCheck ? (
-            <Link to="/register">
+            <Link
+              to="/register"
+              style={
+                input === true ? { display: "none" } : { display: "block" }
+              }
+            >
               <div>
                 <MainButton onClick={logoutHandler}>Log out</MainButton>
               </div>
             </Link>
           ) : (
-            <Link to="/signIn">
+            <Link
+              to="/signIn"
+              style={
+                input === true ? { display: "none" } : { display: "block" }
+              }
+            >
               <MainButton>Sign in</MainButton>
             </Link>
           )}
+          <SearchBtn src={search} onClick={inputHandler} />
         </CartAndBtnContainer>
       </CustomHeader>
       <Navigation />
