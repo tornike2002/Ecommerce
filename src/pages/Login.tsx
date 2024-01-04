@@ -152,6 +152,9 @@ const LoginWrapper = styled.div`
   @media screen and (max-width: 768px) {
     margin-right: 15px;
   }
+  @media screen and (max-width: 380px){
+    padding: 25px 35px 25px 25px;
+  }
 `;
 const LoginTitle = styled.div`
   text-align: center;
