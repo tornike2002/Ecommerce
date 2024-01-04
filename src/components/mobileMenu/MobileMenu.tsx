@@ -1,4 +1,4 @@
-import { MblCont, MenuCont, StyledUL } from "./MobileMenuStyles";
+import { MblCont, MenuCont, Pages, StyledUL } from "./MobileMenuStyles";
 import menuIcons from "../../assets/icons/menu.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -19,6 +19,13 @@ const MobileMenu = () => {
     }
   };
   window.addEventListener("scroll", changePosition);
+
+  const [pagesLinks, setPagesLinks] = useState(false);
+
+  const pagesLinksHandler = () => {
+    setPagesLinks(!pagesLinks);
+  };
+
   return (
     <>
       <MblCont
@@ -49,7 +56,20 @@ const MobileMenu = () => {
             <li>
               <Link to="/about">About</Link>
             </li>
-            <li>Pages +</li>
+            <li>
+              <span onClick={pagesLinksHandler}>
+                Pages {pagesLinks ? "-" : "+"}
+              </span>
+              {pagesLinks && (
+                <Pages>
+                  <Link to="/login">Login</Link>
+                  <Link to="/cart">Cart</Link>
+                  <Link to="/checkout">Checkout</Link>
+                  <Link to="/bookDetails">Book Details</Link>
+                  <Link to="/blogDetails">Blog Details</Link>
+                </Pages>
+              )}
+            </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
