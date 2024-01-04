@@ -3,9 +3,9 @@ import { Book, cart } from "../recoilStates/states";
 import { useRecoilValue } from "recoil";
 import SaleBook from "../components/saleBook/SaleBook";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import { Container } from "../components/styledComponents/containers";
 import { Button, Result } from "antd";
+import { MainButton } from "../components/styledComponents/buttons";
 
 export default function Cart() {
   const books = useRecoilValue(cart);
@@ -48,22 +48,10 @@ export default function Cart() {
         </ul>
       )}
       {books.length > 0 && (
-        <CartCheckoutButton type="button" onClick={CheckoutHandler}>
+        <MainButton type="button" onClick={CheckoutHandler}>
           Go to checkout
-        </CartCheckoutButton>
+        </MainButton>
       )}
     </Container>
   );
 }
-
-const CartCheckoutButton = styled.button`
-  background-color: #ff1616;
-  font-family: "Roboto", sans-serif;
-  padding: 12px 23px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 36px;
-  margin-top: 30px;
-`;

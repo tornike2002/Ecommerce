@@ -171,7 +171,7 @@ const FooterLinks = styled.div`
     color: #454e6d;
     transition: 0.3s ease;
     @media (max-width: 1099px) {
-      font-size: 13px;
+      font-size: 16px;
     }
     &:hover {
       color: orange;
