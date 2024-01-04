@@ -139,6 +139,7 @@ const RegistrationPage = () => {
 export default RegistrationPage;
 
 const RegistrationMainDiv = styled.div`
+  margin-top: 5%;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
