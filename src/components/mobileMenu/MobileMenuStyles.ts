@@ -50,3 +50,10 @@ export const StyledUL = styled.ul`
     padding: 10px;
   }
 `;
+
+export const Pages = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0 20px;
+  gap: 15px;
+`;
