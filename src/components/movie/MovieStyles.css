@@ -68,3 +68,12 @@ h2 {
 .text-container-div div:nth-child(1) p:nth-child(2) {
   color: #9498a7;
 }
+
+@media (max-width: 499px) {
+  .book-container {
+    width: 170px;
+  }
+  .text-container h2 {
+    font-size: 16px;
+  }
+}
