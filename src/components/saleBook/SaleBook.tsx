@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -26,9 +27,23 @@ const SaleBook = ({ img, price, title }: Props) => {
         <CartItemTitle>{title}</CartItemTitle>
         <CartItemPrice>${price.toFixed(2)}</CartItemPrice>
         <CartTotalContainer>
-          <CartPlusMinusButton onClick={plusCount}>+</CartPlusMinusButton>
+          <CartPlusMinusButton
+            as={motion.button}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={plusCount}
+          >
+            +
+          </CartPlusMinusButton>
           <CartCount>{count}</CartCount>
-          <CartPlusMinusButton onClick={minusCount}>-</CartPlusMinusButton>
+          <CartPlusMinusButton
+            onClick={minusCount}
+            as={motion.button}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            -
+          </CartPlusMinusButton>
         </CartTotalContainer>
         <CartPrice>${(price * count).toFixed(2)}</CartPrice>
       </span>
@@ -75,8 +90,19 @@ const CartCount = styled.p`
   font-size: 16px;
 `;
 const CartPlusMinusButton = styled.button`
-  padding: 5px 10px;
   cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid red;
+  background-color: inherit;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
 `;
 const CartTotalContainer = styled.div`
   display: flex;

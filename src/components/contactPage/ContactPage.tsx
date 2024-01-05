@@ -25,11 +25,11 @@ const ContactPage = () => {
   const onSubmit = () => {};
   return (
     <div>
-      <TitleAndImg
-        title="Contact"
-        link="https://preview.colorlib.com/theme/abcbook/assets/img/hero/h2_hero2.jpg"
-      />
       <Container>
+        <TitleAndImg
+          title="Contact"
+          link="https://preview.colorlib.com/theme/abcbook/assets/img/hero/h2_hero2.jpg"
+        />
         <div id="flex">
           <div id="width">
             <form id="gap" onSubmit={handleSubmit(onSubmit)}>
@@ -121,7 +121,7 @@ const ContactPage = () => {
                   style={
                     errors.subject?.message
                       ? { outline: "2px solid #FF7979", width: "100%" }
-                      : { outline: "none" }
+                      : { outline: "none", width: "100%" }
                   }
                 />
                 <p>

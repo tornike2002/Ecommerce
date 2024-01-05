@@ -32,6 +32,7 @@ export default function OneProductCarousel() {
         infinite={true}
         showDots={true}
         draggable={false}
+        autoPlay={true}
       >
         <div className="img-1">
           <motion.div

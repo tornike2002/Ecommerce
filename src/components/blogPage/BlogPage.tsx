@@ -67,4 +67,7 @@ export default BlogPage;
 
 const BlogDataWrapper = styled.div`
   display: flex;
+  @media (max-width: 1210px) {
+    flex-direction: column-reverse;
+  }
 `;
