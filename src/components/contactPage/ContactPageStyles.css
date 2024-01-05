@@ -70,3 +70,7 @@
 .submitButton {
   width: 150px;
 }
+
+ul li {
+  list-style: none;
+}

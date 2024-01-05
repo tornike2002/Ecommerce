@@ -8,7 +8,7 @@ const Navigation = () => {
   const [showPageLinks, setShowPageLinks] = useState(false);
 
   const changePosition = () => {
-    if (window.scrollY >= 400) {
+    if (window.scrollY >= 300) {
       setScroll(true);
     } else {
       setScroll(false);

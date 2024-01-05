@@ -3,23 +3,17 @@ import "react-multi-carousel/lib/styles.css";
 import './ProductCarouselOne.css';
 import { DataBase as Data } from "../../Database";
 import { MainButton } from "../styledComponents/buttons";
+// import { Link } from "react-router-dom";
 // import React from 'react';
 
-type movieType = {
-  // pathname: string;
-  // author: string;
-  // description: string;
-  // genres: string[];
-  // id: number;
-  // img: string;
-  // name: string;
-  price: number;
-  rating: number;
-  review: number;
-  banner: string;
-  title: string;
-  director: string;
-}
+// type movieType = {
+//   price: number;
+//   rating: number;
+//   review: number;
+//   banner: string;
+//   title: string;
+//   director: string;
+// }
 
 const responsive = {
   superLargeDesktop: {
@@ -49,13 +43,17 @@ const ProductCarouselOne = () => {
         </div>
         <div className="movie-info">
           <h3>{title}</h3>
-          <p><strong>Director:</strong> {director}</p>
-          <p><strong>Rating:</strong> {rating}</p>
-          <p><strong>Review:</strong> {review}</p>
-          <p><strong>Price:</strong> {price}</p>
+          <p>Director: {director}</p>
+          <p>Rating: {rating}</p>
+          <p>Review: {review}</p>
+          <p>Price: {price}</p>
+          {/* <Link to={`/${pathname}`}> */}
+
           <MainButton style={{ display: "block", margin: "0 auto" }}>
             View Details
+
           </MainButton>
+          {/* </Link> */}
 
         </div>
       </div>
@@ -88,3 +86,6 @@ const ProductCarouselOne = () => {
 };
 
 export default ProductCarouselOne;
+
+
+// data-ს შემოვიტან.. და იქიდან ვაჩვენებ! 

@@ -14,6 +14,7 @@ import {
 } from "./HeaderStyles";
 import { MainButton } from "../styledComponents/buttons";
 import Navigation from "./navigation/Navigation";
+import MobileMenu from "../mobileMenu/MobileMenu";
 
 const CartImage = styled.img`
   width: 45px;
@@ -69,6 +70,7 @@ export default function Header() {
         </CartAndBtnContainer>
       </CustomHeader>
       <Navigation />
+      <MobileMenu />
     </>
   );
 }
