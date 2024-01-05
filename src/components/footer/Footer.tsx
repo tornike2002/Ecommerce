@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/logos/logoOf.png.webp";
 import styled from "styled-components";
 import { Container } from "../styledComponents/containers";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -17,7 +18,11 @@ const Footer = () => {
               other end year for go.
             </FooterParagraph>
             <SvgMainDiv>
-              <SvgMainWrapper>
+              <SvgMainWrapper
+                as={motion.div}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -33,7 +38,11 @@ const Footer = () => {
                   ></path>
                 </svg>
               </SvgMainWrapper>
-              <SvgMainWrapper>
+              <SvgMainWrapper
+                as={motion.div}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -49,7 +58,11 @@ const Footer = () => {
                   ></path>
                 </svg>
               </SvgMainWrapper>
-              <SvgMainWrapper>
+              <SvgMainWrapper
+                as={motion.div}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -65,7 +78,11 @@ const Footer = () => {
                   ></path>
                 </svg>
               </SvgMainWrapper>
-              <SvgMainWrapper>
+              <SvgMainWrapper
+                as={motion.div}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -86,11 +103,21 @@ const Footer = () => {
           <FooterSiteMapContainer>
             <h2>Site Map</h2>
             <FooterLinks>
-              <Link to="/">Home</Link>
-              <Link to="/categories">Categories</Link>
-              <Link to="/about">About Us</Link>
-              <Link to="/blog">Blog</Link>
-              <Link to="/contact">Contact</Link>
+              <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
+                <Link to="/">Home</Link>
+              </motion.p>
+              <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
+                <Link to="/categories">Categories</Link>
+              </motion.p>
+              <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
+                <Link to="/about">About Us</Link>
+              </motion.p>
+              <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
+                <Link to="/blog">Blog</Link>
+              </motion.p>
+              <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
+                <Link to="/contact">Contact</Link>
+              </motion.p>
             </FooterLinks>
           </FooterSiteMapContainer>
         </FooterWrapper>
@@ -139,6 +166,7 @@ const SvgMainWrapper = styled.div`
   width: 40px;
   height: 40px;
   display: flex;
+  cursor: pointer;
 `;
 const FooterSiteMapContainer = styled.div`
   display: flex;
