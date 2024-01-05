@@ -46,6 +46,7 @@ export const StyledUL = styled.ul`
   text-align: left;
   flex-direction: column;
   padding: 7px 0 7px 20px;
+  list-style: none;
   li {
     padding: 10px;
   }

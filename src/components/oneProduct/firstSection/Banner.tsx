@@ -9,6 +9,7 @@ import {
 import { MovieType } from "../../.././Database";
 import { useRecoilState } from "recoil";
 import { cart } from "../../../recoilStates/states";
+import { motion } from "framer-motion";
 
 type Props = {
   movie: MovieType;
@@ -42,7 +43,13 @@ const Banner = ({ movie }: Props) => {
           <p>({movie?.review} Review)</p>
         </div>
         <div>
-          <MainButton onClick={addToCart} $bgColor="white">
+          <MainButton
+            onClick={addToCart}
+            $bgColor="white"
+            as={motion.button}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Add To Cart
           </MainButton>
         </div>

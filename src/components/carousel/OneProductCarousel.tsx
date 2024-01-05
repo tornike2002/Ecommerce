@@ -2,7 +2,7 @@ import "./OneProductCarousel.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { SliderTitle } from "../styledComponents/texts";
-import { MainButton } from "../styledComponents/buttons";
+import { motion } from "framer-motion";
 
 const responsive = {
   superLargeDesktop: {
@@ -34,27 +34,22 @@ export default function OneProductCarousel() {
         draggable={false}
       >
         <div className="img-1">
-          <div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
             <SliderTitle>The History of Phipino</SliderTitle>
-            <MainButton style={{ display: "block", margin: "0 auto" }}>
-              Browse Store
-            </MainButton>
-          </div>
+          </motion.div>
         </div>
         <div className="img-2">
           <div>
             <SliderTitle>The History of Phipino</SliderTitle>
-            <MainButton style={{ display: "block", margin: "0 auto" }}>
-              Browse Store
-            </MainButton>
           </div>
         </div>
         <div className="img-3">
           <div>
             <SliderTitle>The History of Phipino</SliderTitle>
-            <MainButton style={{ display: "block", margin: "0 auto" }}>
-              Browse Store
-            </MainButton>
           </div>
         </div>
       </Carousel>

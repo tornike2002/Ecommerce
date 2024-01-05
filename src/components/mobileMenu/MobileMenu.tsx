@@ -2,6 +2,7 @@ import { MblCont, MenuCont, Pages, StyledUL } from "./MobileMenuStyles";
 import menuIcons from "../../assets/icons/menu.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const MobileMenu = () => {
   const [menu, setMenu] = useState(false);
@@ -46,7 +47,11 @@ const MobileMenu = () => {
           <img src={menuIcons} />
         </MenuCont>
         {menu && (
-          <StyledUL>
+          <StyledUL
+            as={motion.ul}
+            initial={{ scale: 0, originY: 0, originX: 0 }}
+            animate={{ scale: 1 }}
+          >
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -61,12 +66,14 @@ const MobileMenu = () => {
                 Pages {pagesLinks ? "-" : "+"}
               </span>
               {pagesLinks && (
-                <Pages>
+                <Pages
+                  as={motion.div}
+                  initial={{ scale: 0, originY: 0, originX: 0 }}
+                  animate={{ scale: 1 }}
+                >
                   <Link to="/login">Login</Link>
                   <Link to="/cart">Cart</Link>
                   <Link to="/checkout">Checkout</Link>
-                  <Link to="/bookDetails">Book Details</Link>
-                  <Link to="/blogDetails">Blog Details</Link>
                 </Pages>
               )}
             </li>

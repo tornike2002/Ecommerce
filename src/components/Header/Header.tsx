@@ -18,6 +18,7 @@ import MobileMenu from "../mobileMenu/MobileMenu";
 import search from "../../assets/icons/search.png";
 import { useState } from "react";
 import Inputs from "./Inputs";
+import { motion } from "framer-motion";
 
 const CartImage = styled.img`
   width: 45px;
@@ -79,7 +80,14 @@ export default function Header() {
               }
             >
               <div>
-                <MainButton onClick={logoutHandler}>Log out</MainButton>
+                <MainButton
+                  onClick={logoutHandler}
+                  as={motion.button}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Log out
+                </MainButton>
               </div>
             </Link>
           ) : (
@@ -89,7 +97,13 @@ export default function Header() {
                 input === true ? { display: "none" } : { display: "block" }
               }
             >
-              <MainButton>Sign in</MainButton>
+              <MainButton
+                as={motion.button}
+                whileHover={{ scale: 1.1, backgroundColor: "" }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Sign in
+              </MainButton>
             </Link>
           )}
           <SearchBtn src={search} onClick={inputHandler} />
