@@ -49,6 +49,9 @@ const Navigation = () => {
             }
           : { position: "relative" }
       }
+      as={motion.div}
+      initial={{ y: -50 }}
+      whileInView={{ y: 0 }}
     >
       <Link to="/">Home</Link>
       <Link to="/categories">Categories</Link>
@@ -67,15 +70,28 @@ const Navigation = () => {
           transition={{ duration: 0.3 }}
         >
           <Link to="/login">
-            <motion.p whileHover={{ scale: 1.1, originX: 0 }}>Login</motion.p>
+            <motion.p
+              whileHover={{ scale: 1.1, originX: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              Login
+            </motion.p>
           </Link>
 
           <Link to="/cart">
-            <motion.p whileHover={{ scale: 1.1, originX: 0 }}>Cart</motion.p>
+            <motion.p
+              whileHover={{ scale: 1.1, originX: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              Cart
+            </motion.p>
           </Link>
 
           <Link to="/checkout">
-            <motion.p whileHover={{ scale: 1.1, originX: 0 }}>
+            <motion.p
+              whileHover={{ scale: 1.1, originX: 0 }}
+              transition={{ duration: 0.2 }}
+            >
               Checkout
             </motion.p>
           </Link>
