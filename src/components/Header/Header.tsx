@@ -23,10 +23,6 @@ import { motion } from "framer-motion";
 const CartImage = styled.img`
   width: 45px;
   transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 `;
 
 export default function Header() {
@@ -66,10 +62,14 @@ export default function Header() {
             to="/cart"
             style={input === true ? { display: "none" } : { display: "block" }}
           >
-            <div style={{ position: "relative" }}>
+            <motion.div
+              style={{ position: "relative" }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <CartImage src={LogoOfShop} alt="shop" />
               <ProductNumber>{booksLength}</ProductNumber>
-            </div>
+            </motion.div>
           </Link>
 
           {locCheck ? (

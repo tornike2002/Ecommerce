@@ -29,6 +29,9 @@ const TitleForHero = styled.h2`
   font-weight: 400;
   line-height: 1.4;
   margin: 0px auto;
+  @media (max-width: 580px) {
+    font-size: 30px;
+  }
 `;
 const HeroForBlog = styled.div`
   margin-top: 30px;
@@ -39,4 +42,7 @@ const HeroForBlog = styled.div`
   align-items: center;
   background-position: center;
   margin-bottom: 30px;
+  @media (max-width: 580px) {
+    height: 200px;
+  }
 `;

@@ -68,6 +68,11 @@ export default BlogPoster;
 const BlogPosterShadow = styled.div`
   box-shadow: rgba(221, 221, 221, 0.3) 0px 10px 20px 0px;
   margin-bottom: 40px;
+  @media (max-width: 1210px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const BlogPosterText = styled.div`
   font-family: "Playfair Display", serif;
@@ -108,6 +113,10 @@ const BlogUserWrapper = styled.div`
 const BlogPosterContainer = styled.div`
   position: relative;
   margin-bottom: 20px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const BlogPosterDate = styled.div`
