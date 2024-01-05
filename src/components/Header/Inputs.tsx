@@ -3,6 +3,7 @@ import { DataBase, MovieType } from "../../Database";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 type Props = {
   input: boolean;
@@ -20,6 +21,7 @@ const Inputs = ({ input }: Props) => {
   };
 
   const StyledUL = styled.ul`
+    list-style: none;
     padding: 20px;
     position: absolute;
     display: ${() => (value === "" ? "none" : "flex")};
@@ -63,7 +65,12 @@ const Inputs = ({ input }: Props) => {
         style={input === false ? { display: "none" } : { display: "block" }}
         onChange={searchHandler}
       />
-      <StyledUL>
+      <StyledUL
+        as={motion.ul}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
         {searchedMovies.map((movie) => (
           <Link
             to={`/${movie.pathname}`}

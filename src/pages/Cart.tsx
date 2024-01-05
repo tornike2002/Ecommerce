@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Container } from "../components/styledComponents/containers";
 import { Button, Result } from "antd";
 import { MainButton } from "../components/styledComponents/buttons";
+import { motion } from "framer-motion";
 
 export default function Cart() {
   const books = useRecoilValue(cart);
@@ -48,7 +49,13 @@ export default function Cart() {
         </ul>
       )}
       {books.length > 0 && (
-        <MainButton type="button" onClick={CheckoutHandler}>
+        <MainButton
+          type="button"
+          onClick={CheckoutHandler}
+          as={motion.button}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
           Go to checkout
         </MainButton>
       )}

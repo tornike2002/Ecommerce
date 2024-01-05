@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { CustomNav, PageLinksContainer } from "./NavigationStyles";
+import { motion } from "framer-motion";
 
 const Navigation = () => {
   const [scroll, setScroll] = useState(false);
@@ -59,12 +60,25 @@ const Navigation = () => {
         onMouseLeave={() => setShowPageLinks(false)}
       >
         Pages
-        <PageLinksDropdown>
-          <Link to="/login">Login</Link>
-          <Link to="/cart">Cart</Link>
-          <Link to="/checkout">Checkout</Link>
-          <Link to="/bookDetails">Book Details</Link>
-          <Link to="/blogDetails">Blog Details</Link>
+        <PageLinksDropdown
+          as={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Link to="/login">
+            <motion.p whileHover={{ scale: 1.1, originX: 0 }}>Login</motion.p>
+          </Link>
+
+          <Link to="/cart">
+            <motion.p whileHover={{ scale: 1.1, originX: 0 }}>Cart</motion.p>
+          </Link>
+
+          <Link to="/checkout">
+            <motion.p whileHover={{ scale: 1.1, originX: 0 }}>
+              Checkout
+            </motion.p>
+          </Link>
         </PageLinksDropdown>
       </PageLinksContainer>
 
