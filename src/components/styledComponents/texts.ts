@@ -37,4 +37,7 @@ export const SliderTitle = styled.h2`
   color: #fff;
   line-height: 1.2;
   width: 10ch;
+  @media (max-width: 500px) {
+    font-size: 50px;
+  }
 `;

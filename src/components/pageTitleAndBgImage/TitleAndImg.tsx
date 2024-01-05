@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 type Props = {
   title: string;
@@ -7,7 +8,14 @@ type Props = {
 const TitleAndImg = ({ title, link }: Props) => {
   return (
     <HeroForBlog id="a" style={{ backgroundImage: `url(${link})` }}>
-      <TitleForHero>{title}</TitleForHero>
+      <TitleForHero
+        as={motion.h2}
+        initial={{ opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {title}
+      </TitleForHero>
     </HeroForBlog>
   );
 };
