@@ -9,6 +9,10 @@ export const MainButton = styled.button<{ $bgColor?: "white" }>`
   border-radius: 35px;
   color: ${(props) => (props.$bgColor === "white" ? "#222222;" : "#fff")};
   background: ${(props) => (props.$bgColor === "white" ? "#fff" : "#ff1616")};
+  @media (max-width: 767px) {
+    font-size: 14px;
+    padding: 15px 25px;
+  }
 `;
 
 export const SecondButton = styled.button`

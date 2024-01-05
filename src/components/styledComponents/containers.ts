@@ -7,4 +7,7 @@ export const Container = styled.div`
   @media (max-width: 1439px) {
     padding: 0 6%;
   }
+  @media (max-width: 767px) {
+    padding: 0 3%;
+  }
 `;

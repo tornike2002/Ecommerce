@@ -14,4 +14,7 @@ export const FilterWrapper = styled.div`
   gap: 30px;
   width: 300px;
   height: 800px;
+  @media (max-width: 435px) {
+    height: 1000px;
+  }
 `;

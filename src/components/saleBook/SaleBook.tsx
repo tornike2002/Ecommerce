@@ -22,14 +22,16 @@ const SaleBook = ({ img, price, title }: Props) => {
   return (
     <BooksItem>
       <CartImg src={img} alt="" />
-      <CartItemTitle>{title}</CartItemTitle>
-      <CartItemPrice>${price.toFixed(2)}</CartItemPrice>
-      <CartTotalContainer>
-        <CartPlusMinusButton onClick={plusCount}>+</CartPlusMinusButton>
-        <CartCount>{count}</CartCount>
-        <CartPlusMinusButton onClick={minusCount}>-</CartPlusMinusButton>
-      </CartTotalContainer>
-      <CartPrice>${(price * count).toFixed(2)}</CartPrice>
+      <span>
+        <CartItemTitle>{title}</CartItemTitle>
+        <CartItemPrice>${price.toFixed(2)}</CartItemPrice>
+        <CartTotalContainer>
+          <CartPlusMinusButton onClick={plusCount}>+</CartPlusMinusButton>
+          <CartCount>{count}</CartCount>
+          <CartPlusMinusButton onClick={minusCount}>-</CartPlusMinusButton>
+        </CartTotalContainer>
+        <CartPrice>${(price * count).toFixed(2)}</CartPrice>
+      </span>
     </BooksItem>
   );
 };
@@ -38,24 +40,34 @@ export default SaleBook;
 
 const CartImg = styled.img`
   max-width: 200px;
-  min-height: 300px;
+  height: 300px;
   object-fit: cover;
   object-position: center;
 `;
 const BooksItem = styled.li`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
   padding-right: 10px;
   border-radius: 5px;
+  gap: 5%;
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
 `;
 const CartPrice = styled.p`
   font-family: "Roboto", sans-serif;
   color: #301a22;
   font-size: 16px;
   font-weight: 500;
+  width: 50px;
 `;
 const CartCount = styled.p`
   font-family: "Roboto", sans-serif;
@@ -75,12 +87,13 @@ const CartTotalContainer = styled.div`
 const CartItemTitle = styled.p`
   font-family: "Roboto", sans-serif;
   color: #301a22;
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.6;
 `;
 const CartItemPrice = styled.p`
-  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
   color: #2a2a2a;
   font-family: "Roboto", sans-serif;
   margin-bottom: 0px;

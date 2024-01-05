@@ -105,15 +105,21 @@ const FooterBackgroundColor = styled.div`
 `;
 const FooterWrapper = styled.footer`
   height: 300px;
-
+  gap: 200px;
   display: flex;
   padding: 20px 0;
-  justify-content: space-between;
   margin-top: 50px;
+  @media (max-width: 1099px) {
+    justify-content: space-around;
+    gap: 0;
+  }
 `;
 
 const FooterHelper = styled.div`
-  width: 300px;
+  max-width: 700px;
+  @media (max-width: 1099px) {
+    width: 250px;
+  }
 `;
 const FooterLogo = styled.img`
   margin-bottom: 35px;
@@ -137,20 +143,38 @@ const SvgMainWrapper = styled.div`
 const FooterSiteMapContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-right: 90px;
-  margin-top: 20px;
+  gap: 38px;
+  width: 100%;
+  @media (max-width: 1099px) {
+    gap: 30px;
+    width: auto;
+  }
   & h2 {
-    text-align: right;
-    margin-left: auto;
+    text-align: center;
     color: #232f55;
-    font-size: 20px;
+    font-size: 30px;
+    @media (max-width: 1099px) {
+      text-align: start;
+      font-size: 20px;
+    }
   }
 `;
 const FooterLinks = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  color: #454e6d;
-  font-size: 14px;
+  justify-content: space-between;
+  @media (max-width: 1099px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+  a {
+    font-size: 20px;
+    color: #454e6d;
+    transition: 0.3s ease;
+    @media (max-width: 1099px) {
+      font-size: 16px;
+    }
+    &:hover {
+      color: orange;
+    }
+  }
 `;
