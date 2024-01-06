@@ -41,7 +41,14 @@ export default function OneProductCarousel() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <SliderTitle>The History of Phipino</SliderTitle>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 4 }}
+            >
+
+              <SliderTitle>The History of Phipino</SliderTitle>
+            </motion.div>
           </motion.div>
         </div>
         <div className="img-2">
@@ -50,17 +57,27 @@ export default function OneProductCarousel() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <SliderTitle>The Nature of galaxy</SliderTitle>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 4 }}
+            >
+
+              <SliderTitle>The Nature of galaxy</SliderTitle>
+            </motion.div>
           </motion.div>
         </div>
         <div className="img-3">
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
+            initial={{ y: 100, }}
+            whileInView={{ y: 0, }}
+            transition={{ duration: 1, type: 'spring', stiffness: 500 }}
           >
+
+
             <SliderTitle>The Music of Nature</SliderTitle>
           </motion.div>
+
         </div>
       </Carousel>
     </div>
