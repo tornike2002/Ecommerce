@@ -38,7 +38,7 @@ const ProductCarouselOne = () => {
   const Movie = ({
     banner,
     title,
-    director,
+    author,
     rating,
     review,
     price,
@@ -51,7 +51,7 @@ const ProductCarouselOne = () => {
         </div>
         <div className="movie-info">
           <h3>{title}</h3>
-          <p>Director: {director}</p>
+          <p>Author: {author}</p>
           <p>Rating: {rating}</p>
           <p>Review: {review}</p>
           <p>Price: {price}</p>
@@ -79,7 +79,6 @@ const ProductCarouselOne = () => {
             key={oneMovie.id}
             banner={oneMovie.img}
             title={oneMovie.name}
-            director={oneMovie.author}
             rating={oneMovie.rating}
             review={oneMovie.review}
             price={oneMovie.price}
@@ -89,6 +88,7 @@ const ProductCarouselOne = () => {
             id={0}
             img={""}
             name={""}
+            director={""}
           />
         ))}
       </Carousel>
