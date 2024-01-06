@@ -1,7 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./ProductCarouselOne.css";
-import { DataBase as Data, MovieType } from "../../Database";
+import { DataBase as Data, CarouselTypes } from "../../Database";
 import { MainButton } from "../styledComponents/buttons";
 import { Link } from "react-router-dom";
 // import React from 'react';
@@ -43,7 +43,7 @@ const ProductCarouselOne = () => {
     review,
     price,
     pathname,
-  }: MovieType) => {
+  }: CarouselTypes) => {
     return (
       <div className="movie-container">
         <div className="movie-img">

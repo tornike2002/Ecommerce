@@ -1,18 +1,3 @@
-import falling from "./assets/dataLogos/falling.jpg";
-import lost from "./assets/dataLogos/lost.jpg";
-import spirits from "./assets/dataLogos/spirits.jpg";
-import follet from "./assets/dataLogos/follett.jpg";
-import hike from "./assets/dataLogos/hike.jpg";
-import spy from "./assets/dataLogos/spy.jpg";
-import midnight from "./assets/dataLogos/midnight.jpg";
-import sanctioned from "./assets/dataLogos/sanctioned.jpg";
-import ugly from "./assets/dataLogos/ugly.jpg";
-import cannot from "./assets/dataLogos/cannot-see.jpg";
-import girl from "./assets/dataLogos/girl.jpg";
-import mad from "./assets/dataLogos/mad.jpg";
-
-
-
 export const DataBase = [
   {
     pathname: "dark-space",
@@ -103,122 +88,122 @@ export const DataBase = [
     review: 173,
   },
   {
-    pathname: "Mad",
+    pathname: "italian-bones",
     author: "Cam L. Toe",
     genres: ["Horror", "Love Story"],
     id: 8,
-    img: `${mad}`,
-    name: "Mad",
+    img: "https://preview.colorlib.com/theme/abcbook/assets/img/hero/h1_hero3.jpg",
+    name: "Italian Bones",
     price: 75,
     rating: 7,
     review: 233,
   },
   {
-    pathname: "Falling",
+    pathname: "biba",
     author: "Juan Annatoo",
     genres: ["Biography", "Science Fiction", "History"],
     id: 9,
-    img: `${falling}`,
-    name: "Falling",
+    img: "https://i0.wp.com/bestindiebookaward.com/submit/wp-content/uploads/2019/08/1632344486b.png?fit=1500%2C1500&ssl=1",
+    name: "BIBA",
     price: 47,
     rating: 5,
     review: 122,
   },
   {
-    pathname: "Lost",
+    pathname: "this-way-up",
     author: "Buster Hyman",
     genres: ["History", "Biography"],
     id: 10,
-    img: `${lost}`,
-    name: "Lost",
+    img: "https://payload.cargocollective.com/1/0/8590/5114288/This-Way-Up.png",
+    name: "This Way Up",
     price: 88,
     rating: 8.5,
     review: 341,
   },
   {
-    pathname: "spirits",
+    pathname: "this-way-down",
     author: "Phil Harmonic",
     genres: ["Horror", "Thriller"],
     id: 11,
-    img: `${spirits}`,
-    name: "Spirits",
+    img: "https://elephantbookstore.com/image/cache/catalog/Books/Non-Fiction/Dzheyms-Knap--Sprint-53000-0-950x950.png",
+    name: "This Way Down",
     price: 64,
     rating: 6,
     review: 143,
   },
   {
-    pathname: "follet",
+    pathname: "the-murder",
     author: "Otto Matic",
     genres: ["Horror", "Love Story"],
     id: 12,
-    img: `${follet}`,
-    name: "Follet",
+    img: "	https://preview.colorlib.com/theme/abcbook/assets/img/hero/h1_hero1.jpg",
+    name: "The Murder",
     price: 150,
     rating: 10,
     review: 555,
   },
   {
-    pathname: "hike",
+    pathname: "google-ads",
     author: "Juan Annatoo",
     genres: ["History", "Biography"],
     id: 13,
-    img: `${hike}`,
-    name: "Hike",
+    img: "https://d1aettbyeyfilo.cloudfront.net/simplyconverting/16577697_1611813091417Google_Ads_Cheatsheet_Cover_Ver_1.png",
+    name: "Google ADS",
     price: 99,
     rating: 9.5,
     review: 320,
   },
   {
-    pathname: "spy",
+    pathname: "take-me-apart",
     author: "Cam L. Toe",
     genres: ["Biography", "Love Story"],
     id: 14,
-    img: `${spy}`,
-    name: "Spy",
+    img: "https://images.squarespace-cdn.com/content/v1/55b0ec33e4b07fa072cd915c/1619648967568-UCEVX552O3ATATPO57IF/TMA+Paperback+bookshot.png",
+    name: "Take Me Apart",
     price: 69,
     rating: 7,
     review: 153,
   },
   {
-    pathname: "midnight",
+    pathname: "the-shape",
     author: "Buster Hyman",
     genres: ["Horror", "Thriller"],
     id: 15,
-    img: `${midnight}`,
-    name: "Midnight",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0GOYscjf6Nibbz_BocDtdvB0GVdC2CDloTQ&usqp=CAU",
+    name: "The Shape",
     price: 77,
     rating: 8.5,
     review: 234,
   },
   {
-    pathname: "sanctioned",
+    pathname: "sin-eater",
     author: "Phil Harmonic",
     genres: ["Biography", "Thriller"],
     id: 16,
-    img: `${sanctioned}`,
-    name: "Sanctioned",
+    img: "https://preview.colorlib.com/theme/abcbook/assets/img/gallery/best_selling5.jpg",
+    name: "Sin Eater",
     price: 32,
     rating: 3.2,
     review: 103,
   },
   {
-    pathname: "ugly",
+    pathname: "transformation",
     author: "Otto Matic",
     genres: ["Horror", "Biography"],
     id: 17,
-    img: `${ugly}`,
-    name: "Ugly",
+    img: "https://books.forbes.com/wp-content/uploads/2023/04/The-Great-Digital-Transformation-e1681138709476-922x1024.png",
+    name: "Transformation",
     price: 72,
     rating: 5.5,
     review: 167,
   },
   {
-    pathname: "Cannot See",
+    pathname: "the-boy",
     author: "Juan Annatoo",
     genres: ["Thriller", "Biography"],
     id: 18,
-    img: `${cannot}`,
-    name: "Cannot See",
+    img: "https://i.shgcdn.com/6cc86aa4-66d8-41b1-ad12-2029db30ed79/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+    name: "The Boy",
     price: 100,
     rating: 9.5,
     review: 129,
@@ -235,12 +220,12 @@ export const DataBase = [
     review: 130,
   },
   {
-    pathname: "girl",
+    pathname: "fated-hearts",
     author: "Buster Hyman",
     genres: ["Horror", "Love Story"],
     id: 20,
-    img: `${girl}`,
-    name: "Girl",
+    img: "https://skyemalone.com/wp-content/uploads/2022/02/FatedHearts-Single-Paperback-CROPPED.png",
+    name: "Fated Hearts",
     price: 150,
     rating: 10,
     review: 134,
@@ -256,8 +241,19 @@ export type MovieType = {
   name: string;
   price: number;
   rating: number;
-  review: number;
+};
+
+export type CarouselTypes = {
   banner: string;
   title: string;
+  author: string;
+  rating: number;
+  review: number;
+  price: number;
+  pathname: string;
+  genres: [];
+  id: number;
+  img: string;
+  name: string;
   director: string;
 };
