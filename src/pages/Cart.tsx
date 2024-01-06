@@ -49,15 +49,17 @@ export default function Cart() {
         </ul>
       )}
       {books.length > 0 && (
-        <MainButton
-          type="button"
-          onClick={CheckoutHandler}
-          as={motion.button}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          Go to checkout
-        </MainButton>
+        <div style={{ textAlign: "right" }}>
+          <MainButton
+            type="button"
+            onClick={CheckoutHandler}
+            as={motion.button}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Go to checkout
+          </MainButton>
+        </div>
       )}
     </Container>
   );

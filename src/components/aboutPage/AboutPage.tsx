@@ -2,6 +2,7 @@ import styled from "styled-components";
 import TitleAndImg from "../pageTitleAndBgImage/TitleAndImg";
 import { Container } from "../styledComponents/containers";
 import { Rate } from "antd";
+import { motion } from "framer-motion";
 
 const AboutPage = () => {
   const imgSrc =
@@ -12,20 +13,30 @@ const AboutPage = () => {
     <div>
       <Container>
         <TitleAndImg title="About" link={imgSrc} />
-        <div>
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          transition={{ duration: 1 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+        >
           <div>
             <AboutTitle>Our Story</AboutTitle>
           </div>
           <AboutParagraph>{text}</AboutParagraph>
           <Rate allowHalf defaultValue={2.5} />
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          transition={{ duration: 1 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+        >
           <div>
             <AboutTitle>Our Goal</AboutTitle>
           </div>
           <AboutParagraph>{text}</AboutParagraph>
           <Rate allowHalf defaultValue={2} />
-        </div>
+        </motion.div>
       </Container>
     </div>
   );

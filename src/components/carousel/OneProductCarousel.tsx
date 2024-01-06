@@ -32,25 +32,34 @@ export default function OneProductCarousel() {
         infinite={true}
         showDots={true}
         draggable={false}
+        autoPlay={true}
       >
         <div className="img-1">
           <motion.div
             initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
           >
             <SliderTitle>The History of Phipino</SliderTitle>
           </motion.div>
         </div>
         <div className="img-2">
-          <div>
-            <SliderTitle>The History of Phipino</SliderTitle>
-          </div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <SliderTitle>The Nature of galaxy</SliderTitle>
+          </motion.div>
         </div>
         <div className="img-3">
-          <div>
-            <SliderTitle>The History of Phipino</SliderTitle>
-          </div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <SliderTitle>The Music of Nature</SliderTitle>
+          </motion.div>
         </div>
       </Carousel>
     </div>

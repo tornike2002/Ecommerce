@@ -2,7 +2,7 @@ import { MblCont, MenuCont, Pages, StyledUL } from "./MobileMenuStyles";
 import menuIcons from "../../assets/icons/menu.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const MobileMenu = () => {
   const [menu, setMenu] = useState(false);
@@ -41,50 +41,59 @@ const MobileMenu = () => {
               }
             : { position: "relative" }
         }
+        as={motion.div}
+        initial={{ y: -30 }}
+        whileInView={{ y: 0 }}
       >
         <MenuCont onClick={menuHandler}>
           Menu
           <img src={menuIcons} />
         </MenuCont>
-        {menu && (
-          <StyledUL
-            as={motion.ul}
-            initial={{ scale: 0, originY: 0, originX: 0 }}
-            animate={{ scale: 1 }}
-          >
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/categories">Categories</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <span onClick={pagesLinksHandler}>
-                Pages {pagesLinks ? "-" : "+"}
-              </span>
-              {pagesLinks && (
-                <Pages
-                  as={motion.div}
-                  initial={{ scale: 0, originY: 0, originX: 0 }}
-                  animate={{ scale: 1 }}
-                >
-                  <Link to="/login">Login</Link>
-                  <Link to="/cart">Cart</Link>
-                  <Link to="/checkout">Checkout</Link>
-                </Pages>
-              )}
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </StyledUL>
-        )}
+        <AnimatePresence>
+          {menu && (
+            <StyledUL
+              as={motion.ul}
+              initial={{ scaleY: 0, originY: 0, originX: 0 }}
+              animate={{ scaleY: 1 }}
+              exit={{ scaleY: 0, originY: 0, originX: 0 }}
+            >
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/categories">Categories</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <span onClick={pagesLinksHandler}>
+                  Pages {pagesLinks ? "-" : "+"}
+                </span>
+                <AnimatePresence>
+                  {pagesLinks && (
+                    <Pages
+                      as={motion.div}
+                      initial={{ scaleY: 0, originY: 0, originX: 0 }}
+                      animate={{ scaleY: 1 }}
+                      exit={{ scaleY: 0, originY: 0, originX: 0 }}
+                    >
+                      <Link to="/login">Login</Link>
+                      <Link to="/cart">Cart</Link>
+                      <Link to="/checkout">Checkout</Link>
+                    </Pages>
+                  )}
+                </AnimatePresence>
+              </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </StyledUL>
+          )}
+        </AnimatePresence>
       </MblCont>
     </>
   );

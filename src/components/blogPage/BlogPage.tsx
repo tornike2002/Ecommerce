@@ -4,17 +4,18 @@ import secondBlog from "../../assets/blogAssets/second-blog.jpg.webp";
 import thirdBlog from "../../assets/blogAssets/third-blog.jpg.webp";
 import fourthBlog from "../../assets/blogAssets/fourth-blog.jpg.webp";
 import sixthBlog from "../../assets/blogAssets/sixth-blog.jpg.webp";
-import blogHero from "../../assets/blogAssets/blog-hero.jpg.webp";
 import { Container } from "../styledComponents/containers";
 import styled from "styled-components";
 import InstagramFeeds from "./InstagramFeeds";
 import BlogNewsLetter from "./BlogNewsLetter";
+import TitleAndImg from "../pageTitleAndBgImage/TitleAndImg";
 const BlogPage = () => {
   return (
     <Container>
-      <BlogMainCover>
-        <BlogMainCoverTitle>Welcome to blog page</BlogMainCoverTitle>
-      </BlogMainCover>
+      <TitleAndImg
+        title="Welcome to blog page"
+        link="https://preview.colorlib.com/theme/abcbook/assets/img/hero/h2_hero2.jpg"
+      />
       <BlogDataWrapper>
         <div>
           <BlogPoster
@@ -64,25 +65,9 @@ const BlogPage = () => {
 
 export default BlogPage;
 
-const BlogMainCover = styled.div`
-  margin: 30px 0;
-  background: url(${blogHero});
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 350px;
-  background-position: center center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 const BlogDataWrapper = styled.div`
   display: flex;
-`
-
-const BlogMainCoverTitle = styled.div`
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  font-weight: 600;
-  font-size: 41px;
+  @media (max-width: 1210px) {
+    flex-direction: column-reverse;
+  }
 `;
