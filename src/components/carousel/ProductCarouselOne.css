@@ -1,0 +1,23 @@
+.movie-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.movie-img {
+  flex: 0 0 30%; 
+}
+
+.movie-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.movie-info {
+  flex: 0 0 65%; 
+}
+

@@ -22,6 +22,7 @@ const responsive = {
     items: 1,
   },
 };
+// ss
 
 export default function OneProductCarousel() {
   return (
@@ -49,7 +50,7 @@ export default function OneProductCarousel() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <SliderTitle>The History of Phipino</SliderTitle>
+            <SliderTitle>The Nature of galaxy</SliderTitle>
           </motion.div>
         </div>
         <div className="img-3">
@@ -58,7 +59,7 @@ export default function OneProductCarousel() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <SliderTitle>The History of Phipino</SliderTitle>
+            <SliderTitle>The Music of Nature</SliderTitle>
           </motion.div>
         </div>
       </Carousel>

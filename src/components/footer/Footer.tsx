@@ -4,7 +4,13 @@ import styled from "styled-components";
 import { Container } from "../styledComponents/containers";
 import { motion } from "framer-motion";
 
+
 const Footer = () => {
+
+  // This is for scrool up, when user click other Pagination number
+  const pagiHandler = () => {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
   return (
     <FooterBackgroundColor>
       <Container>
@@ -104,19 +110,19 @@ const Footer = () => {
             <h2>Site Map</h2>
             <FooterLinks>
               <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
-                <Link to="/">Home</Link>
+                <Link onClick={pagiHandler} to="/">Home</Link>
               </motion.p>
               <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
-                <Link to="/categories">Categories</Link>
+                <Link onClick={pagiHandler} to="/categories">Categories</Link>
               </motion.p>
               <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
-                <Link to="/about">About Us</Link>
+                <Link onClick={pagiHandler} to="/about">About Us</Link>
               </motion.p>
               <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
-                <Link to="/blog">Blog</Link>
+                <Link onClick={pagiHandler} to="/blog">Blog</Link>
               </motion.p>
               <motion.p whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.7 }}>
-                <Link to="/contact">Contact</Link>
+                <Link onClick={pagiHandler} to="/contact">Contact</Link>
               </motion.p>
             </FooterLinks>
           </FooterSiteMapContainer>
