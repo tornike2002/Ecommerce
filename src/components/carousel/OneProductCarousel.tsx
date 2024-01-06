@@ -22,6 +22,7 @@ const responsive = {
     items: 1,
   },
 };
+// ss
 
 export default function OneProductCarousel() {
   return (
