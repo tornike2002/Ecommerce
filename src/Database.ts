@@ -241,6 +241,7 @@ export type MovieType = {
   name: string;
   price: number;
   rating: number;
+  review: string;
 };
 
 export type CarouselTypes = {
