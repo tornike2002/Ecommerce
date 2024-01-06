@@ -85,7 +85,7 @@ const ProductCarouselOne = () => {
             price={oneMovie.price}
             pathname={oneMovie.pathname}
             author={oneMovie.author}
-            genres={[...oneMovie.genres]}
+            genres={[]}
             id={0}
             img={""}
             name={""}
