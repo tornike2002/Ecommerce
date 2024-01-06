@@ -1,6 +1,17 @@
 import falling from "./assets/dataLogos/falling.jpg";
 import lost from "./assets/dataLogos/lost.jpg";
 import spirits from "./assets/dataLogos/spirits.jpg";
+import follet from "./assets/dataLogos/follett.jpg";
+import hike from "./assets/dataLogos/hike.jpg";
+import spy from "./assets/dataLogos/spy.jpg";
+import midnight from "./assets/dataLogos/midnight.jpg";
+import sanctioned from "./assets/dataLogos/sanctioned.jpg";
+import ugly from "./assets/dataLogos/ugly.jpg";
+import cannot from "./assets/dataLogos/cannot-see.jpg";
+import girl from "./assets/dataLogos/girl.jpg";
+import mad from "./assets/dataLogos/mad.jpg";
+
+
 
 export const DataBase = [
   {
@@ -92,12 +103,12 @@ export const DataBase = [
     review: 173,
   },
   {
-    pathname: "italian-bones",
+    pathname: "Mad",
     author: "Cam L. Toe",
     genres: ["Horror", "Love Story"],
     id: 8,
-    img: "https://preview.colorlib.com/theme/abcbook/assets/img/hero/h1_hero3.jpg",
-    name: "Italian Bones",
+    img: `${mad}`,
+    name: "Mad",
     price: 75,
     rating: 7,
     review: 233,
@@ -136,78 +147,78 @@ export const DataBase = [
     review: 143,
   },
   {
-    pathname: "the-murder",
+    pathname: "follet",
     author: "Otto Matic",
     genres: ["Horror", "Love Story"],
     id: 12,
-    img: "	https://preview.colorlib.com/theme/abcbook/assets/img/hero/h1_hero1.jpg",
-    name: "The Murder",
+    img: `${follet}`,
+    name: "Follet",
     price: 150,
     rating: 10,
     review: 555,
   },
   {
-    pathname: "google-ads",
+    pathname: "hike",
     author: "Juan Annatoo",
     genres: ["History", "Biography"],
     id: 13,
-    img: "https://d1aettbyeyfilo.cloudfront.net/simplyconverting/16577697_1611813091417Google_Ads_Cheatsheet_Cover_Ver_1.png",
-    name: "Google ADS",
+    img: `${hike}`,
+    name: "Hike",
     price: 99,
     rating: 9.5,
     review: 320,
   },
   {
-    pathname: "take-me-apart",
+    pathname: "spy",
     author: "Cam L. Toe",
     genres: ["Biography", "Love Story"],
     id: 14,
-    img: "https://images.squarespace-cdn.com/content/v1/55b0ec33e4b07fa072cd915c/1619648967568-UCEVX552O3ATATPO57IF/TMA+Paperback+bookshot.png",
-    name: "Take Me Apart",
+    img: `${spy}`,
+    name: "Spy",
     price: 69,
     rating: 7,
     review: 153,
   },
   {
-    pathname: "the-shape",
+    pathname: "midnight",
     author: "Buster Hyman",
     genres: ["Horror", "Thriller"],
     id: 15,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0GOYscjf6Nibbz_BocDtdvB0GVdC2CDloTQ&usqp=CAU",
-    name: "The Shape",
+    img: `${midnight}`,
+    name: "Midnight",
     price: 77,
     rating: 8.5,
     review: 234,
   },
   {
-    pathname: "sin-eater",
+    pathname: "sanctioned",
     author: "Phil Harmonic",
     genres: ["Biography", "Thriller"],
     id: 16,
-    img: "https://preview.colorlib.com/theme/abcbook/assets/img/gallery/best_selling5.jpg",
-    name: "Sin Eater",
+    img: `${sanctioned}`,
+    name: "Sanctioned",
     price: 32,
     rating: 3.2,
     review: 103,
   },
   {
-    pathname: "transformation",
+    pathname: "ugly",
     author: "Otto Matic",
     genres: ["Horror", "Biography"],
     id: 17,
-    img: "https://books.forbes.com/wp-content/uploads/2023/04/The-Great-Digital-Transformation-e1681138709476-922x1024.png",
-    name: "Transformation",
+    img: `${ugly}`,
+    name: "Ugly",
     price: 72,
     rating: 5.5,
     review: 167,
   },
   {
-    pathname: "the-boy",
+    pathname: "Cannot See",
     author: "Juan Annatoo",
     genres: ["Thriller", "Biography"],
     id: 18,
-    img: "https://i.shgcdn.com/6cc86aa4-66d8-41b1-ad12-2029db30ed79/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
-    name: "The Boy",
+    img: `${cannot}`,
+    name: "Cannot See",
     price: 100,
     rating: 9.5,
     review: 129,
@@ -224,12 +235,12 @@ export const DataBase = [
     review: 130,
   },
   {
-    pathname: "fated-hearts",
+    pathname: "girl",
     author: "Buster Hyman",
     genres: ["Horror", "Love Story"],
     id: 20,
-    img: "https://skyemalone.com/wp-content/uploads/2022/02/FatedHearts-Single-Paperback-CROPPED.png",
-    name: "Fated Hearts",
+    img: `${girl}`,
+    name: "Girl",
     price: 150,
     rating: 10,
     review: 134,
