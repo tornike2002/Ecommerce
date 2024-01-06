@@ -20,7 +20,7 @@
     "@mui/material": "^5.15.0",
     "antd": "^5.12.5",
     "firebase": "^10.7.1",
-    "framer-motion": "^10.17.8",
+    "framer-motion": "^10.17.9",
     "hero-slider": "^3.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
