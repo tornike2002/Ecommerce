@@ -1,9 +1,9 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import './ProductCarouselOne.css';
+import "./ProductCarouselOne.css";
 import { DataBase as Data, MovieType } from "../../Database";
 import { MainButton } from "../styledComponents/buttons";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import React from 'react';
 
 // type movieType = {
@@ -35,7 +35,15 @@ const responsive = {
 };
 
 const ProductCarouselOne = () => {
-  const Movie = ({ banner, title, director, rating, review, price }: MovieType) => {
+  const Movie = ({
+    banner,
+    title,
+    director,
+    rating,
+    review,
+    price,
+    pathname,
+  }: MovieType) => {
     return (
       <div className="movie-container">
         <div className="movie-img">
@@ -47,14 +55,11 @@ const ProductCarouselOne = () => {
           <p>Rating: {rating}</p>
           <p>Review: {review}</p>
           <p>Price: {price}</p>
-          {/* <Link to={`/${pathname}`}> */}
-
-          <MainButton style={{ display: "block", margin: "0 auto" }}>
-            View Details
-
-          </MainButton>
-          {/* </Link> */}
-
+          <Link to={`/${pathname}`}>
+            <MainButton style={{ display: "block", margin: "0 auto" }}>
+              View Details
+            </MainButton>
+          </Link>
         </div>
       </div>
     );
@@ -77,7 +82,14 @@ const ProductCarouselOne = () => {
             director={oneMovie.author}
             rating={oneMovie.rating}
             review={oneMovie.review}
-            price={oneMovie.price} pathname={""} author={""} genres={[]} id={0} img={""} name={""}          />
+            price={oneMovie.price}
+            pathname={oneMovie.pathname}
+            author={oneMovie.author}
+            genres={[...oneMovie.genres]}
+            id={0}
+            img={""}
+            name={""}
+          />
         ))}
       </Carousel>
     </div>
@@ -86,5 +98,4 @@ const ProductCarouselOne = () => {
 
 export default ProductCarouselOne;
 
-
-// data-ს შემოვიტან.. და იქიდან ვაჩვენებ! 
+// data-ს შემოვიტან.. და იქიდან ვაჩვენებ!
