@@ -1,3 +1,6 @@
+import falling from "./assets/dataLogos/falling.jpg";
+import lost from "./assets/dataLogos/lost.jpg";
+import spirits from "./assets/dataLogos/spirits.jpg";
 
 export const DataBase = [
   {
@@ -100,34 +103,34 @@ export const DataBase = [
     review: 233,
   },
   {
-    pathname: "biba",
+    pathname: "Falling",
     author: "Juan Annatoo",
     genres: ["Biography", "Science Fiction", "History"],
     id: 9,
-    img: "https://i0.wp.com/bestindiebookaward.com/submit/wp-content/uploads/2019/08/1632344486b.png?fit=1500%2C1500&ssl=1",
-    name: "BIBA",
+    img: `${falling}`,
+    name: "Falling",
     price: 47,
     rating: 5,
     review: 122,
   },
   {
-    pathname: "this-way-up",
+    pathname: "Lost",
     author: "Buster Hyman",
     genres: ["History", "Biography"],
     id: 10,
-    img: "https://payload.cargocollective.com/1/0/8590/5114288/This-Way-Up.png",
-    name: "This Way Up",
+    img: `${lost}`,
+    name: "Lost",
     price: 88,
     rating: 8.5,
     review: 341,
   },
   {
-    pathname: "this-way-down",
+    pathname: "spirits",
     author: "Phil Harmonic",
     genres: ["Horror", "Thriller"],
     id: 11,
-    img: "https://elephantbookstore.com/image/cache/catalog/Books/Non-Fiction/Dzheyms-Knap--Sprint-53000-0-950x950.png",
-    name: "This Way Down",
+    img: `${spirits}`,
+    name: "Spirits",
     price: 64,
     rating: 6,
     review: 143,
