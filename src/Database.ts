@@ -257,4 +257,7 @@ export type MovieType = {
   price: number;
   rating: number;
   review: number;
+  banner: string;
+  title: string;
+  director: string;
 };
