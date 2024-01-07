@@ -6,7 +6,10 @@ import scrollUp from "../assets/icons/scroll-up-svgrepo-com.svg";
 import OneProductCarousel from "../components/carousel/OneProductCarousel";
 import { Container } from "../components/styledComponents/containers";
 import ProductCarouselOne from "../components/carousel/ProductCarouselOne";
-import { MainButton } from "../components/styledComponents/buttons";
+import { Link } from "react-router-dom";
+// import { motion } from "framer-motion";
+
+// import { SecondButton } from "../components/styledComponents/buttons";
 
 const Home = () => {
   const ScrollToTopButtonContainer = styled.div`
@@ -27,6 +30,36 @@ const Home = () => {
       }
     }, 15);
   };
+
+  const SecondButton = styled.button`
+  /* Resetting default styles */
+  appearance: none;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  &:hover {
+    scale: 1.1;
+    color: #dc3545;
+  }
+
+  border: 1px solid red;
+
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+`;
+
+
+
   const ResetButton = styled.button`
     /* Resetting default styles */
     appearance: none;
@@ -51,6 +84,10 @@ const Home = () => {
     padding-bottom: 100px;
   `;
 
+  // This is for scrool up, when user click other Pagination number
+  const pagiHandler = () => {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
   return (
     <>
       <HomeBackground>
@@ -59,20 +96,21 @@ const Home = () => {
           <ProductsCarousel />
           <ProductCarouselOne />
           <ProductsCarousel />
-          <MainButton />
-
+          <Link to='categories' onClick={pagiHandler} >
+            <SecondButton> Browse More</SecondButton>
+          </Link>
 
         </Container>
-      </HomeBackground>
+      </HomeBackground >
 
       {/* სქროლი, რომ მაღლა აგაგდოს */}
-      <div>
+      < div >
         <ScrollToTopButtonContainer>
           <ResetButton onClick={scrollToTop} style={{ borderRadius: "30px" }}>
             <img src={scrollUp} alt="logo" style={{ width: "40px" }} />
           </ResetButton>
         </ScrollToTopButtonContainer>
-      </div>
+      </ div>
     </>
   );
 };
