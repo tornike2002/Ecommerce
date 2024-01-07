@@ -1,6 +1,6 @@
 import ProductsCarousel from "../components/carousel/ProductsCarousel";
 
-import styled from "styled-components";
+import styled from 'styled-components';
 import scrollUp from "../assets/icons/scroll-up-svgrepo-com.svg";
 // import { OneProductCarousel } from "../components/carousel/OneProductCarousel";
 import OneProductCarousel from "../components/carousel/OneProductCarousel";
@@ -31,32 +31,32 @@ const Home = () => {
     }, 15);
   };
 
-  const SecondButton = styled.button`
-  /* Resetting default styles */
-  appearance: none;
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: none;
-  color: black;
-  background-color: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  //   const SecondButton = styled.button`
+  //   /* Resetting default styles */
+  //   appearance: none;
+  //   background: none;
+  //   border: none;
+  //   margin: 0;
+  //   padding: 0;
+  //   font: inherit;
+  //   cursor: pointer;
+  //   outline: none;
+  //   color: black;
+  //   background-color: none;
+  //   padding: 8px 16px;
+  //   border-radius: 4px;
 
-  &:hover {
-    scale: 1.1;
-    color: #dc3545;
-  }
+  //   &:hover {
+  //     scale: 1.1;
+  //     color: #dc3545;
+  //   }
 
-  border: 1px solid red;
+  //   border: 1px solid red;
 
-  width: 150px;
-  height: 50px;
-  border-radius: 30px;
-`;
+  //   width: 150px;
+  //   height: 50px;
+  //   border-radius: 30px;
+  // `;
 
 
 
@@ -88,6 +88,42 @@ const Home = () => {
   const pagiHandler = () => {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
+
+  // Styled div component
+  const StyledDiv = styled.div`
+  width: 200px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  transition: background-color 0.4s ease;
+  border: 1px solid red;
+  border-radius: 30px;
+
+  color: black;
+
+`;
+
+  // Styled button component
+  const StyledButton = styled.button`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100%;
+  border: none;
+  cursor: pointer;
+  transition: left 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+
+  color: black;
+
+  /* Apply style changes when the parent div is hovered over */
+  ${StyledDiv}:hover & {
+    left: 0;
+    background-color: red;
+  }
+`;
+
+
   return (
     <>
       <HomeBackground>
@@ -97,7 +133,12 @@ const Home = () => {
           <ProductCarouselOne />
           <ProductsCarousel />
           <Link to='categories' onClick={pagiHandler} >
-            <SecondButton> Browse More</SecondButton>
+            {/* <SecondButton> Browse More</SecondButton> */}
+            <StyledDiv>
+              <StyledButton>
+                Browse More
+              </StyledButton>
+            </StyledDiv>
           </Link>
 
         </Container>
