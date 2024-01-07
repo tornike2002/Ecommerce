@@ -36,26 +36,32 @@ const Navigation = () => {
     }
   `;
 
+
+  // This is for scrool up, when user click other Pagination number
+  const pagiHandler = () => {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+
   return (
     <CustomNav
       style={
         scroll
           ? {
-              position: "fixed",
-              left: "0",
-              top: "0",
-              zIndex: "10000",
-              width: "100%",
-            }
+            position: "fixed",
+            left: "0",
+            top: "0",
+            zIndex: "10000",
+            width: "100%",
+          }
           : { position: "relative" }
       }
       as={motion.div}
       initial={{ y: -50 }}
       whileInView={{ y: 0 }}
     >
-      <Link to="/">Home</Link>
-      <Link to="/categories">Categories</Link>
-      <Link to="/about">About</Link>
+      <Link to="/" onClick={pagiHandler}>Home</Link>
+      <Link to="/categories" onClick={pagiHandler}>Categories</Link>
+      <Link to="/about" onClick={pagiHandler}>About</Link>
 
       {/* ეს მხოლოდ pages-თან რომ მაუსს მიიტან და ჩამოიშლება ჩამონათვალები.. */}
       <PageLinksContainer
@@ -69,7 +75,7 @@ const Navigation = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <Link to="/login">
+          <Link to="/login" onClick={pagiHandler}>
             <motion.p
               whileHover={{ scale: 1.1, originX: 0 }}
               transition={{ duration: 0.2 }}
@@ -78,7 +84,7 @@ const Navigation = () => {
             </motion.p>
           </Link>
 
-          <Link to="/cart">
+          <Link to="/cart" onClick={pagiHandler}>
             <motion.p
               whileHover={{ scale: 1.1, originX: 0 }}
               transition={{ duration: 0.2 }}
@@ -87,7 +93,7 @@ const Navigation = () => {
             </motion.p>
           </Link>
 
-          <Link to="/checkout">
+          <Link to="/checkout" onClick={pagiHandler}>
             <motion.p
               whileHover={{ scale: 1.1, originX: 0 }}
               transition={{ duration: 0.2 }}
@@ -98,8 +104,8 @@ const Navigation = () => {
         </PageLinksDropdown>
       </PageLinksContainer>
 
-      <Link to="/blog">Blog</Link>
-      <Link to="/contact">Contact</Link>
+      <Link to="/blog" onClick={pagiHandler}>Blog</Link>
+      <Link to="/contact" onClick={pagiHandler}>Contact</Link>
     </CustomNav>
   );
 };
