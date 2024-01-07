@@ -10,8 +10,6 @@ import Header from "./components/Header/Header";
 import Cart from "./pages/Cart";
 import { RecoilRoot } from "recoil";
 import Checkout from "./pages/Checkout";
-import BookDetails from "./pages/BookDetails";
-import BlogDetails from "./pages/BlogDetails";
 import Registration from "./pages/Registration";
 import Footer from "./components/footer/Footer";
 import ErrorPage from "./pages/ErrorPage";
@@ -34,8 +32,6 @@ function App() {
             <Route path="/:id" element={<OneProductPage />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/bookDetails" element={<BookDetails />} />
-            <Route path="/blogDetails" element={<BlogDetails />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
