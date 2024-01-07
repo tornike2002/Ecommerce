@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import HomeBanner from "../components/homeBanner/HomeBanner";
 import ban1 from "../assets/homeBanner/ban1.jpg.webp";
 import ban2 from "../assets/homeBanner/ban2.jpg.webp";
+import HomeLetter from "../components/HomeNewsLetter/HomeLetter";
 // import { motion } from "framer-motion";
 
 // import { SecondButton } from "../components/styledComponents/buttons";
@@ -149,6 +150,7 @@ const Home = () => {
               <StyledButton>Browse More</StyledButton>
             </StyledDiv>
           </Link>
+          {/* home banner */}
           <HomeBannersContainer>
             <HomeBanner
               background={ban1}
@@ -161,6 +163,8 @@ const Home = () => {
               button="View Details"
             />
           </HomeBannersContainer>
+          {/* home banner */}
+          <HomeLetter />
         </Container>
       </HomeBackground>
 
