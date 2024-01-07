@@ -85,7 +85,7 @@ const Home = () => {
   `;
 
   // This is for scrool up, when user click other Pagination number
-  const pagiHandler = () => {
+  const scrollUpHandler = () => {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
@@ -113,10 +113,11 @@ const Home = () => {
   border: none;
   cursor: pointer;
   transition: left 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+  font-size: 17px;
+
 
   color: black;
 
-  /* Apply style changes when the parent div is hovered over */
   ${StyledDiv}:hover & {
     left: 0;
     background-color: red;
@@ -132,7 +133,7 @@ const Home = () => {
           <ProductsCarousel />
           <ProductCarouselOne />
           <ProductsCarousel />
-          <Link to='categories' onClick={pagiHandler} >
+          <Link to='categories' onClick={scrollUpHandler} >
             {/* <SecondButton> Browse More</SecondButton> */}
             <StyledDiv>
               <StyledButton>
