@@ -1,18 +1,14 @@
+<<<<<<< HEAD
 // import React from 'react'
 import { useRef } from 'react';
 import './OneProductCarousel.css';
+=======
+import "./OneProductCarousel.css";
+>>>>>>> origin/master
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import { DataBase as Data } from "../../Database";
-// import Movie from "../movie/Movie";
-import img1 from '../../../public/419-1116x500.jpg';
-import img2 from '../../../public/883-1116x500.jpg';
-import img3 from '../../../public/894-1116x500.jpg';
-
-const images = [img1, img2, img3];
-
-
-// სტილების მაგივრად
+import { SliderTitle } from "../styledComponents/texts";
+import { motion } from "framer-motion";
 
 const responsive = {
   superLargeDesktop: {
@@ -32,8 +28,10 @@ const responsive = {
     items: 1,
   },
 };
+// ss
 
 export default function OneProductCarousel() {
+<<<<<<< HEAD
   // const [currentSlide, setCurrentSlide] = useState<number>(0);
   // console.log(currentSlide);
   // const handleSlideCHange = (current: number) => {
@@ -78,9 +76,59 @@ export default function OneProductCarousel() {
 
         beforeChange={handleBeforeSlideChange}
         afterChange={handleAfterSlideChange}
+=======
+  return (
+    <div className="carousel-container">
+      <Carousel
+        className="one-img-carousel"
+        responsive={responsive}
+        infinite={true}
+        showDots={true}
+        draggable={false}
+        autoPlay={true}
+>>>>>>> origin/master
       >
+        <div className="img-1">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 4 }}
+            >
+
+              <SliderTitle>The History of Phipino</SliderTitle>
+            </motion.div>
+          </motion.div>
+        </div>
+        <div className="img-2">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 4 }}
+            >
+
+              <SliderTitle>The Nature of galaxy</SliderTitle>
+            </motion.div>
+          </motion.div>
+        </div>
+        <div className="img-3">
+          <motion.div
+            initial={{ y: 100, }}
+            whileInView={{ y: 0, }}
+            transition={{ duration: 1, type: 'spring', stiffness: 500 }}
+          >
 
 
+<<<<<<< HEAD
         {images.map((image, index) => (
           <div key={index} >
             <img src={image} alt={`Slide ${index + 1}`} />
@@ -95,8 +143,13 @@ export default function OneProductCarousel() {
 
 
 
+=======
+            <SliderTitle>The Music of Nature</SliderTitle>
+          </motion.div>
+>>>>>>> origin/master
 
+        </div>
       </Carousel>
     </div>
-  )
+  );
 }

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { FormErrorMessage } from "../components/styledComponents/texts";
+import { FormErrorMessage } from "../components/styledComponents/InputFields";
 
 type FormData = {
   email: string;
@@ -12,8 +12,14 @@ type FormData = {
 };
 
 const schema = z.object({
-  email: z.string().email({ message: "Invalid email address" }).refine(data => data.trim() !== '', { message: 'Email is required' }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters" }).refine(data => data.trim() !== '', { message: 'Password is required' }),
+  email: z
+    .string()
+    .email({ message: "Invalid email address" })
+    .refine((data) => data.trim() !== "", { message: "Email is required" }),
+  password: z
+    .string()
+    .min(6, { message: "Password must be at least 6 characters" })
+    .refine((data) => data.trim() !== "", { message: "Password is required" }),
 });
 
 const Login: FC = () => {
@@ -45,7 +51,7 @@ const Login: FC = () => {
       ) {
         // Redirect to the home page
         navigate("/");
-        refresh()
+        refresh();
       } else {
         setError("password", {
           type: "manual",
@@ -78,7 +84,9 @@ const Login: FC = () => {
                   placeholder="Email Address..."
                   {...register("email")}
                 />
-                {errors.email && <FormErrorMessage>{errors.email.message}</FormErrorMessage>}
+                {errors.email && (
+                  <FormErrorMessage>{errors.email.message}</FormErrorMessage>
+                )}
               </LoginInputsContainer>
               <LoginInputsContainer>
                 <label htmlFor="password">Password</label>
@@ -88,7 +96,9 @@ const Login: FC = () => {
                   placeholder="Enter Password..."
                   {...register("password")}
                 />
-                {errors.password && <FormErrorMessage>{errors.password.message}</FormErrorMessage>}
+                {errors.password && (
+                  <FormErrorMessage>{errors.password.message}</FormErrorMessage>
+                )}
               </LoginInputsContainer>
             </LoginInputsWrapper>
             <CheckboxForgotWrapper>
@@ -100,10 +110,10 @@ const Login: FC = () => {
             </CheckboxForgotWrapper>
             <SignLoginWrapper>
               <p>
-                Don’t have an account?{" "}
+                Don’t have an account?
                 <Link to="/register">
-                  <span>Sign Up</span>
-                </Link>{" "}
+                  <span> Sign Up </span>
+                </Link>
                 here
               </p>
               <button type="submit">Login</button>
@@ -126,6 +136,12 @@ const LoginMainDiv = styled.div`
   align-items: center;
   justify-content: center;
   font-family: "Roboto", sans-serif;
+  @media screen and (max-width: 1024px) {
+    margin-top: 5%;
+  }
+  @media screen and (max-width: 768px) {
+    margin-left: 15px;
+  }
 `;
 const LoginWrapper = styled.div`
   background: #fff;
@@ -133,6 +149,12 @@ const LoginWrapper = styled.div`
   box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
   width: 100%;
   max-width: 700px;
+  @media screen and (max-width: 768px) {
+    margin-right: 15px;
+  }
+  @media screen and (max-width: 380px){
+    padding: 25px 35px 25px 25px;
+  }
 `;
 const LoginTitle = styled.div`
   text-align: center;
@@ -245,5 +267,12 @@ const SignLoginWrapper = styled.div`
     cursor: pointer;
     font-size: 16px;
     border-radius: 0px;
+  }
+
+  @media screen and (max-width: 380px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
   }
 `;

@@ -1,3 +1,5 @@
+import { EachFilterTitle } from "../FiltersStyles";
+
 type Props = {
   priceHandler: (firstPrice: number, secondPrice: number) => void;
 };
@@ -5,18 +7,10 @@ type Props = {
 const FilterByPrice = ({ priceHandler }: Props) => {
   return (
     <div>
-      <div style={{ width: "300px", border: "1px solid black" }}>
+      <div style={{}}>
         <div className="filter-sidebar">
-          <h2>Filter by Price</h2>
+          <EachFilterTitle>Filter by Price</EachFilterTitle>
           <div className="hahaha">
-            <label
-              className="label-sidebar"
-              onClick={() => priceHandler(0, 200)}
-            >
-              <input type="radio" name="filt" />
-              <span className="checkmark"></span>
-              <span>All</span>
-            </label>
             <label
               className="label-sidebar"
               onClick={() => priceHandler(0, 30)}

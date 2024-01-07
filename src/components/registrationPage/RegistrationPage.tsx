@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import styled from "styled-components";
-import { FormsHeader, FormErrorMessage } from "../styledComponents/texts";
+import { FormsHeader } from "../styledComponents/texts";
+import { FormErrorMessage } from "../styledComponents/InputFields";
 import { InputFieldsWrapper } from "../styledComponents/InputFields";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -14,7 +15,7 @@ type FormData = {
   cpassword: string;
 };
 const RegistrationPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const schema = z
     .object({
       fullname: z
@@ -66,7 +67,6 @@ const RegistrationPage = () => {
 
     navigate("/login");
   };
-
 
   return (
     <RegistrationMainDiv>
@@ -128,9 +128,7 @@ const RegistrationPage = () => {
               </Link>
               here
             </p>
-            <button type="submit">
-              Register
-            </button>
+            <button type="submit">Register</button>
           </RegistrationButtonWrapper>
         </RegistrationInputsWrapper>
       </RegistrationDivWrapper>
@@ -141,6 +139,7 @@ const RegistrationPage = () => {
 export default RegistrationPage;
 
 const RegistrationMainDiv = styled.div`
+  margin-top: 5%;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
@@ -149,6 +148,9 @@ const RegistrationMainDiv = styled.div`
   align-items: center;
   justify-content: center;
   font-family: "Roboto", sans-serif;
+  @media screen and (max-width: 768px) {
+    margin-left: 15px;
+  }
 `;
 
 const RegistrationDivWrapper = styled.div`
@@ -157,6 +159,12 @@ const RegistrationDivWrapper = styled.div`
   box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
   width: 100%;
   max-width: 700px;
+  @media screen and (max-width: 768px) {
+    margin-right: 15px;
+  }
+  @media screen and (max-width: 380px) {
+    padding: 25px 35px 25px 25px;
+  }
 `;
 
 const RegistrationInputsWrapper = styled.form`
@@ -173,6 +181,11 @@ const RegistrationButtonWrapper = styled.div`
   align-items: center;
   padding-top: 90px;
   font-family: "Roboto", sans-serif;
+  @media screen and (max-width: 380px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   & p {
     color: var(--lightBrown);

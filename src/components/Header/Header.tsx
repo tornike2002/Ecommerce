@@ -1,47 +1,34 @@
 // import React from 'react'
 import styled from "styled-components";
-import Logo from "../../../public/logoOf.png.webp";
-import LogoOfShop from "../../../public/shopping-cart-outline-svgrepo-com.svg";
+import Logo from "../../assets/logos/logoOf.png.webp";
+import LogoOfShop from "../../assets/icons/shopping-cart-outline-svgrepo-com.svg";
 import { Link } from "react-router-dom";
-
-const ResetButton = styled.button`
-  /* Resetting default styles */
-  appearance: none;
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: none;
-  color: black;
-  background-color: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-
-  &:hover {
-    color: #dc3545;
-  }
-`;
+import { useRecoilValue } from "recoil";
+import { Book, cart } from "../../recoilStates/states";
+import {
+  CartAndBtnContainer,
+  CustomHeader,
+  LogoAndInput,
+  ProductNumber,
+  SearchBtn,
+} from "./HeaderStyles";
+import { MainButton } from "../styledComponents/buttons";
+import Navigation from "./navigation/Navigation";
+import MobileMenu from "../mobileMenu/MobileMenu";
+import search from "../../assets/icons/search.png";
+import { useState } from "react";
+import Inputs from "./Inputs";
+import { motion } from "framer-motion";
 
 const CartImage = styled.img`
   width: 45px;
   transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const SignInButton = styled(ResetButton)`
-  color: white; /* Text color for "Sign in" button */
-
-  &:hover {
-    color: white;
-  }
 `;
 
 export default function Header() {
+  const books = useRecoilValue<Book[]>(cart);
+  const booksLength = books.length;
+
   const refresh = () => window.location.reload();
   const logoutHandler = () => {
     localStorage.removeItem("registrationData");
@@ -49,64 +36,81 @@ export default function Header() {
   };
   const locCheck = localStorage.getItem("registrationData");
 
+  const [input, setInput] = useState(false);
+
+  const inputHandler = () => {
+    setInput(!input);
+  };
+
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <Link to="/">
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <img src={Logo} alt="logo" style={{ width: "170px" }} />
-        </div>
-      </Link>
-
-      <input
-        placeholder="Search your book"
-        style={{
-          marginLeft: "50px",
-          width: "500px",
-          height: "50px",
-          borderRadius: "20px",
-          paddingLeft: "20px",
-          borderColor: "gray",
-        }}
-      ></input>
-
-      <div style={{ marginLeft: "200px", display: "flex", gap: "20px" }}>
-        <Link to="/faq">
-          <ResetButton>FAQ</ResetButton>
-        </Link>
-        <Link to="/trackOrder">
-          <ResetButton>Track Order</ResetButton>
-        </Link>
-
-        <Link to="/cart">
-          <CartImage src={LogoOfShop} alt="shop" style={{ width: "45px" }} />
-        </Link>
-
-        {locCheck ? (
-          <Link to="/register">
-            <div
-              style={{
-                width: "80px",
-                backgroundColor: "red",
-                borderRadius: "20px",
-              }}
-            >
-              <SignInButton onClick={logoutHandler}>Log out</SignInButton>
+    <>
+      <CustomHeader>
+        <LogoAndInput>
+          <Link
+            to="/"
+            style={input === true ? { display: "none" } : { display: "block" }}
+          >
+            <div>
+              <img src={Logo} alt="logo" />
             </div>
           </Link>
-        ) : (
-          <Link to="/signIn">
-            <div
-              style={{
-                width: "80px",
-                backgroundColor: "red",
-                borderRadius: "20px",
-              }}
+          <Inputs input={input} />
+        </LogoAndInput>
+
+        <CartAndBtnContainer>
+          <Link
+            to="/cart"
+            style={input === true ? { display: "none" } : { display: "block" }}
+          >
+            <motion.div
+              style={{ position: "relative" }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <SignInButton>Sign in</SignInButton>
-            </div>
+              <CartImage src={LogoOfShop} alt="shop" />
+              <ProductNumber>{booksLength}</ProductNumber>
+            </motion.div>
           </Link>
-        )}
-      </div>
-    </div>
+
+          {locCheck ? (
+            <Link
+              to="/register"
+              style={
+                input === true ? { display: "none" } : { display: "block" }
+              }
+            >
+              <div>
+                <MainButton
+                  onClick={logoutHandler}
+                  as={motion.button}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Log out
+                </MainButton>
+              </div>
+            </Link>
+          ) : (
+            <Link
+              to="/signIn"
+              style={
+                input === true ? { display: "none" } : { display: "block" }
+              }
+            >
+              <MainButton
+                as={motion.button}
+                whileHover={{ scale: 1.1, backgroundColor: "" }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Sign in
+              </MainButton>
+            </Link>
+          )}
+          <SearchBtn src={search} onClick={inputHandler} />
+        </CartAndBtnContainer>
+      </CustomHeader>
+      <Navigation />
+      <MobileMenu />
+    </>
   );
 }

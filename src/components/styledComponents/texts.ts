@@ -4,7 +4,12 @@ export const MainTitle = styled.h2`
   font-size: 30px;
   font-weight: 700;
   line-height: 1.4;
+  font-family: normal;
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 `;
+
 export const FormsHeader = styled.div`
   text-align: center;
   color: var(--mediumBlue);
@@ -24,8 +29,15 @@ export const FormsHeader = styled.div`
   }
 `;
 
-export const FormErrorMessage = styled.p`
-  color: #ff1616;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
+export const SliderTitle = styled.h2`
+  font-family: "Playfair Display", serif;
+  font-size: 70px;
+  font-weight: 400;
+  margin-bottom: 34px;
+  color: #fff;
+  line-height: 1.2;
+  width: 10ch;
+  @media (max-width: 500px) {
+    font-size: 50px;
+  }
 `;

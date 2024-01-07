@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+// login/registration input field
 export const InputFieldsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,3 +25,12 @@ export const InputFieldsWrapper = styled.div`
     font-size: 16px;
   }
 `;
+// login/registration input field
+
+// error message
+export const FormErrorMessage = styled.p`
+  color: #ff1616;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+`;
+// error message
