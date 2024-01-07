@@ -7,7 +7,8 @@ import { Container } from "../components/styledComponents/containers";
 import ProductCarouselOne from "../components/carousel/ProductCarouselOne";
 import { Link } from "react-router-dom";
 import HomeBanner from "../components/homeBanner/HomeBanner";
-
+import ban1 from "../assets/homeBanner/ban1.jpg.webp";
+import ban2 from "../assets/homeBanner/ban2.jpg.webp";
 // import { motion } from "framer-motion";
 
 // import { SecondButton } from "../components/styledComponents/buttons";
@@ -135,7 +136,16 @@ const Home = () => {
               <StyledButton>Browse More</StyledButton>
             </StyledDiv>
           </Link>
-          <HomeBanner background="" title="" button="" />
+          <HomeBanner
+            background={ban1}
+            title="The History of Phipino"
+            button="View Details"
+          />
+          <HomeBanner
+            background={ban2}
+            title="Wilma Mumduya"
+            button="View Details"
+          />
         </Container>
       </HomeBackground>
 
