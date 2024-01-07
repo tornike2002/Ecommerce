@@ -23,7 +23,7 @@ const HomeBanner: React.FC<HomeBannerProps> = ({
 export default HomeBanner;
 
 const HomeBannerMainContainer = styled.div<{ background: string }>`
-  max-width: 555px;
+  width: 49%;
   min-height: 188px;
   background: url(${(props) => props.background});
   background-repeat: no-repeat;
@@ -33,6 +33,15 @@ const HomeBannerMainContainer = styled.div<{ background: string }>`
   justify-content: space-around;
   align-items: center;
   border-radius: 5px;
+  padding: 10px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const BannerTitle = styled.h1`
@@ -42,4 +51,7 @@ const BannerTitle = styled.h1`
   margin-bottom: 10px;
   color: #fff;
   font-family: "Playfair Display", serif;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;

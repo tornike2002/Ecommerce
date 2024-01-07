@@ -102,7 +102,20 @@ const Home = () => {
 
     color: black;
   `;
+  // home banners
+  const HomeBannersContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
 
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+      margin: 15px;
+    }
+  `;
   // Styled button component
   const StyledButton = styled.button`
     width: 100%;
@@ -136,16 +149,18 @@ const Home = () => {
               <StyledButton>Browse More</StyledButton>
             </StyledDiv>
           </Link>
-          <HomeBanner
-            background={ban1}
-            title="The History of Phipino"
-            button="View Details"
-          />
-          <HomeBanner
-            background={ban2}
-            title="Wilma Mumduya"
-            button="View Details"
-          />
+          <HomeBannersContainer>
+            <HomeBanner
+              background={ban1}
+              title="The History of Phipino"
+              button="View Details"
+            />
+            <HomeBanner
+              background={ban2}
+              title="Wilma Mumduya"
+              button="View Details"
+            />
+          </HomeBannersContainer>
         </Container>
       </HomeBackground>
 
