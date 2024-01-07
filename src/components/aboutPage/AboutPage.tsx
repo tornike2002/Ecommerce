@@ -8,12 +8,53 @@ const AboutPage = () => {
   const imgSrc =
     "https://preview.colorlib.com/theme/abcbook/assets/img/hero/h2_hero1.jpg";
   const text =
-    "Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of cooking that is more efficient for one person creating less.";
+    "Beryl Cook is one of Britain’s most talented and amusing artists..."; // Your text here
+
+  // Define a styled component for the animated container
+  const KenBurnsContainer = styled(motion.div)`
+    /* Apply the animation properties to this container */
+    @-webkit-keyframes kenburns-top {
+      0% {
+        -webkit-transform: scale(1) translateY(0);
+        transform: scale(1) translateY(0);
+        -webkit-transform-origin: 50% 16%;
+        transform-origin: 50% 16%;
+      }
+      100% {
+        -webkit-transform: scale(1.25) translateY(-15px);
+        transform: scale(1.25) translateY(-15px);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+      }
+    }
+    @keyframes kenburns-top {
+      0% {
+        -webkit-transform: scale(1) translateY(0);
+        transform: scale(1) translateY(0);
+        -webkit-transform-origin: 50% 16%;
+        transform-origin: 50% 16%;
+      }
+      100% {
+        -webkit-transform: scale(1.25) translateY(-15px);
+        transform: scale(1.25) translateY(-15px);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+      }
+    }
+    
+    /* Apply the animation with a single iteration */
+  -webkit-animation: kenburns-top 5s ease-out both 1;
+  animation: kenburns-top 5s ease-out both 1;
+`;
+
+
   return (
     <div>
       <Container>
         <TitleAndImg title="About" link={imgSrc} />
-        <motion.div
+
+        {/* Apply the Ken Burns effect to the animated container */}
+        <KenBurnsContainer
           initial={{ x: -50, opacity: 0 }}
           transition={{ duration: 1 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -24,8 +65,10 @@ const AboutPage = () => {
           </div>
           <AboutParagraph>{text}</AboutParagraph>
           <Rate allowHalf defaultValue={2.5} />
-        </motion.div>
-        <motion.div
+        </KenBurnsContainer>
+
+        {/* Similarly, apply the effect to the next section */}
+        <KenBurnsContainer
           initial={{ x: -50, opacity: 0 }}
           transition={{ duration: 1 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -36,7 +79,7 @@ const AboutPage = () => {
           </div>
           <AboutParagraph>{text}</AboutParagraph>
           <Rate allowHalf defaultValue={2} />
-        </motion.div>
+        </KenBurnsContainer>
       </Container>
     </div>
   );
