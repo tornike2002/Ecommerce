@@ -13,6 +13,7 @@ export const MainButton = styled.button<{ $bgColor?: "white" }>`
     font-size: 14px;
     padding: 15px 25px;
   }
+  height: fit-content;
 `;
 
 export const SecondButton = styled.button`
