@@ -6,6 +6,7 @@ import scrollUp from "../assets/icons/scroll-up-svgrepo-com.svg";
 import OneProductCarousel from "../components/carousel/OneProductCarousel";
 import { Container } from "../components/styledComponents/containers";
 import ProductCarouselOne from "../components/carousel/ProductCarouselOne";
+import { MainButton } from "../components/styledComponents/buttons";
 
 const Home = () => {
   const ScrollToTopButtonContainer = styled.div`
@@ -57,6 +58,10 @@ const Home = () => {
           <OneProductCarousel />
           <ProductsCarousel />
           <ProductCarouselOne />
+          <ProductsCarousel />
+          <MainButton />
+
+
         </Container>
       </HomeBackground>
 
