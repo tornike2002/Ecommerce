@@ -7,9 +7,13 @@ import OneProductCarousel from "../components/carousel/OneProductCarousel";
 import { Container } from "../components/styledComponents/containers";
 import ProductCarouselOne from "../components/carousel/ProductCarouselOne";
 import { Link } from "react-router-dom";
+import BookFilteredCarousel from "../components/carousel/BookFilteredCarousel";
+
 // import { motion } from "framer-motion";
 
 // import { SecondButton } from "../components/styledComponents/buttons";
+
+
 
 const Home = () => {
   const ScrollToTopButtonContainer = styled.div`
@@ -132,7 +136,11 @@ const Home = () => {
           <OneProductCarousel />
           <ProductsCarousel />
           <ProductCarouselOne />
-          <ProductsCarousel />
+
+
+          {/* <BookFilteredCarousel /> */}
+
+
           <Link to='categories' onClick={scrollUpHandler} >
             {/* <SecondButton> Browse More</SecondButton> */}
             <StyledDiv>
