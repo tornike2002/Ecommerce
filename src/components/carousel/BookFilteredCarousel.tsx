@@ -5,6 +5,7 @@ import Movie from "../movie/Movie";
 import { MainTitle } from "../styledComponents/texts";
 import "./BookFIlteredCarousel.css";
 import FilterByGenre from "../categoryPage/filter/filterByGenre/FilterByGenre";
+import { useState } from "react";
 
 // სტილების მაგივრად
 
