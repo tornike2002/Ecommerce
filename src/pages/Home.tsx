@@ -7,7 +7,7 @@ import OneProductCarousel from "../components/carousel/OneProductCarousel";
 import { Container } from "../components/styledComponents/containers";
 import ProductCarouselOne from "../components/carousel/ProductCarouselOne";
 import { Link } from "react-router-dom";
-import BookFilteredCarousel from "../components/carousel/BookFilteredCarousel";
+// import BookFilteredCarousel from "../components/carousel/BookFilteredCarousel";
 
 // import { motion } from "framer-motion";
 
@@ -15,13 +15,14 @@ import BookFilteredCarousel from "../components/carousel/BookFilteredCarousel";
 
 
 
+
+
+
+
+
+
 const Home = () => {
-  const ScrollToTopButtonContainer = styled.div`
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; /* Ensure it's above other elements */
-  `;
+
   // სკროლისთვის და ასევე ინტერვალისთვის რომ, ერთიანად არ აისქორლოს..
   const scrollToTop = () => {
     const scrollStep = -window.scrollY / (500 / 15);
@@ -64,69 +65,11 @@ const Home = () => {
 
 
 
-  const ResetButton = styled.button`
-    /* Resetting default styles */
-    appearance: none;
-    background: none;
-    border: none;
-    margin: 0;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: none;
-    color: black;
-    background-color: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-
-    &:hover {
-      color: #dc3545;
-    }
-  `;
-  const HomeBackground = styled.div`
-    background-color: #fef4f4;
-    padding-bottom: 100px;
-  `;
-
   // This is for scrool up, when user click other Pagination number
   const scrollUpHandler = () => {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
-  // Styled div component
-  const StyledDiv = styled.div`
-  width: 200px;
-  height: 50px;
-  overflow: hidden;
-  position: relative;
-  background-color: white;
-  transition: background-color 0.4s ease;
-  border: 1px solid red;
-  border-radius: 30px;
-
-  color: black;
-
-`;
-
-  // Styled button component
-  const StyledButton = styled.button`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: -100%;
-  border: none;
-  cursor: pointer;
-  transition: left 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-  font-size: 17px;
-
-
-  color: black;
-
-  ${StyledDiv}:hover & {
-    left: 0;
-    background-color: red;
-  }
-`;
 
 
   return (
@@ -166,3 +109,70 @@ const Home = () => {
 };
 
 export default Home;
+
+
+// Styled div component
+const StyledDiv = styled.div`
+  width: 200px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  transition: background-color 0.4s ease;
+  border: 1px solid red;
+  border-radius: 30px;
+
+  color: black;
+
+`;
+
+// Styled button component
+const StyledButton = styled.button`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100%;
+  border: none;
+  cursor: pointer;
+  transition: left 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+  font-size: 17px;
+
+
+  color: black;
+
+  ${StyledDiv}:hover & {
+    left: 0;
+    background-color: red;
+  }
+`;
+
+const ScrollToTopButtonContainer = styled.div`
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+  `;
+
+const ResetButton = styled.button`
+/* Resetting default styles */
+appearance: none;
+background: none;
+border: none;
+margin: 0;
+padding: 0;
+font: inherit;
+cursor: pointer;
+outline: none;
+color: black;
+background-color: none;
+padding: 8px 16px;
+border-radius: 4px;
+
+&:hover {
+  color: #dc3545;
+}
+`;
+const HomeBackground = styled.div`
+background-color: #fef4f4;
+padding-bottom: 100px;
+`;

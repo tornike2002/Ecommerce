@@ -9,6 +9,12 @@ type Props = {
   input: boolean;
 };
 
+
+
+
+
+
+
 const Inputs = ({ input }: Props) => {
   const [searchedMovies, setSearchedMovie] = useState<MovieType[]>([]);
   const [value, setValue] = useState("");
@@ -20,38 +26,6 @@ const Inputs = ({ input }: Props) => {
     setSearchedMovie(books);
   };
 
-  const StyledUL = styled.ul`
-    list-style: none;
-    padding: 20px;
-    position: absolute;
-    display: ${() => (value === "" ? "none" : "flex")};
-    overflow: auto;
-    left: 16%;
-    z-index: 20;
-    top: 80px;
-    gap: 20px;
-    flex-wrap: wrap;
-    height: 340px;
-    width: 68%;
-    justify-content: center;
-    background-color: #fef4f4;
-    img {
-      height: 300px;
-      width: 200px;
-      border-radius: 8px;
-    }
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    @media (max-width: 1439px) {
-      left: 6%;
-      width: 88%;
-    }
-    @media (max-width: 767px) {
-      left: 3%;
-      width: 94%;
-    }
-  `;
 
   return (
     <>
@@ -70,6 +44,7 @@ const Inputs = ({ input }: Props) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
+        isVisible={value !== ""}
       >
         {searchedMovies.map((movie) => (
           <Link
@@ -92,3 +67,39 @@ const Inputs = ({ input }: Props) => {
 };
 
 export default Inputs;
+
+
+
+
+const StyledUL = styled.ul<{ isVisible: boolean }>`
+list-style: none;
+padding: 20px;
+position: absolute;
+display: ${(props) => (props.isVisible ? "flex" : "none")};
+overflow: auto;
+left: 16%;
+z-index: 20;
+top: 80px;
+gap: 20px;
+flex-wrap: wrap;
+height: 340px;
+width: 68%;
+justify-content: center;
+background-color: #fef4f4;
+img {
+  height: 300px;
+  width: 200px;
+  border-radius: 8px;
+}
+&::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 1439px) {
+  left: 6%;
+  width: 88%;
+}
+@media (max-width: 767px) {
+  left: 3%;
+  width: 94%;
+}
+`;
