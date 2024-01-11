@@ -1,9 +1,10 @@
+// ... (imports and responsive object)
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { DataBase as Data } from "../../Database";
 import Movie from "../movie/Movie";
 import { MainTitle } from "../styledComponents/texts";
-import "./ProductsCarousel.css";
+import "./ProductsCarousel2.css";
 
 
 
@@ -29,12 +30,20 @@ const responsive = {
   },
 };
 
-const ProductsCarousel = () => {
+interface ProductsCarouselProps {
+  selectedGenre: string;
+}
+
+const ProductsCarousel2: React.FC<ProductsCarouselProps> = ({ selectedGenre }) => {
+  const filteredData = selectedGenre === "all"
+    ? Data
+    : Data.filter((movie) => movie.genres.includes(selectedGenre));
+
   return (
     <div className="prod-car-cont">
       <MainTitle>Best Selling Books Ever</MainTitle>
       <Carousel responsive={responsive} infinite={true} autoPlay={true}>
-        {Data.map((oneMovie) => (
+        {filteredData.map((oneMovie) => (
           <Movie
             key={oneMovie.id}
             pathname={oneMovie.pathname}
@@ -51,4 +60,4 @@ const ProductsCarousel = () => {
   );
 };
 
-export default ProductsCarousel;
+export default ProductsCarousel2;
