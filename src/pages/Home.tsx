@@ -10,11 +10,17 @@ import HomeBanner from "../components/homeBanner/HomeBanner";
 import ban1 from "../assets/homeBanner/ban1.jpg.webp";
 import ban2 from "../assets/homeBanner/ban2.jpg.webp";
 import HomeLetter from "../components/HomeNewsLetter/HomeLetter";
+import { useState } from "react";
+// import FilterByGenre from "../components/categoryPage/filter/filterByGenre/FilterByGenre";
+import ProductsCarousel2 from "../components/carousel/ProductsCarousel2";
+import FilterByGenre2 from "../components/categoryPage/filter/filterByGenreForHome/FilterByGenre2";
 // import { motion } from "framer-motion";
 
 // import { SecondButton } from "../components/styledComponents/buttons";
 
 const Home = () => {
+  const [selectedGenre, setSelectedGenre] = useState("all");
+
   const scrollToTop = () => {
     const scrollStep = -window.scrollY / (500 / 15);
 
@@ -39,7 +45,10 @@ const Home = () => {
           <OneProductCarousel />
           <ProductsCarousel />
           <ProductCarouselOne />
-          <ProductsCarousel />
+          {/* filter code in this place */}
+          <FilterByGenre2 filterHandler={(genre) => setSelectedGenre(genre)} />
+          <ProductsCarousel2 selectedGenre={selectedGenre} />
+
           <Link to="categories" onClick={pagiHandler}>
             {/* <SecondButton> Browse More</SecondButton> */}
             <StyledDiv>
