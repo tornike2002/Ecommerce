@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+Hello This is a Book Ecommerce Web site ✔
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a group project with 4 developers, each of us had to share certain parts of the site that we were working on. Also everything is divided into branches. While working in the project, all of us learned something new that was most important to us, as well as how to work in a team.
 
-Currently, two official plugins are available:
+How to use this project :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1) git clone https://github.com/tornike2002/Ecommerce.git
+2) npm install to install node modules
+3) npm run dev to make project live
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+this project was build with :
+1) React
+2) Typescript
+3) antDesign
+4) styled components
+5) Framer motion
+6) React-router-dom
+7) React-hook-forms
+8) Zod
+9) React-multy-carousel
+10) Vite
+11) Trello
+12) Recoil
