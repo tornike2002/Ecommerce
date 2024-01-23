@@ -1,8 +1,6 @@
 // import { EachFilterTitle } from "../FiltersStyles";
 import styled from "styled-components";
 
-
-
 type Props = {
   filterHandler: (genre: string) => void;
 };
@@ -41,18 +39,14 @@ const FilterByGenre2 = ({ filterHandler }: Props) => {
 export default FilterByGenre2;
 
 const FByGenreTwo = styled.button`
-  /* padding: 8px 10px;
-  color: #776969;
-  outline: none;
-  border: 1px solid #ccc; */
-  color: #454E6D;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 10px 30px;
-    margin-right: 8px;
-    border: 1px solid #EEE1E0;
-    border-radius: 20px;
-  &:focus{
+  color: #454e6d;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 30px;
+  margin-right: 8px;
+  border: 1px solid #eee1e0;
+  border-radius: 20px;
+  &:focus {
     background-color: red;
     color: #fff;
   }
@@ -60,9 +54,13 @@ const FByGenreTwo = styled.button`
 const FbyGenreContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  max-width: 60%;
   align-items: center;
-
+  @media screen and (max-width: 1000px) {
+    max-width: 100%;
+    flex-direction: column;
+    
+  }
 `;
 const FilterSidebar = styled.div`
   padding: 10px;
@@ -70,6 +68,12 @@ const FilterSidebar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
 `;
 
 const EachFilterTitle = styled.div`
