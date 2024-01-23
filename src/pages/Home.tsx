@@ -4,19 +4,14 @@ import scrollUp from "../assets/icons/scroll-up-svgrepo-com.svg";
 // import { OneProductCarousel } from "../components/carousel/OneProductCarousel";
 import OneProductCarousel from "../components/carousel/OneProductCarousel";
 import { Container } from "../components/styledComponents/containers";
-import ProductCarouselOne from "../components/carousel/ProductCarouselOne";
 import { Link } from "react-router-dom";
 import HomeBanner from "../components/homeBanner/HomeBanner";
 import ban1 from "../assets/homeBanner/ban1.jpg.webp";
 import ban2 from "../assets/homeBanner/ban2.jpg.webp";
 import HomeLetter from "../components/HomeNewsLetter/HomeLetter";
 import { useState } from "react";
-// import FilterByGenre from "../components/categoryPage/filter/filterByGenre/FilterByGenre";
 import ProductsCarousel2 from "../components/carousel/ProductsCarousel2";
 import FilterByGenre2 from "../components/categoryPage/filter/filterByGenreForHome/FilterByGenre2";
-// import { motion } from "framer-motion";
-
-// import { SecondButton } from "../components/styledComponents/buttons";
 
 const Home = () => {
   const [selectedGenre, setSelectedGenre] = useState("all");
@@ -44,7 +39,7 @@ const Home = () => {
         <Container>
           <OneProductCarousel />
           <ProductsCarousel />
-          <ProductCarouselOne />
+          {/* <ProductCarouselOne /> */}
           {/* filter code in this place */}
           <FilterByGenre2 filterHandler={(genre) => setSelectedGenre(genre)} />
           <ProductsCarousel2 selectedGenre={selectedGenre} />
@@ -132,28 +127,16 @@ const HomeBannersContainer = styled.div`
 `;
 
 const StyledDiv = styled.div`
-  width: 200px;
-  height: 50px;
-  overflow: hidden;
-  position: relative;
-  background-color: white;
-  transition: background-color 0.4s ease;
-  border: 1px solid red;
-  border-radius: 30px;
-  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
 `;
 const StyledButton = styled.button`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: -100%;
-  border: none;
+  border: 1px solid #ff1616 !important;
+  color: #ff1616 !important;
+  border-radius: 30px;
+  padding: 10px 24px;
   cursor: pointer;
-  transition: left 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-  color: black;
-  ${StyledDiv}:hover & {
-    left: 0;
-    background-color: red;
-  }
-  /* Apply style changes when the parent div is hovered over */
 `;

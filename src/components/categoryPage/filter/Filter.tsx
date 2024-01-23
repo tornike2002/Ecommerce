@@ -1,7 +1,6 @@
 import "./FilterStyles.css";
 import FilterByAuthor from "./filterByAuthor/FilterByAuthor";
 import FilterByGenre from "./filterByGenre/FilterByGenre";
-import FilterByGenre2 from "./filterByGenreForHome/FilterByGenre2";
 import FilterByPrice from "./filterByPrice/FilterByPrice";
 import FilterByRating from "./filterByRating/FilterByRating";
 
@@ -20,7 +19,7 @@ const Filter = ({
 }: Props) => {
   return (
     <>
-      <FilterByGenre2 filterHandler={filterHandler} />
+
       <FilterByGenre filterHandler={filterHandler} />
       <FilterByPrice priceHandler={priceHandler} />
       <FilterByRating ratingHandler={ratingHandler} />
