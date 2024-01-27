@@ -1,5 +1,7 @@
 Hello This is a Book Ecommerce Web site ✔
 
+Live: https://darling-quokka-ea0219.netlify.app
+
 This is a group project with 4 developers, each of us had to share certain parts of the site that we were working on. Also everything is divided into branches. While working in the project, all of us learned something new that was most important to us, as well as how to work in a team.
 
 How to use this project :
