@@ -6,6 +6,9 @@ export const ProductContainer = styled.div`
   align-items: center;
   gap: 50px;
   padding: 30px 80px;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const ProductBanner = styled.img`
