@@ -8,6 +8,11 @@ export const StyledButtonsContainer = styled.div`
   display: flex;
   gap: 20px;
   margin-top: 50px;
+  @media screen and (max-width: 460px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const StyledButton = styled.button`
